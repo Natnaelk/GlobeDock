@@ -1,0 +1,36 @@
+// ignore_for_file: constant_identifier_names
+//STRING
+const String ACCESS_TOKEN = 'access_token';
+const String ONBOARDING = 'onboarding';
+const String JOURNEY_STARTS_HERE = 'Your Global Education Journey starts here';
+const String JOIN_US =
+    "Join us and start your journey to one of 2000 universities around the world.";
+const String EMAIL_OR_PHONE = 'Continue with Email or Phone';
+const String GOOGLE = 'Continue with Goole';
+const String APPLE = 'Continue with Apple';
+const String DONT_HAVE_AN_ACCOUNT = 'Don\'t have an account?';
+const String SIGN_UP = 'Sign up for Free!';
+
+//MARGIN
+const double MARGIN = 18;
+
+//RADIUS
+const double RADIUS = 12;
+const double RADIUS_SMALL = 8;
+
+//SPACE
+const double SPACE8 = 8;
+const double SPACE4 = 4;
+const double SPACE12 = 12;
+const double SPACE15 = 15;
+const double SPACE20 = 20;
+const double SPACE25 = 25;
+const double SPACE35 = 35;
+const double SPACE40 = 40;
+const double SPACE45 = 45;
+const double SPACE50 = 50;
+const double SPACE55 = 55;
+const double SPACE60 = 60;
+
+//SIZE
+const double SIZE35 = 35;
