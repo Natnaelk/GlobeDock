@@ -4,7 +4,9 @@ import 'package:flutter_svg/svg.dart';
 import 'package:globedock/src/common/constant.dart';
 import 'package:globedock/src/common/custom_font_size.dart';
 import 'package:globedock/src/common/images.dart';
+import 'package:globedock/src/common/routes.dart';
 import 'package:globedock/src/presentation/widget/custom_icon_button.dart';
+import 'package:go_router/go_router.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({Key? key}) : super(key: key);
@@ -15,8 +17,8 @@ class OnboardingScreen extends StatelessWidget {
       body: Stack(
         children: [
           Padding(
-            padding: const EdgeInsets.only(
-                top: SPACE45, left: SPACE15, right: SPACE15),
+            padding:
+                EdgeInsets.only(top: SPACE60.h, left: SPACE15, right: SPACE15),
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.start, children: [
               Row(
@@ -43,13 +45,11 @@ class OnboardingScreen extends StatelessWidget {
                 height: SPACE35.h,
               ),
               CustomIconButton(
-                onTap: () {},
+                onTap: () =>
+                    GoRouter.of(context).go(AppRoutes.SIGNIN_ROUTE_PATH),
                 label: EMAIL_OR_PHONE,
                 labelColor: Theme.of(context).cardColor,
-                icon: Icon(
-                  Icons.email,
-                  color: Theme.of(context).cardColor,
-                ),
+                icon: SvgPicture.asset(Images.EMAIL_LOGIN),
                 color: Theme.of(context).dialogBackgroundColor,
               ),
               SizedBox(
@@ -59,10 +59,7 @@ class OnboardingScreen extends StatelessWidget {
                 onTap: () {},
                 label: GOOGLE,
                 labelColor: Theme.of(context).dialogBackgroundColor,
-                icon: Icon(
-                  Icons.golf_course,
-                  color: Theme.of(context).dialogBackgroundColor,
-                ),
+                icon: SvgPicture.asset(Images.GOOGLE_LOGIN),
                 color: Theme.of(context).cardColor,
                 borderColor: Theme.of(context).canvasColor,
               ),
@@ -73,9 +70,10 @@ class OnboardingScreen extends StatelessWidget {
                 onTap: () {},
                 label: APPLE,
                 labelColor: Theme.of(context).dialogBackgroundColor,
-                icon: Icon(
-                  Icons.apple,
-                  color: Theme.of(context).dialogBackgroundColor,
+                icon: SvgPicture.asset(
+                  Images.APPLE_LOGIN,
+                  height: 20.h,
+                  width: 20.w,
                 ),
                 color: Theme.of(context).cardColor,
                 borderColor: Theme.of(context).canvasColor,
@@ -98,12 +96,16 @@ class OnboardingScreen extends StatelessWidget {
                               SizedBox(
                                 width: 5.w,
                               ),
-                              Text(
-                                SIGN_UP,
-                                style: TextStyle(
-                                    fontSize: CustomFontSize.s11,
-                                    fontWeight: FontWeight.bold,
-                                    color: Theme.of(context).primaryColor),
+                              GestureDetector(
+                                onTap: () => GoRouter.of(context)
+                                    .go(AppRoutes.SIGNUP_ROUTE_PATH),
+                                child: Text(
+                                  SIGN_UP_FOR_FREE,
+                                  style: TextStyle(
+                                      fontSize: CustomFontSize.s10,
+                                      fontWeight: FontWeight.bold,
+                                      color: Theme.of(context).primaryColor),
+                                ),
                               )
                             ]),
                         SizedBox(

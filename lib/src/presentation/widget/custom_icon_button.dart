@@ -1,4 +1,5 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:globedock/src/common/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -33,14 +34,14 @@ class CustomIconButton extends StatelessWidget {
   final double height;
   final double? labelSize;
   final EdgeInsetsGeometry? margin;
-  final Icon? icon;
+  final SvgPicture? icon;
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
     return GestureDetector(
-      onTap: () {},
+      onTap: () => onTap.call(),
       child: Container(
           decoration: BoxDecoration(
               color: color,

@@ -1,11 +1,12 @@
 import 'dart:developer';
+
+import 'package:flutter/material.dart';
 import 'package:globedock/src/common/routes.dart';
-import 'package:globedock/src/presentation/page/auth/sign_in_screen.dart';
 import 'package:globedock/src/presentation/page/auth/sign_up_screen.dart';
 import 'package:globedock/src/presentation/page/error/error_screen.dart';
 import 'package:globedock/src/presentation/page/onboarding/onboarding_screen.dart';
+import 'package:globedock/src/presentation/page/auth/sign_in_screen.dart';
 import 'package:globedock/src/presentation/page/splash/splash_screen.dart';
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 GoRouter routerinit = GoRouter(
@@ -33,10 +34,10 @@ GoRouter routerinit = GoRouter(
     /// ********************** Authentication Routes ********************
     /// ==================================================================
     GoRoute(
-      name: AppRoutes.LOGIN_ROUTE_NAME,
-      path: AppRoutes.LOGIN_ROUTE_PATH,
+      name: AppRoutes.SIGNIN_ROUTE_NAME,
+      path: AppRoutes.SIGNIN_ROUTE_PATH,
       builder: (BuildContext context, GoRouterState state) {
-        return const SignInPage();
+        return const SignInScreen();
       },
     ),
 
@@ -44,7 +45,7 @@ GoRouter routerinit = GoRouter(
       name: AppRoutes.SIGNUP_ROUTE_NAME,
       path: AppRoutes.SIGNUP_ROUTE_PATH,
       builder: (BuildContext context, GoRouterState state) {
-        return const SignUnPage();
+        return const SignUpScreen();
       },
     ),
   ],

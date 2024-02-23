@@ -9,8 +9,20 @@ const String EMAIL_OR_PHONE = 'Continue with Email or Phone';
 const String GOOGLE = 'Continue with Goole';
 const String APPLE = 'Continue with Apple';
 const String DONT_HAVE_AN_ACCOUNT = 'Don\'t have an account?';
-const String SIGN_UP = 'Sign up for Free!';
-
+const String SIGN_UP_FOR_FREE = 'Sign up for Free!';
+const String MOBILE = 'Mobile Number';
+const String EMAIL = 'Email';
+const String VERIFY = 'Verify';
+const String HAVE_AN_ACCOUNT = 'Already have an account?';
+const String LOGIN = 'Login';
+const String RESEND_OTP = 'resend OTP in';
+const String CREATE_ACCOUNT = 'Create an account';
+const String LOGIN_TO_CONTINUE = 'Login to continue';
+const String NEW_TO_GLOBEDOCK = 'New to GlobDock?';
+const String AGREEMENT_TXT = 'By continuing, you agree to GlobDock\'s';
+const String TERMS_AND_CONDITIONS = 'Terms & Conditions and Privacy Policy';
+const String SEND_OTP = 'Send OTP';
+const String SIGN_UP = 'Sign Up';
 //MARGIN
 const double MARGIN = 18;
 

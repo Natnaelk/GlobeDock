@@ -55,6 +55,11 @@ ThemeData themeLight(BuildContext context) {
         fontSize: CustomFontSize.s17,
         fontWeight: FontWeight.w500,
       ),
+      headlineLarge: GoogleFonts.rubik(
+        color: ColorLight.fontTitle,
+        fontSize: CustomFontSize.s20,
+        fontWeight: FontWeight.w500,
+      ),
       headlineSmall: GoogleFonts.rubik(
         color: ColorLight.fontTitle,
         fontSize: CustomFontSize.s12,
