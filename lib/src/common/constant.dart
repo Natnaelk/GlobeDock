@@ -23,6 +23,27 @@ const String AGREEMENT_TXT = 'By continuing, you agree to GlobDock\'s';
 const String TERMS_AND_CONDITIONS = 'Terms & Conditions and Privacy Policy';
 const String SEND_OTP = 'Send OTP';
 const String SIGN_UP = 'Sign Up';
+const String COMPLETE_PROFIE = 'Complete Your Profile';
+const String PERSONALIZE_INFO =
+    'We will personalize your further process accordingly. This won\'t take more than a minute.';
+const String LETS_GO = 'Let’s Go';
+const String PREFERRED_LEVEL_OF_STUDY =
+    'What is your preferred level of study?';
+const String HIGHSCHOOL = 'Highschool';
+const String UNDERGRADUATE = 'Undergraduate';
+const String POSTGRADUATE = 'Postgraduate';
+const String DESTINATION_PREFERENCE = 'Select your destination preference';
+const String HIGHSCHOOL_ATTENDED = 'Which Highschool did you attend in?';
+const String CONTINUE = 'Continue';
+const String NO_NOTIFICATION = 'No new notification';
+const String THINGS_NEED_ATTENTION =
+    'Things that need your attention will appear here';
+const String BACK_TO_HOME = 'Back to Home';
+const String INTRODUCING_PREMIUM = 'Introducing GlobeDock +';
+const String VIP_SERVICE = 'The VIP Service for Global Citizens';
+const String ONE_SOLUTION = 'Thousands of student problems, one solution';
+const String EXPLORE_PLANS = 'Explore Plans';
+
 //MARGIN
 const double MARGIN = 18;
 
@@ -46,3 +67,8 @@ const double SPACE60 = 60;
 
 //SIZE
 const double SIZE35 = 35;
+
+//PADDING
+const double MAIN_PADDING = 20;
+
+const double SMALL_PADDING = 10;

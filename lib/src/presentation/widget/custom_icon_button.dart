@@ -20,6 +20,12 @@ class CustomIconButton extends StatelessWidget {
     this.margin,
     required this.icon,
     this.borderColor = Colors.black,
+    this.isIconLeading = true,
+    this.isContentCentered = false,
+    this.borderRadius = RADIUS_SMALL,
+    this.iconColor,
+    this.showBorder = true,
+    this.textSize = 16,
   });
 
   final Widget? child;
@@ -35,6 +41,12 @@ class CustomIconButton extends StatelessWidget {
   final double? labelSize;
   final EdgeInsetsGeometry? margin;
   final SvgPicture? icon;
+  final bool isIconLeading;
+  final bool isContentCentered;
+  final double borderRadius;
+  final Color? iconColor;
+  final bool showBorder;
+  final double textSize;
 
   @override
   Widget build(BuildContext context) {
@@ -45,28 +57,47 @@ class CustomIconButton extends StatelessWidget {
       child: Container(
           decoration: BoxDecoration(
               color: color,
-              borderRadius: BorderRadius.circular(RADIUS_SMALL),
-              border: Border.all(color: borderColor!)),
+              borderRadius: BorderRadius.circular(borderRadius),
+              border: Border.all(
+                  color: showBorder ? borderColor! : Colors.transparent)),
           width: width,
           height: height,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Row(
-                children: [
-                  SizedBox(
-                    width: 20.w,
-                  ),
-                  icon!,
-                  SizedBox(
-                    width: 40.w,
-                  ),
-                  Text(
-                    label!,
-                    style: TextStyle(color: labelColor),
-                  )
-                ],
-              )
+              isIconLeading
+                  ? Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        icon!,
+                        SizedBox(
+                          width: 15.w,
+                        ),
+                        Text(
+                          label!,
+                          style: TextStyle(
+                            color: labelColor,
+                          ),
+                        )
+                      ],
+                    )
+                  : Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          width: 20.w,
+                        ),
+                        Text(
+                          label!,
+                          style:
+                              TextStyle(color: labelColor, fontSize: textSize),
+                        ),
+                        SizedBox(
+                          width: 10.w,
+                        ),
+                        icon!,
+                      ],
+                    )
             ],
           )),
     );

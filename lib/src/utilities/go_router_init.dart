@@ -3,9 +3,12 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:globedock/src/common/routes.dart';
 import 'package:globedock/src/presentation/page/auth/sign_up_screen.dart';
+import 'package:globedock/src/presentation/page/bottomNavigation/bottom_navigation_screen.dart';
 import 'package:globedock/src/presentation/page/error/error_screen.dart';
 import 'package:globedock/src/presentation/page/onboarding/onboarding_screen.dart';
 import 'package:globedock/src/presentation/page/auth/sign_in_screen.dart';
+import 'package:globedock/src/presentation/page/question/question_onboarding_screen.dart';
+import 'package:globedock/src/presentation/page/question/question_screen.dart';
 import 'package:globedock/src/presentation/page/splash/splash_screen.dart';
 import 'package:go_router/go_router.dart';
 
@@ -46,6 +49,31 @@ GoRouter routerinit = GoRouter(
       path: AppRoutes.SIGNUP_ROUTE_PATH,
       builder: (BuildContext context, GoRouterState state) {
         return const SignUpScreen();
+      },
+    ),
+
+    GoRoute(
+      name: AppRoutes.QUESTION_ONBOARDING_ROUTE_NAME,
+      path: AppRoutes.QUESTION_ONBOARDING_ROUTE_PATH,
+      builder: (BuildContext context, GoRouterState state) {
+        return const QuestionOnboardingScreen();
+      },
+    ),
+
+    GoRoute(
+      name: AppRoutes.QUESTION_ROUTE_NAME,
+      path: AppRoutes.QUESTION_ROUTE_PATH,
+      builder: (BuildContext context, GoRouterState state) {
+        return QuestionScreen(
+            questionNumber: state.uri.queryParameters['questionNumber']);
+      },
+    ),
+
+    GoRoute(
+      name: AppRoutes.DASHBOARD_ROUTE_NAME,
+      path: AppRoutes.DASHBOARD_ROUTE_PATH,
+      builder: (BuildContext context, GoRouterState state) {
+        return BottomNavigationScreen();
       },
     ),
   ],

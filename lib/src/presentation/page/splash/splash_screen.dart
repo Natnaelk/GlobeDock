@@ -22,7 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 0, microseconds: 900), () {
-      GoRouter.of(context).go(AppRoutes.ONBOARDING_ROUTE_PATH);
+      GoRouter.of(context).goNamed(AppRoutes.DASHBOARD_ROUTE_NAME);
     });
   }
 

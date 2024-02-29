@@ -68,7 +68,7 @@ class CustomElevatedButton extends StatelessWidget {
                     style: theme.textTheme.labelLarge?.copyWith(
                       fontSize: labelSize,
                       color: labelColor,
-                      fontWeight: FontWeight.w600,
+                      fontWeight: FontWeight.w400,
                     ),
                   ),
       ),

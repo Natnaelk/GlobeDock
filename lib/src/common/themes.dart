@@ -14,12 +14,14 @@ ThemeData themeLight(BuildContext context) {
     // ignore: deprecated_member_use
     errorColor: ColorLight.error,
     hintColor: ColorLight.fontSubtitle,
-    indicatorColor: ColorLight.primary,
+    indicatorColor: ColorLight.darkColor,
     iconTheme: const IconThemeData(
       color: ColorLight.fontTitle,
     ),
+    secondaryHeaderColor: ColorLight.bottomNavigationColor,
     primaryColor: ColorLight.primary,
     primaryColorLight: ColorLight.primaryLight,
+    bottomAppBarColor: ColorLight.primaryVeryLight,
     textSelectionTheme: const TextSelectionThemeData(
       cursorColor: ColorLight.primary,
     ),
@@ -28,17 +30,19 @@ ThemeData themeLight(BuildContext context) {
         color: ColorLight.disabledButton,
       ),
     ),
-    scaffoldBackgroundColor: ColorLight.card,
+    scaffoldBackgroundColor: ColorLight.premiumColor,
     dialogBackgroundColor: ColorLight.blackBackgroud,
+
     appBarTheme: const AppBarTheme(
       elevation: 0,
       centerTitle: true,
     ),
+    dividerColor: ColorLight.disabledText,
     textTheme: GoogleFonts.rubikTextTheme().copyWith(
       displayLarge: GoogleFonts.rubik(
-        color: ColorLight.fontTitle,
-        fontSize: 20,
-        fontWeight: FontWeight.w500,
+        color: ColorLight.primary,
+        fontSize: 25,
+        fontWeight: FontWeight.w800,
       ),
       displayMedium: GoogleFonts.rubik(
         color: ColorLight.fontTitle,
@@ -47,32 +51,37 @@ ThemeData themeLight(BuildContext context) {
       ),
       displaySmall: GoogleFonts.rubik(
         color: ColorLight.fontTitle,
-        fontSize: 16,
+        fontSize: CustomFontSize.s12,
         fontWeight: FontWeight.w500,
       ),
       headlineMedium: GoogleFonts.rubik(
         color: ColorLight.fontTitle,
         fontSize: CustomFontSize.s17,
-        fontWeight: FontWeight.w500,
+        fontWeight: FontWeight.w600,
       ),
       headlineLarge: GoogleFonts.rubik(
         color: ColorLight.fontTitle,
         fontSize: CustomFontSize.s20,
-        fontWeight: FontWeight.w500,
+        fontWeight: FontWeight.w600,
       ),
       headlineSmall: GoogleFonts.rubik(
         color: ColorLight.fontTitle,
-        fontSize: CustomFontSize.s12,
-        fontWeight: FontWeight.w500,
+        fontSize: CustomFontSize.s14,
+        fontWeight: FontWeight.w600,
       ),
       bodyLarge: GoogleFonts.rubik(
-        color: ColorLight.fontTitle,
-        fontSize: CustomFontSize.s16,
+        color: ColorLight.card,
+        fontSize: CustomFontSize.s17,
+        fontWeight: FontWeight.w600,
+      ),
+      bodySmall: GoogleFonts.rubik(
+        color: ColorLight.card,
+        fontSize: CustomFontSize.s15,
         fontWeight: FontWeight.normal,
       ),
       bodyMedium: GoogleFonts.rubik(
-        color: ColorLight.card,
-        fontSize: CustomFontSize.s15,
+        color: ColorLight.blackBackgroud,
+        fontSize: CustomFontSize.s16,
         fontWeight: FontWeight.normal,
       ),
       titleMedium: GoogleFonts.rubik(
@@ -83,6 +92,11 @@ ThemeData themeLight(BuildContext context) {
       titleSmall: GoogleFonts.rubik(
         color: ColorLight.fontSubtitle,
         fontSize: CustomFontSize.s12,
+        fontWeight: FontWeight.normal,
+      ),
+      titleLarge: GoogleFonts.rubik(
+        color: ColorLight.fontSubtitle,
+        fontSize: CustomFontSize.s16,
         fontWeight: FontWeight.normal,
       ),
       labelLarge: GoogleFonts.rubik(
@@ -149,7 +163,7 @@ ThemeData themeDark(BuildContext context) {
       ),
       headlineSmall: GoogleFonts.rubik(
         color: ColorDark.fontTitle,
-        fontSize: 12,
+        fontSize: 15,
         fontWeight: FontWeight.w500,
       ),
       bodyLarge: GoogleFonts.rubik(

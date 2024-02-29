@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:globedock/src/common/constant.dart';
 import 'package:globedock/src/common/custom_font_size.dart';
+import 'package:globedock/src/common/routes.dart';
 import 'package:globedock/src/presentation/widget/custom_elevated_button.dart';
 import 'package:globedock/src/presentation/widget/custom_textfield.dart';
+import 'package:go_router/go_router.dart';
 
 Widget registerWidget(BuildContext context) {
   return Column(
@@ -38,7 +40,8 @@ Widget registerWidget(BuildContext context) {
         height: 25.h,
       ),
       CustomElevatedButton(
-        onTap: () {},
+        onTap: () =>
+            GoRouter.of(context).go(AppRoutes.QUESTION_ONBOARDING_ROUTE_PATH),
         label: SIGN_UP,
       ),
     ],

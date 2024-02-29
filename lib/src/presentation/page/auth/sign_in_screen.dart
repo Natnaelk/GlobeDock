@@ -123,7 +123,7 @@ class _SignInScreenState extends State<SignInScreen>
             ),
             Positioned.fill(
               top: _tabController.index == 0
-                  ? MediaQuery.of(context).size.height * 0.55
+                  ? MediaQuery.of(context).size.height * 0.51
                   : MediaQuery.of(context).size.height * 0.65, //
               child: Column(
                 children: [

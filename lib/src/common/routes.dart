@@ -20,4 +20,12 @@ class AppRoutes {
 
   static const String CREATE_PROFILE_ROUTE_NAME = 'create_profile';
   static const String CREATE_PROFILE_ROUTE_PATH = '/create_profile';
+
+  static const String QUESTION_ONBOARDING_ROUTE_NAME = 'question_onboarding';
+  static const String QUESTION_ONBOARDING_ROUTE_PATH = '/question_onboarding';
+
+  static const String QUESTION_ROUTE_NAME = 'question';
+  static const String QUESTION_ROUTE_PATH = '/question';
+  static const String DASHBOARD_ROUTE_NAME = 'dashboard';
+  static const String DASHBOARD_ROUTE_PATH = '/dashboard';
 }

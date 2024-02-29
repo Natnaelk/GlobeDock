@@ -174,7 +174,7 @@ class CustomTextFormField extends StatelessWidget {
           hintText: hintText,
           hintStyle: theme.textTheme.subtitle2,
           labelText: labelText,
-          labelStyle: theme.textTheme.subtitle1,
+          labelStyle: theme.textTheme.titleMedium,
           suffixIcon: suffixIcon,
           prefixIcon: prefixIcon,
           helperMaxLines: helperMaxLines,
@@ -199,7 +199,7 @@ class CustomTextFormField extends StatelessWidget {
           ),
           disabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(RADIUS),
-            borderSide: BorderSide(color: theme.disabledColor),
+            borderSide: BorderSide(color: theme.dividerColor),
           ),
         ),
       ),

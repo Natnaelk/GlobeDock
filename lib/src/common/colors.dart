@@ -12,6 +12,11 @@ class ColorLight {
   static const Color disabledButton = Color(0xFF8F8A94);
   static const Color divider = Color(0xFFDCDCDC);
   static const Color canvasColor = Color(0xFFCDCACF);
+  static const Color disabledText = Color(0xFFDDDCDF);
+  static const Color primaryVeryLight = Color.fromARGB(255, 255, 250, 255);
+  static const Color premiumColor = Color(0xFFD2B7E7);
+  static const Color darkColor = Color(0xFF0D0612);
+  static const Color bottomNavigationColor = Color(0xFF121113);
 
   static const Color success = Color(0xFF81C784);
   static const Color warning = Color(0xFFFFB74D);

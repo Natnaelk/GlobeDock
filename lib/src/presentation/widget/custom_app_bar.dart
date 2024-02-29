@@ -1,19 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   CustomAppBar(
-      {this.title, this.isBackButtonExist = true, this.onBackButtonPressed});
+      {this.title,
+      this.isBackButtonExist = true,
+      this.onBackButtonPressed,
+      this.titleColor = Colors.black,
+      this.backgroundColor = Colors.white});
 
   final String? title;
   final bool isBackButtonExist;
   final VoidCallback? onBackButtonPressed;
+  final Color? titleColor;
+  final Color? backgroundColor;
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       title: title != null
-          ? Text(title!, style: Theme.of(context).textTheme.titleMedium)
+          ? Text(title!,
+              style: TextStyle(
+                color: titleColor,
+              ))
           : null,
       centerTitle: true,
       leading: isBackButtonExist
@@ -23,7 +31,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               onPressed: onBackButtonPressed,
             )
           : SizedBox(),
-      backgroundColor: Theme.of(context).cardColor,
+      backgroundColor: backgroundColor,
       elevation: 0,
     );
   }
