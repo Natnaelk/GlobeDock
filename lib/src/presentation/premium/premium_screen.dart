@@ -4,8 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:globedock/src/common/constant.dart';
 import 'package:globedock/src/common/icons.dart';
 import 'package:globedock/src/common/images.dart';
-import 'package:globedock/src/presentation/home/drawer_widget.dart';
-import 'package:globedock/src/presentation/widget/custom_app_bar.dart';
+import 'package:globedock/src/presentation/page/home/drawer_widget.dart';
 import 'package:globedock/src/presentation/widget/custom_icon_button.dart';
 
 class PremiumScreen extends StatelessWidget {
@@ -28,7 +27,7 @@ class PremiumScreen extends StatelessWidget {
           ),
           onPressed: () {
             if (scaffoldKey.currentState!.isDrawerOpen) {
-              scaffoldKey.currentState!.closeDrawer();
+              scaffoldKey.currentState!.openEndDrawer();
             } else {
               scaffoldKey.currentState!.openDrawer();
             }

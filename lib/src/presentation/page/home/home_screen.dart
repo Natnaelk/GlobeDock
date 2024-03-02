@@ -6,9 +6,9 @@ import 'package:globedock/src/common/custom_font_size.dart';
 import 'package:globedock/src/common/icons.dart';
 import 'package:globedock/src/common/images.dart';
 import 'package:globedock/src/data/model/country.dart';
-import 'package:globedock/src/presentation/home/drawer_widget.dart';
-import 'package:globedock/src/presentation/home/journey_progress_widget.dart';
-import 'package:globedock/src/presentation/home/quick_actions_widget.dart';
+import 'package:globedock/src/presentation/page/home/drawer_widget.dart';
+import 'package:globedock/src/presentation/page/home/journey_progress_widget.dart';
+import 'package:globedock/src/presentation/page/home/quick_actions_widget.dart';
 import 'package:globedock/src/presentation/widget/custom_icon_button.dart';
 import 'package:globedock/src/presentation/widget/home_country_tile.dart';
 

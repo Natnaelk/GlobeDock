@@ -11,4 +11,10 @@ class CustomIcons {
   static const String TASK = 'assets/icons/task.svg';
   static const String NOTIFICATION = 'assets/icons/notification_icon.svg';
   static const String CHAT = 'assets/icons/chat.svg';
+  static const String RADIO_PROGRESS_INDICATOR_NOTSELECTED =
+      'assets/icons/radio_progress_indicator2.svg';
+  static const String RADIO_PROGRESS_INDICATOR =
+      'assets/icons/radio_progress_indicator.svg';
+  static const String ARROW_DOWN = 'assets/icons/arrow_down.svg';
+  static const String DATE = 'assets/icons/date_icon.svg';
 }

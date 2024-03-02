@@ -4,7 +4,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:globedock/src/common/constant.dart';
 import 'package:globedock/src/common/custom_font_size.dart';
 import 'package:globedock/src/common/icons.dart';
+import 'package:globedock/src/common/routes.dart';
 import 'package:globedock/src/presentation/widget/custom_icon_button.dart';
+import 'package:go_router/go_router.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 import 'dart:math' as math;
 
@@ -126,7 +128,8 @@ class JourneyProgressWidget extends StatelessWidget {
         ),
         Center(
           child: CustomIconButton(
-            onTap: () {},
+            onTap: () => GoRouter.of(context)
+                .go(AppRoutes.COMPLETE_ONBOARDING_ROUTE_PATH),
             label: 'Track Your Journey',
             color: Theme.of(context).cardColor,
             labelColor: Theme.of(context).primaryColor,

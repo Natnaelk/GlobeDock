@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:globedock/src/common/constant.dart';
+import 'package:globedock/src/common/routes.dart';
+import 'package:go_router/go_router.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
 class QuickActionsWidget extends StatelessWidget {
@@ -36,30 +38,34 @@ class QuickActionsWidget extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(MAIN_PADDING),
             child: Column(children: [
-              Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Fill Profile Details',
-                        style: Theme.of(context).textTheme.titleLarge,
-                      ),
-                      IconButton(
-                          onPressed: () {},
-                          icon: const Icon(Icons.chevron_right))
-                    ],
-                  ),
-                  StepProgressIndicator(
-                    totalSteps: 100,
-                    currentStep: 32,
-                    size: 12,
-                    padding: 0,
-                    selectedColor: Theme.of(context).primaryColor,
-                    unselectedColor: Theme.of(context).primaryColorLight,
-                    roundedEdges: const Radius.circular(RADIUS),
-                  ),
-                ],
+              GestureDetector(
+                onTap: () =>
+                    GoRouter.of(context).go(AppRoutes.FILL_PROFILE_ROUTE_PATH),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Fill Profile Details',
+                          style: Theme.of(context).textTheme.titleLarge,
+                        ),
+                        IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.chevron_right))
+                      ],
+                    ),
+                    StepProgressIndicator(
+                      totalSteps: 100,
+                      currentStep: 32,
+                      size: 12,
+                      padding: 0,
+                      selectedColor: Theme.of(context).primaryColor,
+                      unselectedColor: Theme.of(context).primaryColorLight,
+                      roundedEdges: const Radius.circular(RADIUS),
+                    ),
+                  ],
+                ),
               ),
               Column(
                 children: [

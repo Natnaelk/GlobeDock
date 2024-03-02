@@ -9,6 +9,9 @@ class AppRoutes {
   static const String ONBOARDING_ROUTE_NAME = 'onboarding';
   static const String ONBOARDING_ROUTE_PATH = '/onboarding';
 
+  static const String COMPLETE_ONBOARDING_ROUTE_NAME = 'completeonboarding';
+  static const String COMPLETE_ONBOARDING_ROUTE_PATH = '/completeonboarding';
+
   static const String SIGNIN_ROUTE_NAME = 'signin';
   static const String SIGNIN_ROUTE_PATH = '/signin';
 
@@ -26,6 +29,10 @@ class AppRoutes {
 
   static const String QUESTION_ROUTE_NAME = 'question';
   static const String QUESTION_ROUTE_PATH = '/question';
+
   static const String DASHBOARD_ROUTE_NAME = 'dashboard';
   static const String DASHBOARD_ROUTE_PATH = '/dashboard';
+
+  static const String FILL_PROFILE_ROUTE_NAME = 'fillprofile';
+  static const String FILL_PROFILE_ROUTE_PATH = '/fillprofile';
 }

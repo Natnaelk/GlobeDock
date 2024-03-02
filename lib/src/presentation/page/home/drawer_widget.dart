@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:globedock/src/common/constant.dart';
 import 'package:globedock/src/common/icons.dart';
-import 'package:globedock/src/presentation/home/profile_widget.dart';
+import 'package:globedock/src/presentation/page/home/profile_widget.dart';
 
 class DrawerWidget extends StatelessWidget {
   const DrawerWidget({
@@ -24,7 +24,7 @@ class DrawerWidget extends StatelessWidget {
             padding: const EdgeInsets.only(
                 top: MAIN_PADDING * 4, right: MAIN_PADDING, left: MAIN_PADDING),
             child: Container(
-              height: 70.h,
+              height: 72.h,
               width: double.infinity,
               decoration: BoxDecoration(
                   color: Theme.of(context).primaryColor,

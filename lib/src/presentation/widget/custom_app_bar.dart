@@ -20,8 +20,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: title != null
           ? Text(title!,
               style: TextStyle(
-                color: titleColor,
-              ))
+                  color: titleColor,
+                  fontStyle: Theme.of(context).textTheme.titleLarge!.fontStyle))
           : null,
       centerTitle: true,
       leading: isBackButtonExist

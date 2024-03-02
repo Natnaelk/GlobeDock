@@ -5,6 +5,8 @@ import 'package:globedock/src/common/routes.dart';
 import 'package:globedock/src/presentation/page/auth/sign_up_screen.dart';
 import 'package:globedock/src/presentation/page/bottomNavigation/bottom_navigation_screen.dart';
 import 'package:globedock/src/presentation/page/error/error_screen.dart';
+import 'package:globedock/src/presentation/page/home/fill_profile_details_screen.dart';
+import 'package:globedock/src/presentation/page/onboarding/complete_onboarding_screen.dart';
 import 'package:globedock/src/presentation/page/onboarding/onboarding_screen.dart';
 import 'package:globedock/src/presentation/page/auth/sign_in_screen.dart';
 import 'package:globedock/src/presentation/page/question/question_onboarding_screen.dart';
@@ -74,6 +76,22 @@ GoRouter routerinit = GoRouter(
       path: AppRoutes.DASHBOARD_ROUTE_PATH,
       builder: (BuildContext context, GoRouterState state) {
         return BottomNavigationScreen();
+      },
+    ),
+
+    GoRoute(
+      name: AppRoutes.COMPLETE_ONBOARDING_ROUTE_NAME,
+      path: AppRoutes.COMPLETE_ONBOARDING_ROUTE_PATH,
+      builder: (BuildContext context, GoRouterState state) {
+        return CompleteOnboardingScreen();
+      },
+    ),
+
+    GoRoute(
+      name: AppRoutes.FILL_PROFILE_ROUTE_NAME,
+      path: AppRoutes.FILL_PROFILE_ROUTE_PATH,
+      builder: (BuildContext context, GoRouterState state) {
+        return FillProfileDetilsScreen();
       },
     ),
   ],
