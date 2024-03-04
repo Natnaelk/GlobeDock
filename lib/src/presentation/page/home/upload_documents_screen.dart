@@ -3,39 +3,36 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:globedock/src/common/constant.dart';
 import 'package:globedock/src/common/icons.dart';
 import 'package:globedock/src/common/routes.dart';
-import 'package:globedock/src/presentation/page/home/tabs/address_tab.dart';
-import 'package:globedock/src/presentation/page/home/tabs/education_tab.dart';
-import 'package:globedock/src/presentation/page/home/tabs/extra_curricular_documents_tab.dart';
-import 'package:globedock/src/presentation/page/home/tabs/family_tab.dart';
-import 'package:globedock/src/presentation/page/home/tabs/personal_info_tab.dart';
-import 'package:globedock/src/presentation/page/home/tabs/recommendations_tab.dart';
-import 'package:globedock/src/presentation/page/home/tabs/test_score_tab.dart';
-import 'package:globedock/src/presentation/page/home/tabs/work_experience_tab.dart';
+import 'package:globedock/src/presentation/page/home/tabs/education_upload_tab.dart';
+import 'package:globedock/src/presentation/page/home/tabs/english_proficiency_test_tab.dart';
+import 'package:globedock/src/presentation/page/home/tabs/extra_curricular_upload_tab.dart';
+import 'package:globedock/src/presentation/page/home/tabs/identity_tab.dart';
+import 'package:globedock/src/presentation/page/home/tabs/other_tab.dart';
+import 'package:globedock/src/presentation/page/home/tabs/recommendation_upload_tab.dart';
+import 'package:globedock/src/presentation/page/home/tabs/work_experience_upload_tab.dart';
 import 'package:globedock/src/presentation/widget/custom_icon_button.dart';
 import 'package:go_router/go_router.dart';
 
-class FillProfileDetilsScreen extends StatefulWidget {
-  const FillProfileDetilsScreen({Key? key}) : super(key: key);
+class UploadDocumentsScreen extends StatefulWidget {
+  const UploadDocumentsScreen({Key? key}) : super(key: key);
 
   @override
-  State<FillProfileDetilsScreen> createState() =>
-      _FillProfileDetilsScreenState();
+  State<UploadDocumentsScreen> createState() => _UploadDocumentsScreenState();
 }
 
-class _FillProfileDetilsScreenState extends State<FillProfileDetilsScreen>
+class _UploadDocumentsScreenState extends State<UploadDocumentsScreen>
     with SingleTickerProviderStateMixin {
   int _selectedIndex = 0;
   late TabController _tabController;
 
   final List<Widget> _tabs = [
-    PersonalInfoTab(),
-    AddressTab(),
-    FamilyTab(),
-    EducationTab(),
-    TestScoreTab(),
-    WorkExperience(),
-    ExtraCurricularDocumentsTab(),
-    RecommendationsTab()
+    const IdentityTab(),
+    const EducationUploadTab(),
+    const WorkExperienceUploadTab(),
+    const EnglishProficiencyTestTab(),
+    const ExtraCurriuclarUploadTab(),
+    const RecommendationUploadTab(),
+    const OtherTab()
   ];
 
   @override
@@ -63,13 +60,12 @@ class _FillProfileDetilsScreenState extends State<FillProfileDetilsScreen>
           physics: const ClampingScrollPhysics(),
           isScrollable: true,
           padding: EdgeInsets.zero,
-          dividerColor: Colors.transparent,
           onTap: (index) {
             setState(() {
               _selectedIndex = index;
             });
           },
-          tabs: fillProfileDetilsTabTitles
+          tabs: uploadDocumentsTabTitles
               .map((title) => Tab(text: title))
               .toList(),
         ),

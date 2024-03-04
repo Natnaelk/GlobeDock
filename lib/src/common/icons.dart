@@ -17,4 +17,10 @@ class CustomIcons {
       'assets/icons/radio_progress_indicator.svg';
   static const String ARROW_DOWN = 'assets/icons/arrow_down.svg';
   static const String DATE = 'assets/icons/date_icon.svg';
+  static const String CAMERA = 'assets/icons/camera_icon.svg';
+  static const String FILTER = 'assets/icons/filter.svg';
+  static const String PLAY = 'assets/icons/btn_play.svg';
+  static const String INFO = 'assets/icons/info.svg';
+  static const String CHECKED = 'assets/icons/checked.svg';
+  static const String UNCHECKED = 'assets/icons/unchecked.svg';
 }

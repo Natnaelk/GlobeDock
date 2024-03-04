@@ -55,6 +55,9 @@ class QuickActionsWidget extends StatelessWidget {
                             icon: const Icon(Icons.chevron_right))
                       ],
                     ),
+                    const SizedBox(
+                      height: SPACE10,
+                    ),
                     StepProgressIndicator(
                       totalSteps: 100,
                       currentStep: 32,
@@ -67,30 +70,40 @@ class QuickActionsWidget extends StatelessWidget {
                   ],
                 ),
               ),
-              Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Upload Documents',
-                        style: Theme.of(context).textTheme.titleLarge,
-                      ),
-                      IconButton(
-                          onPressed: () {},
-                          icon: const Icon(Icons.chevron_right))
-                    ],
-                  ),
-                  StepProgressIndicator(
-                    totalSteps: 100,
-                    currentStep: 50,
-                    size: 12,
-                    padding: 0,
-                    selectedColor: Theme.of(context).primaryColor,
-                    unselectedColor: Theme.of(context).primaryColorLight,
-                    roundedEdges: const Radius.circular(RADIUS),
-                  ),
-                ],
+              const SizedBox(
+                height: SPACE15,
+              ),
+              GestureDetector(
+                onTap: () => GoRouter.of(context)
+                    .go(AppRoutes.UPLOAD_DOCUMENTS_ROUTE_PATH),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Upload Documents',
+                          style: Theme.of(context).textTheme.titleLarge,
+                        ),
+                        IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.chevron_right))
+                      ],
+                    ),
+                    const SizedBox(
+                      height: SPACE10,
+                    ),
+                    StepProgressIndicator(
+                      totalSteps: 100,
+                      currentStep: 50,
+                      size: 12,
+                      padding: 0,
+                      selectedColor: Theme.of(context).primaryColor,
+                      unselectedColor: Theme.of(context).primaryColorLight,
+                      roundedEdges: const Radius.circular(RADIUS),
+                    ),
+                  ],
+                ),
               )
             ]),
           ),

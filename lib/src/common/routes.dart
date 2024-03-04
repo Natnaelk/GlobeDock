@@ -35,4 +35,16 @@ class AppRoutes {
 
   static const String FILL_PROFILE_ROUTE_NAME = 'fillprofile';
   static const String FILL_PROFILE_ROUTE_PATH = '/fillprofile';
+
+  static const String UPLOAD_DOCUMENTS_ROUTE_NAME = 'uploaddocuments';
+  static const String UPLOAD_DOCUMENTS_ROUTE_PATH = '/uploaddocuments';
+
+  static const String VIDEOS_ROUTE_NAME = 'videos';
+  static const String VIDEOS_ROUTE_PATH = '/videos';
+
+  static const String PREMIUM_PLAN_ROUTE_NAME = 'premiumplan';
+  static const String PREMIUM_PLAN_ROUTE_PATH = '/premiumplan';
+
+  static const String PROFILE_ROUTE_NAME = 'profile';
+  static const String PROFILE_ROUTE_PATH = '/profile';
 }

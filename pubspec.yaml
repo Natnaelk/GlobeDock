@@ -32,6 +32,7 @@ dependencies:
   country_picker: ^2.0.25
   csc_picker: ^0.2.7
   language_picker: ^0.4.3
+  dotted_border: ^2.1.0
 
 dev_dependencies:
   flutter_test:

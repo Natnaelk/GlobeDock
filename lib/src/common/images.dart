@@ -30,4 +30,7 @@ class Images {
   static const String WORKING_ON_APPS = 'assets/images/working_on_my_apps.png';
   static const String APPLICATIONS_MGMT = 'assets/images/apps_mgmt.png';
   static const String VISA_MGMT = 'assets/images/visa_mgmt.png';
+  static const String BUTTON_PLAY = 'assets/icons/btn_play.svg';
+  static const String GLOBEDOCK_WORKERS = 'assets/images/globedock_image.jpeg';
+  static const String AVATAR_IMAGE = 'assets/images/avatar.jpeg';
 }

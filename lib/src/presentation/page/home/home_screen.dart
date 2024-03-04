@@ -5,12 +5,14 @@ import 'package:globedock/src/common/constant.dart';
 import 'package:globedock/src/common/custom_font_size.dart';
 import 'package:globedock/src/common/icons.dart';
 import 'package:globedock/src/common/images.dart';
+import 'package:globedock/src/common/routes.dart';
 import 'package:globedock/src/data/model/country.dart';
 import 'package:globedock/src/presentation/page/home/drawer_widget.dart';
 import 'package:globedock/src/presentation/page/home/journey_progress_widget.dart';
 import 'package:globedock/src/presentation/page/home/quick_actions_widget.dart';
 import 'package:globedock/src/presentation/widget/custom_icon_button.dart';
 import 'package:globedock/src/presentation/widget/home_country_tile.dart';
+import 'package:go_router/go_router.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -23,9 +25,9 @@ class HomeScreen extends StatelessWidget {
             TextStyle(fontSize: CustomFontSize.s16, color: Colors.black),
         title: Row(
             mainAxisAlignment: MainAxisAlignment.start,
-            children: [Text('👋 User')]),
+            children: const [Text('👋 User')]),
       ),
-      drawer: DrawerWidget(),
+      drawer: const DrawerWidget(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         backgroundColor: Theme.of(context).primaryColor,
@@ -37,7 +39,7 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
       body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: Column(children: [
           CustomIconButton(
             onTap: () {},
@@ -63,22 +65,26 @@ class HomeScreen extends StatelessWidget {
                       top: MAIN_PADDING),
                   child: Column(
                     children: [
-                      JourneyProgressWidget(),
+                      const JourneyProgressWidget(),
                       SizedBox(
                         height: 15.h,
                       ),
-                      QuickActionsWidget(),
+                      const QuickActionsWidget(),
                     ],
                   ),
                 ),
                 SizedBox(
                   height: 20.h,
                 ),
-                Image.asset(
-                  Images.GLOBEDOCK_IMAGE,
-                  width: double.infinity,
-                  fit: BoxFit.scaleDown,
-                  scale: 0.2,
+                GestureDetector(
+                  onTap: () =>
+                      GoRouter.of(context).go(AppRoutes.VIDEOS_ROUTE_PATH),
+                  child: Image.asset(
+                    Images.GLOBEDOCK_IMAGE,
+                    width: double.infinity,
+                    fit: BoxFit.scaleDown,
+                    scale: 0.2,
+                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(

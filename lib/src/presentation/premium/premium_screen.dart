@@ -4,8 +4,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:globedock/src/common/constant.dart';
 import 'package:globedock/src/common/icons.dart';
 import 'package:globedock/src/common/images.dart';
+import 'package:globedock/src/common/routes.dart';
 import 'package:globedock/src/presentation/page/home/drawer_widget.dart';
 import 'package:globedock/src/presentation/widget/custom_icon_button.dart';
+import 'package:go_router/go_router.dart';
 
 class PremiumScreen extends StatelessWidget {
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -74,7 +76,8 @@ class PremiumScreen extends StatelessWidget {
           padding:
               const EdgeInsets.only(left: MAIN_PADDING, right: MAIN_PADDING),
           child: CustomIconButton(
-              onTap: () {},
+              onTap: () =>
+                  GoRouter.of(context).go(AppRoutes.PREMIUM_PLAN_ROUTE_PATH),
               label: EXPLORE_PLANS,
               isIconLeading: false,
               color: Theme.of(context).scaffoldBackgroundColor,

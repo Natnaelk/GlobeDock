@@ -54,6 +54,7 @@ const double RADIUS_SMALL = 8;
 //SPACE
 const double SPACE8 = 8;
 const double SPACE4 = 4;
+const double SPACE10 = 10;
 const double SPACE12 = 12;
 const double SPACE15 = 15;
 const double SPACE20 = 20;
@@ -187,4 +188,33 @@ final List<String> fillProfileDetilsTabTitles = [
   'Work Experience',
   'Extra Curricular Documents',
   'Recommendation'
+];
+
+final List<String> uploadDocumentsTabTitles = [
+  'Identity',
+  'Education',
+  'Work Experience',
+  'English Proficiency Test',
+  'Extra Curricular',
+  'Recommendation',
+  'Other',
+];
+
+final List<String> premiumPlanTitles = [
+  'Elite',
+  'Premium',
+  'Executive',
+  'Supreme',
+];
+
+final List<String> premiumPlansFeatures = [
+  'Free counselling Session',
+  'Destination Specific Mentor/Coach',
+  'Access to Exclusive Scholarships',
+  'Personalized CV/Resume Editing Service',
+  'Statement of Purpose/Personal  Essays’ Help',
+  'Application submission support',
+  'Interact with Alumni Mentor from Universities',
+  'TOEFEL Booking Scholarship',
+  'One-Way Economy Non-stop Flight Ticket to Uk'
 ];
