@@ -47,4 +47,36 @@ class AppRoutes {
 
   static const String PROFILE_ROUTE_NAME = 'profile';
   static const String PROFILE_ROUTE_PATH = '/profile';
+
+  static const String CHAT_ONBORADING_ROUTE_NAME = 'chatonboarding';
+  static const String CHAT_ONBORADING_ROUTE_PATH = '/chatonboarding';
+
+  static const String CHAT_ROOM_ROUTE_NAME = 'chatroom';
+  static const String CHAT_ROOM_ROUTE_PATH = '/chatroom';
+
+  static const String HELP_WITH_VISA_ROUTE_NAME = 'helpwithvisa';
+  static const String HELP_WITH_VISA_ROUTE_PATH = '/helpwithvisa';
+
+  static const String VISA_MGMT_ROUTE_NAME = 'visamgmt';
+  static const String VISA_MGMT_ROUTE_PATH = '/visamgmt';
+
+  static const String MATCHED_WITH_TEAM_ROUTE_NAME = 'matchedwithteam';
+  static const String MATCHED_WITH_TEAM_ROUTE_PATH = '/matchedwithteam';
+
+  static const String MY_PROFILE_ROUTE_NAME = 'myprofile';
+  static const String MY_PROFILE_ROUTE_PATH = '/myprofile';
+
+  static const String READY_TO_FLY_ROUTE_NAME = 'readytofly';
+  static const String READY_TO_FLY_ROUTE_PATH = '/readytofly';
+
+  static const String UNIVERSITY_APPLICATION_MGMT_ROUTE_NAME =
+      'universityapplicationmgmt';
+  static const String UNIVERSITY_APPLICATION_MGMT_ROUTE_PATH =
+      '/universityapplicationmgmt';
+
+  static const String DESTINATION_ROUTE_NAME = 'destination';
+  static const String DESTINATION_ROUTE_PATH = '/destination';
+
+  static const String HELP_ROUTE_NAME = 'helpandsupport';
+  static const String HELP_ROUTE_PATH = '/helpandsupport';
 }

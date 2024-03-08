@@ -2,8 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:globedock/src/common/constant.dart';
+import 'package:globedock/src/common/custom_font_size.dart';
 import 'package:globedock/src/common/icons.dart';
+import 'package:globedock/src/common/routes.dart';
+import 'package:globedock/src/presentation/page/bottomNavigation/bottom_navigation_screen.dart';
 import 'package:globedock/src/presentation/page/home/profile_widget.dart';
+import 'package:globedock/src/presentation/page/successstories/success_stories_onboarding_screen.dart';
+import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:share_plus/share_plus.dart';
 
 class DrawerWidget extends StatelessWidget {
   const DrawerWidget({
@@ -20,17 +27,22 @@ class DrawerWidget extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
-          Padding(
-            padding: const EdgeInsets.only(
-                top: MAIN_PADDING * 4, right: MAIN_PADDING, left: MAIN_PADDING),
-            child: Container(
-              height: 72.h,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                  color: Theme.of(context).primaryColor,
-                  borderRadius: BorderRadius.circular(RADIUS)),
-              child: Column(
-                children: [ProfileWidget()],
+          InkWell(
+            onTap: () => GoRouter.of(context).go(AppRoutes.PROFILE_ROUTE_PATH),
+            child: Padding(
+              padding: const EdgeInsets.only(
+                  top: MAIN_PADDING * 4,
+                  right: MAIN_PADDING,
+                  left: MAIN_PADDING),
+              child: Container(
+                height: 72.h,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                    color: Theme.of(context).primaryColor,
+                    borderRadius: BorderRadius.circular(RADIUS)),
+                child: Column(
+                  children: [ProfileWidget()],
+                ),
               ),
             ),
           ),
@@ -44,14 +56,26 @@ class DrawerWidget extends StatelessWidget {
                 ),
                 child: SvgPicture.asset(
                   CustomIcons.TASK,
-                  height: 25,
-                  width: 25,
+                  height: 20,
+                  width: 20,
                   color: Theme.of(context).dialogBackgroundColor,
                 )),
-            title: Text('Pending Task',
-                style: Theme.of(context).textTheme.bodyMedium),
+            title: Text(
+              'Pending Task',
+              style: GoogleFonts.rubik(
+                color: Theme.of(context).dialogBackgroundColor,
+                fontSize: CustomFontSize.s13,
+                fontWeight: FontWeight.normal,
+              ),
+            ),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => BottomNavigationScreen(
+                          selectedIndex: '3',
+                        )),
+              );
             },
           ),
           ListTile(
@@ -61,14 +85,26 @@ class DrawerWidget extends StatelessWidget {
                 ),
                 child: SvgPicture.asset(
                   CustomIcons.NOTIFICATION,
-                  height: 25,
-                  width: 25,
+                  height: 20,
+                  width: 20,
                   color: Theme.of(context).dialogBackgroundColor,
                 )),
-            title: Text('Notifications',
-                style: Theme.of(context).textTheme.bodyMedium),
+            title: Text(
+              'Notifications',
+              style: GoogleFonts.rubik(
+                color: Theme.of(context).dialogBackgroundColor,
+                fontSize: CustomFontSize.s13,
+                fontWeight: FontWeight.normal,
+              ),
+            ),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => BottomNavigationScreen(
+                          selectedIndex: '1',
+                        )),
+              );
             },
           ),
           ListTile(
@@ -78,14 +114,20 @@ class DrawerWidget extends StatelessWidget {
                 ),
                 child: SvgPicture.asset(
                   CustomIcons.HELP_AND_SUPPORT,
-                  height: 25,
-                  width: 25,
+                  height: 20,
+                  width: 20,
                   color: Theme.of(context).dialogBackgroundColor,
                 )),
-            title: Text('Help & Support',
-                style: Theme.of(context).textTheme.bodyMedium),
+            title: Text(
+              'Help & Support',
+              style: GoogleFonts.rubik(
+                color: Theme.of(context).dialogBackgroundColor,
+                fontSize: CustomFontSize.s13,
+                fontWeight: FontWeight.normal,
+              ),
+            ),
             onTap: () {
-              Navigator.pop(context);
+              GoRouter.of(context).go(AppRoutes.HELP_ROUTE_PATH);
             },
           ),
           ListTile(
@@ -95,12 +137,18 @@ class DrawerWidget extends StatelessWidget {
                 ),
                 child: SvgPicture.asset(
                   CustomIcons.RATING,
-                  height: 25,
-                  width: 25,
+                  height: 20,
+                  width: 20,
                   color: Theme.of(context).dialogBackgroundColor,
                 )),
-            title: Text('Rate the App',
-                style: Theme.of(context).textTheme.bodyMedium),
+            title: Text(
+              'Rate the App',
+              style: GoogleFonts.rubik(
+                color: Theme.of(context).dialogBackgroundColor,
+                fontSize: CustomFontSize.s13,
+                fontWeight: FontWeight.normal,
+              ),
+            ),
             onTap: () {
               Navigator.pop(context);
             },
@@ -112,14 +160,21 @@ class DrawerWidget extends StatelessWidget {
                 ),
                 child: SvgPicture.asset(
                   CustomIcons.SHARE,
-                  height: 25,
-                  width: 25,
+                  height: 20,
+                  width: 20,
                   color: Theme.of(context).dialogBackgroundColor,
                 )),
-            title: Text('Share the App',
-                style: Theme.of(context).textTheme.bodyMedium),
+            title: Text(
+              'Share the App',
+              style: GoogleFonts.rubik(
+                color: Theme.of(context).dialogBackgroundColor,
+                fontSize: CustomFontSize.s13,
+                fontWeight: FontWeight.normal,
+              ),
+            ),
             onTap: () {
-              Navigator.pop(context);
+              Share.share(
+                  'Interested in studying abroad? Check out the GlobeDock app');
             },
           ),
           Padding(
@@ -135,14 +190,24 @@ class DrawerWidget extends StatelessWidget {
                 ),
                 child: SvgPicture.asset(
                   CustomIcons.SUCCESS,
-                  height: 25,
-                  width: 25,
+                  height: 20,
+                  width: 20,
                   color: Theme.of(context).dialogBackgroundColor,
                 )),
-            title: Text('View Success Stories',
-                style: Theme.of(context).textTheme.bodyMedium),
+            title: Text(
+              'View Success Stories',
+              style: GoogleFonts.rubik(
+                color: Theme.of(context).dialogBackgroundColor,
+                fontSize: CustomFontSize.s13,
+                fontWeight: FontWeight.normal,
+              ),
+            ),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => SuccessStoriesOnboardingScreen()),
+              );
             },
           ),
           Padding(

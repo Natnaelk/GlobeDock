@@ -8,6 +8,7 @@ import 'package:globedock/src/common/icons.dart';
 import 'package:globedock/src/common/images.dart';
 import 'package:globedock/src/common/routes.dart';
 import 'package:globedock/src/data/model/country.dart';
+import 'package:globedock/src/presentation/widget/custom_elevated_button.dart';
 import 'package:go_router/go_router.dart';
 
 class VideosScreen extends StatelessWidget {
@@ -180,121 +181,136 @@ Widget VieosFilterBottomSheet() {
     builder: (BuildContext context, StateSetter setState) {
       return Container(
         color: Theme.of(context).cardColor,
-        padding: EdgeInsets.only(
-            left: MAIN_PADDING, right: MAIN_PADDING, top: MAIN_PADDING * 1.3),
-        child: SingleChildScrollView(
-          physics: AlwaysScrollableScrollPhysics(),
-          child: FormBuilder(
-            child: Stack(
+        padding: EdgeInsets.all(MAIN_PADDING),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'Filter by',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 15,
-                          ),
-                        ),
-                        InkWell(
-                          onTap: () => Navigator.pop(context),
-                          child: Icon(
-                            Icons.close,
-                            color: Theme.of(context).disabledColor,
-                          ),
-                        )
-                      ],
+                Text(
+                  'Filter by',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 15,
+                  ),
+                ),
+                InkWell(
+                  onTap: () => Navigator.pop(context),
+                  child: Icon(
+                    Icons.close,
+                    color: Theme.of(context).disabledColor,
+                  ),
+                )
+              ],
+            ),
+            SizedBox(height: 15.h),
+            Divider(),
+            SizedBox(height: 10.h),
+            Text(
+              'Speaker Type',
+              style: Theme.of(context).textTheme.labelMedium,
+            ),
+            FormBuilderFilterChip(
+              name: 'speaker_chip',
+              spacing: MAIN_PADDING,
+              showCheckmark: false,
+              selectedColor: Theme.of(context).primaryColor,
+              backgroundColor: Theme.of(context).cardColor,
+              labelStyle: Theme.of(context).textTheme.titleMedium,
+              runSpacing: SMALL_PADDING,
+              options: [
+                FormBuilderChipOption(value: 'GlobeDock'),
+                FormBuilderChipOption(value: 'Mentor'),
+                FormBuilderChipOption(value: 'Team GlobeDock'),
+              ],
+              onChanged: (value) {
+                setState(() {});
+              },
+            ),
+            SizedBox(height: 10.h),
+            Text(
+              'Topic',
+              style: Theme.of(context).textTheme.labelMedium,
+            ),
+            FormBuilderFilterChip(
+              name: 'topic_chip',
+              disabledColor: Colors.white,
+              spacing: MAIN_PADDING * 2,
+              showCheckmark: false,
+              selectedColor: Theme.of(context).primaryColor,
+              backgroundColor: Theme.of(context).cardColor,
+              labelStyle: Theme.of(context).textTheme.titleMedium,
+              runSpacing: SMALL_PADDING,
+              options: [
+                FormBuilderChipOption(value: 'GlobeDock'),
+                FormBuilderChipOption(value: 'Mentor'),
+                FormBuilderChipOption(value: 'Team GlobeDock'),
+              ],
+              onChanged: (value) {
+                setState(() {});
+              },
+            ),
+            SizedBox(height: 10.h),
+            Text(
+              'Country',
+              style: Theme.of(context).textTheme.labelMedium,
+            ),
+            Container(
+              child: FormBuilderFilterChip(
+                name: 'country_chip',
+                disabledColor: Theme.of(context).cardColor,
+                selectedColor: Theme.of(context).primaryColor,
+                spacing: MAIN_PADDING,
+                showCheckmark: false,
+                backgroundColor: Theme.of(context).cardColor,
+                runSpacing: SMALL_PADDING,
+                labelStyle: Theme.of(context).textTheme.titleMedium,
+                avatarBorder: Border.all(color: Colors.red),
+                options: [
+                  FormBuilderChipOption(
+                    value: 'GlobeDock',
+                    avatar: Container(
+                      width: 40.h,
+                      height: 20.h,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20)),
                     ),
-                    SizedBox(height: 15.h),
-                    Divider(),
-                    SizedBox(height: 10.h),
-                    Row(children: [
-                      Text(
-                        'Speaker Type',
-                        style: Theme.of(context).textTheme.labelMedium,
-                      )
-                    ]),
-                    FormBuilderFilterChip(
-                      name: 'speaker_chip',
-                      spacing: MAIN_PADDING,
-                      showCheckmark: false,
-                      selectedColor: Theme.of(context).primaryColor,
-                      backgroundColor: Theme.of(context).cardColor,
-                      labelStyle: Theme.of(context).textTheme.titleMedium,
-                      runSpacing: SMALL_PADDING,
-                      options: [
-                        FormBuilderChipOption(value: 'GlobeDock'),
-                        FormBuilderChipOption(value: 'Mentor'),
-                        FormBuilderChipOption(value: 'Team GlobeDock'),
-                      ],
-                      onChanged: (value) {
-                        setState(() {});
-                      },
-                    ),
-                    SizedBox(height: 10.h),
-                    Row(children: [
-                      Text(
-                        'Topic',
-                        style: Theme.of(context).textTheme.labelMedium,
-                      )
-                    ]),
-                    FormBuilderFilterChip(
-                      name: 'topic_chip',
-                      disabledColor: Colors.white,
-                      spacing: MAIN_PADDING * 2,
-                      showCheckmark: false,
-                      selectedColor: Theme.of(context).primaryColor,
-                      backgroundColor: Theme.of(context).cardColor,
-                      labelStyle: Theme.of(context).textTheme.titleMedium,
-                      runSpacing: SMALL_PADDING,
-                      options: [
-                        FormBuilderChipOption(value: 'GlobeDock'),
-                        FormBuilderChipOption(value: 'Mentor'),
-                        FormBuilderChipOption(value: 'Team GlobeDock'),
-                      ],
-                      onChanged: (value) {
-                        setState(() {}); // To update the UI
-                      },
-                    ),
-                    SizedBox(height: 10.h),
-                    Row(children: [
-                      Text(
-                        'Country',
-                        style: Theme.of(context).textTheme.labelMedium,
-                      )
-                    ]),
-                    FormBuilderFilterChip(
-                      name: 'country_chip',
-                      disabledColor: Theme.of(context).disabledColor,
-                      selectedColor: Theme.of(context).primaryColor,
-                      spacing: MAIN_PADDING,
-                      showCheckmark: false,
-                      backgroundColor: Theme.of(context).cardColor,
-                      runSpacing: SMALL_PADDING,
-                      labelStyle: Theme.of(context).textTheme.titleMedium,
-                      options: [
-                        FormBuilderChipOption(
-                          value: 'GlobeDock',
-                        ),
-                        FormBuilderChipOption(value: 'Mentor'),
-                        FormBuilderChipOption(value: 'Team GlobeDock'),
-                      ],
-                      onChanged: (value) {
-                        setState(() {
-                          print(value);
-                        }); // To update the UI
-                      },
-                    ),
-                    SizedBox(height: MAIN_PADDING * 7),
-                  ],
+                  ),
+                  FormBuilderChipOption(value: 'Mentor'),
+                  FormBuilderChipOption(value: 'Team GlobeDock'),
+                ],
+                onChanged: (value) {
+                  setState(() {});
+                },
+              ),
+            ),
+            SizedBox(height: 20.h),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                SizedBox(
+                  width: MediaQuery.of(context).size.width *
+                      0.4, // Adjust width as needed
+                  child: CustomElevatedButton(
+                    onTap: () => Navigator.of(context).pop(),
+                    color: Theme.of(context).cardColor,
+                    label: 'Cancel',
+                    labelColor: Theme.of(context).primaryColor,
+                  ),
+                ),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width *
+                      0.4, // Adjust width as needed
+                  child: CustomElevatedButton(
+                    onTap: () {},
+                    label: 'Apply',
+                  ),
                 ),
               ],
             ),
-          ),
+          ],
         ),
       );
     },

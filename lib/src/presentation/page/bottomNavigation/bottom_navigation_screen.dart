@@ -13,7 +13,7 @@ class BottomNavigationScreen extends StatefulWidget {
     Key? key,
     this.selectedIndex,
   }) : super(key: key);
-  final int? selectedIndex;
+  final String? selectedIndex;
 
   @override
   _BottomNavigationScreenState createState() => _BottomNavigationScreenState();
@@ -26,7 +26,8 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
   void initState() {
     super.initState();
     if (widget.selectedIndex != null) {
-      _selectedIndex = widget.selectedIndex!;
+      print("it gets here");
+      _selectedIndex = int.parse(widget.selectedIndex!);
     }
   }
 
@@ -69,6 +70,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).bottomAppBarColor,
       body: _screens[_selectedIndex],
       bottomNavigationBar: CupertinoTabBar(
         backgroundColor: _selectedIndex == 2

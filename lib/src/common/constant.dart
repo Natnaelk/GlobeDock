@@ -1,5 +1,7 @@
 // ignore_for_file: constant_identifier_names
 //STRING
+import 'package:globedock/src/common/images.dart';
+
 const String ACCESS_TOKEN = 'access_token';
 const String ONBOARDING = 'onboarding';
 const String JOURNEY_STARTS_HERE = 'Your Global Education Journey starts here';
@@ -217,4 +219,17 @@ final List<String> premiumPlansFeatures = [
   'Interact with Alumni Mentor from Universities',
   'TOEFEL Booking Scholarship',
   'One-Way Economy Non-stop Flight Ticket to Uk'
+];
+
+final List<String> destinationTabs = ['Overview', 'Universities', 'FAQ\'S'];
+
+final List<String> destinationOverviewCardImages = [
+  Images.CAPITAL,
+  Images.POPULATION,
+  Images.LANGUAGE,
+  Images.STUDENTS,
+  Images.GDP,
+  Images.CURRENCY,
+  Images.UNIVERSITIES,
+  Images.TEMPERATURE
 ];

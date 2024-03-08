@@ -14,7 +14,7 @@ class ColorLight {
   static const Color canvasColor = Color(0xFFCDCACF);
   static const Color disabledText = Color(0xFFDDDCDF);
   static const Color primaryVeryLight = Color.fromARGB(255, 255, 250, 255);
-  static const Color premiumColor = Color(0xFFD2B7E7);
+  static const Color premiumColor = Color.fromARGB(255, 235, 226, 243);
   static const Color darkColor = Color(0xFF0D0612);
   static const Color bottomNavigationColor = Color(0xFF121113);
 
@@ -22,6 +22,7 @@ class ColorLight {
   static const Color warning = Color(0xFFFFB74D);
   static const Color error = Color(0xFFE57373);
   static const Color info = Color(0xFF64B5F6);
+  static const Color alert = Color(0xFFe6e4e7);
 }
 
 class ColorDark {

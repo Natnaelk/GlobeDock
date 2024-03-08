@@ -12,6 +12,7 @@ class CompleteOnboardingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     int currentStep = 2;
     return Scaffold(
+      backgroundColor: Theme.of(context).bottomAppBarColor,
       appBar: CustomAppBar(
         isBackButtonExist: true,
         title: 'Complete Your Onboarding',

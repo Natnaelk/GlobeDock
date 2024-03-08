@@ -29,11 +29,12 @@ class HomeScreen extends StatelessWidget {
       ),
       drawer: const DrawerWidget(),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () =>
+            GoRouter.of(context).go(AppRoutes.CHAT_ONBORADING_ROUTE_PATH),
         backgroundColor: Theme.of(context).primaryColor,
         shape: CircleBorder(),
         child: SvgPicture.asset(
-          CustomIcons.CALL,
+          CustomIcons.CHAT,
           width: 23.w,
           height: 23.h,
         ),
@@ -115,7 +116,11 @@ class HomeScreen extends StatelessWidget {
                         itemBuilder: ((context, index) {
                           return Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: HomeCountryTile(country: countries[index]),
+                            child: GestureDetector(
+                                onTap: () => GoRouter.of(context)
+                                    .go(AppRoutes.DESTINATION_ROUTE_PATH),
+                                child:
+                                    HomeCountryTile(country: countries[index])),
                           );
                         })),
                   ),

@@ -80,7 +80,7 @@ class PremiumScreen extends StatelessWidget {
                   GoRouter.of(context).go(AppRoutes.PREMIUM_PLAN_ROUTE_PATH),
               label: EXPLORE_PLANS,
               isIconLeading: false,
-              color: Theme.of(context).scaffoldBackgroundColor,
+              color: Theme.of(context).primaryColorLight,
               labelColor: Theme.of(context).dialogBackgroundColor,
               icon: SvgPicture.asset(
                 CustomIcons.FORWARD_ARROW,

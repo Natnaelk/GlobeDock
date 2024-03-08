@@ -14,7 +14,7 @@ class EducationUploadTab extends StatelessWidget {
             children: [
               Text(
                 'Completed or Pursuing Secondary Education ',
-                style: Theme.of(context).textTheme.titleMedium,
+                style: Theme.of(context).textTheme.titleSmall,
               )
             ],
           ),
@@ -38,7 +38,7 @@ class EducationUploadTab extends StatelessWidget {
             children: [
               Text(
                 'Completed or Pursuing Undergraduate Education ',
-                style: Theme.of(context).textTheme.titleMedium,
+                style: Theme.of(context).textTheme.titleSmall,
                 maxLines: 3,
               )
             ],
@@ -63,7 +63,7 @@ class EducationUploadTab extends StatelessWidget {
             children: [
               Text(
                 'Completed or Pursuing Post Graduate Education ',
-                style: Theme.of(context).textTheme.titleMedium,
+                style: Theme.of(context).textTheme.titleSmall,
                 maxLines: 3,
               )
             ],

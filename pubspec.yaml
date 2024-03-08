@@ -33,6 +33,13 @@ dependencies:
   csc_picker: ^0.2.7
   language_picker: ^0.4.3
   dotted_border: ^2.1.0
+  flutter_chat_ui: ^1.6.12
+  # file_picker: ^6.2.0
+  image_picker:
+  open_filex: ^4.4.0
+  intl: ^0.19.0
+  share_plus: ^7.2.2
+  url_launcher: ^6.2.5
 
 dev_dependencies:
   flutter_test:
@@ -45,3 +52,4 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+    - assets/messages.json

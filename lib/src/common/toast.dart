@@ -11,7 +11,7 @@ FutureOr<dynamic> showToast({
 }) {
   return Fluttertoast.showToast(
     msg: msg,
-    toastLength: Toast.LENGTH_SHORT,
+    toastLength: Toast.LENGTH_LONG,
     fontSize: 16,
     gravity: ToastGravity.BOTTOM,
     backgroundColor: backgroundColor ?? ColorLight.primary,

@@ -53,7 +53,77 @@ class UploadDocumentWidget extends StatelessWidget {
                   CustomElevatedButton(
                     width: 200.w,
                     height: 35.h,
-                    onTap: () {},
+                    onTap: () {
+                      showModalBottomSheet<void>(
+                        context: context,
+                        builder: (BuildContext context) => SafeArea(
+                          child: GestureDetector(
+                            onTap: () {},
+                            child: SizedBox(
+                              height: 100,
+                              width: double.infinity,
+                              child: Container(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                        Column(
+                                          children: [
+                                            SvgPicture.asset(
+                                              CustomIcons.CAMERA_FILLED,
+                                            ),
+                                            SizedBox(
+                                              height: 4.h,
+                                            ),
+                                            Text(
+                                              'Camera',
+                                              style: TextStyle(
+                                                  color: Colors.black),
+                                            )
+                                          ],
+                                        ),
+                                        Column(
+                                          children: [
+                                            SvgPicture.asset(
+                                                CustomIcons.UPLOAD_FILLED),
+                                            SizedBox(
+                                              height: 4.h,
+                                            ),
+                                            Text(
+                                              'Upload',
+                                              style: TextStyle(
+                                                  color: Colors.black),
+                                            )
+                                          ],
+                                        ),
+                                        Column(
+                                          children: [
+                                            SvgPicture.asset(
+                                                CustomIcons.CLOSE_FILLED),
+                                            SizedBox(
+                                              height: 4.h,
+                                            ),
+                                            Text(
+                                              'Close',
+                                              style: TextStyle(
+                                                  color: Colors.black),
+                                            )
+                                          ],
+                                        ),
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      );
+                    },
                     color: Theme.of(context).primaryColorLight,
                     label: 'Take a photo or upload',
                     labelColor: Theme.of(context).primaryColor,

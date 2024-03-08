@@ -49,6 +49,7 @@ class _SignInScreenState extends State<SignInScreen>
         );
       },
       child: Scaffold(
+        backgroundColor: Theme.of(context).bottomAppBarColor,
         appBar: CustomAppBar(
           isBackButtonExist: true,
           onBackButtonPressed: () =>

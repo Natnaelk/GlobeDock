@@ -124,7 +124,7 @@ FutureOr<dynamic> showConfirmationDialog(
     builder: (context) {
       return BlocBuilder<ThemeCubit, ThemeState>(
         builder: (context, state) {
-          return AlertDialog(
+          return AlertDialog.adaptive(
             backgroundColor:
                 (state is ThemeDark) ? ColorDark.card : ColorLight.card,
             shape: RoundedRectangleBorder(

@@ -23,4 +23,15 @@ class CustomIcons {
   static const String INFO = 'assets/icons/info.svg';
   static const String CHECKED = 'assets/icons/checked.svg';
   static const String UNCHECKED = 'assets/icons/unchecked.svg';
+  static const String DELETE = 'assets/icons/delete.svg';
+  static const String EDIT = 'assets/icons/edit.svg';
+  static const String CAKE = 'assets/icons/cake.svg';
+  static const String GENDER = 'assets/icons/male.svg';
+  static const String LOCATION = 'assets/icons/location.svg';
+  static const String ATTACH = 'assets/icons/attach.svg';
+  static const String GALLERY = 'assets/icons/photo.svg';
+  static const String DOWNLOAD = 'assets/icons/download.svg';
+  static const String UPLOAD_FILLED = 'assets/icons/upload_filled.svg';
+  static const String CLOSE_FILLED = 'assets/icons/close_filled.svg';
+  static const String CAMERA_FILLED = 'assets/icons/camera_filled.svg';
 }

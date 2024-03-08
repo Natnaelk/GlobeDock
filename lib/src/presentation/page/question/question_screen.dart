@@ -13,6 +13,7 @@ class QuestionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).bottomAppBarColor,
       body: Padding(
         padding: EdgeInsets.only(top: 60.h),
         child: SingleChildScrollView(

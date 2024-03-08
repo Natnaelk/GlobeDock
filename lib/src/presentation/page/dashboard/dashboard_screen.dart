@@ -5,8 +5,16 @@ import 'package:globedock/src/common/constant.dart';
 import 'package:globedock/src/common/custom_font_size.dart';
 import 'package:globedock/src/common/icons.dart';
 import 'package:globedock/src/common/images.dart';
+import 'package:globedock/src/common/routes.dart';
+import 'package:globedock/src/presentation/page/chat/chat_onboarding_screen.dart';
+import 'package:globedock/src/presentation/page/dashboard/help_me_with_visa_screen.dart';
+import 'package:globedock/src/presentation/page/dashboard/my_profile_screen.dart';
+import 'package:globedock/src/presentation/page/dashboard/ready_to_fly_screen.dart';
+import 'package:globedock/src/presentation/page/dashboard/university_application_mgmt_screen.dart';
+import 'package:globedock/src/presentation/page/dashboard/visa_mgmt_screen.dart';
 import 'package:globedock/src/presentation/page/home/drawer_widget.dart';
 import 'package:globedock/src/presentation/widget/custom_icon_button.dart';
+import 'package:go_router/go_router.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
 class DashboardScreen extends StatelessWidget {
@@ -14,7 +22,7 @@ class DashboardScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool isProfileCompleted = false;
+    bool isProfileCompleted = true;
     int currentStep = 3;
     return Scaffold(
       backgroundColor: Theme.of(context).bottomAppBarColor,
@@ -28,7 +36,8 @@ class DashboardScreen extends StatelessWidget {
       ),
       drawer: DrawerWidget(),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () => Navigator.push(context,
+            MaterialPageRoute(builder: (context) => ChatOnboardingScreen())),
         backgroundColor: Theme.of(context).primaryColor,
         shape: CircleBorder(),
         child: SvgPicture.asset(
@@ -137,9 +146,6 @@ class DashboardScreen extends StatelessWidget {
               child: Column(children: [
                 CustomIconButton(
                   onTap: () {},
-                  // => GoRouter.of(context).goNamed(
-                  //     AppRoutes.QUESTION_ROUTE_NAME,
-                  //     queryParameters: {'questionNumber': '1'}),
                   label: 'Get University Admits in 14 Days',
                   color: Theme.of(context).primaryColor,
                   labelColor: Theme.of(context).cardColor,
@@ -158,32 +164,89 @@ class DashboardScreen extends StatelessWidget {
                 SizedBox(
                   height: 25,
                 ),
-                Opacity(
-                    alwaysIncludeSemantics: true,
-                    opacity: isProfileCompleted ? 1 : 0.3,
-                    child: Image.asset(Images.MATCH_WITH_TEAM)),
+                GestureDetector(
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ChatOnboardingScreen())),
+                  child: Opacity(
+                      alwaysIncludeSemantics: true,
+                      opacity: isProfileCompleted ? 1 : 0.3,
+                      child: Image.asset(Images.MATCH_WITH_TEAM)),
+                ),
                 SizedBox(
                   height: 20,
                 ),
-                Opacity(
-                    alwaysIncludeSemantics: true,
-                    opacity: isProfileCompleted ? 1 : 0.3,
-                    child: Image.asset(Images.WORKING_ON_APPS)),
+                GestureDetector(
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MyProfileScreen())),
+                  child: Opacity(
+                      alwaysIncludeSemantics: true,
+                      opacity: isProfileCompleted ? 1 : 0.3,
+                      child: Image.asset(Images.WORKING_ON_APPS)),
+                ),
                 SizedBox(
                   height: 20,
                 ),
-                Opacity(
-                    alwaysIncludeSemantics: true,
-                    opacity: isProfileCompleted ? 1 : 0.3,
-                    child: Image.asset(Images.APPLICATIONS_MGMT)),
+                GestureDetector(
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              UniversityApplicationMgmtScreen())),
+                  child: Opacity(
+                      alwaysIncludeSemantics: true,
+                      opacity: isProfileCompleted ? 1 : 0.3,
+                      child: Image.asset(Images.APPLICATIONS_MGMT)),
+                ),
                 SizedBox(
                   height: 20,
                 ),
-                Opacity(
-                  alwaysIncludeSemantics: true,
-                  opacity: isProfileCompleted ? 1 : 0.3,
-                  child: Image.asset(
-                    Images.VISA_MGMT,
+                GestureDetector(
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => VisaMgmtScreen())),
+                  child: Opacity(
+                    alwaysIncludeSemantics: true,
+                    opacity: isProfileCompleted ? 1 : 0.3,
+                    child: Image.asset(
+                      Images.VISA_MGMT,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                GestureDetector(
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => HelpMeWithVisaScreen())),
+                  child: Opacity(
+                    alwaysIncludeSemantics: true,
+                    opacity: isProfileCompleted ? 1 : 0.3,
+                    child: Image.asset(
+                      Images.HELP_ME_WITH_VISA,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                GestureDetector(
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ReadyToFlyScreen())),
+                  child: Opacity(
+                    alwaysIncludeSemantics: true,
+                    opacity: isProfileCompleted ? 1 : 0.3,
+                    child: Image.asset(
+                      Images.READY_TO_FLY,
+                    ),
                   ),
                 ),
               ]),

@@ -6,11 +6,12 @@ import 'package:globedock/src/domain/repositories/autentication_repository.dart'
 import 'package:globedock/src/domain/usecase/login.dart';
 import 'package:globedock/src/presentation/bloc/authenticator_watcher/authenticator_watcher_bloc.dart';
 import 'package:globedock/src/presentation/bloc/sign_in_form/sign_in_form_bloc.dart';
+import 'package:intl/date_symbol_data_local.dart';
 
 import 'src/utilities/go_router_init.dart';
 
 void main() {
-  runApp(const MyApp());
+  initializeDateFormatting().then((_) => runApp(const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
           splitScreenMode: true,
           builder: (_, child) {
             return MaterialApp.router(
-              debugShowCheckedModeBanner: true,
+              debugShowCheckedModeBanner: false,
               theme: themeLight(context),
               darkTheme: themeDark(context),
               themeMode: ThemeMode.system,

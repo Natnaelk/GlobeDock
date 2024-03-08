@@ -33,4 +33,17 @@ class Images {
   static const String BUTTON_PLAY = 'assets/icons/btn_play.svg';
   static const String GLOBEDOCK_WORKERS = 'assets/images/globedock_image.jpeg';
   static const String AVATAR_IMAGE = 'assets/images/avatar.jpeg';
+  static const String WORK_ON_APPS = 'assets/images/work_on_apps.svg';
+  static const String HELP_ME_WITH_VISA = 'assets/images/help_me_with_visa.png';
+  static const String READY_TO_FLY = 'assets/images/ready_to_fly.png';
+  static const String CAPITAL = 'assets/images/capital.png';
+  static const String GDP = 'assets/images/gdp.png';
+  static const String LANGUAGE = 'assets/images/language.png';
+  static const String POPULATION = 'assets/images/population.png';
+  static const String STUDENTS = 'assets/images/students.png';
+  static const String TEMPERATURE = 'assets/images/temperature.png';
+  static const String UNIVERSITIES = 'assets/images/universities.png';
+  static const String CURRENCY = 'assets/images/currency.png';
+  static const String SUCCESS_STORIES =
+      'assets/images/success_story_onboarding.svg';
 }

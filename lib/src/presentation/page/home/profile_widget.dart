@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:globedock/src/common/constant.dart';
+import 'package:globedock/src/common/routes.dart';
 import 'package:globedock/src/presentation/widget/custom_widget.dart';
+import 'package:go_router/go_router.dart';
 
 class ProfileWidget extends StatelessWidget {
   @override
@@ -40,7 +42,8 @@ class ProfileWidget extends StatelessWidget {
                             ),
                             IconButton(
                                 padding: EdgeInsets.zero,
-                                onPressed: () {},
+                                onPressed: () => GoRouter.of(context)
+                                    .go(AppRoutes.PROFILE_ROUTE_PATH),
                                 icon: Icon(
                                   Icons.chevron_right,
                                   color: Colors.white,
