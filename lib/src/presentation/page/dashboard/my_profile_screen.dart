@@ -27,7 +27,7 @@ class MyProfileScreen extends StatelessWidget {
             context,
             MaterialPageRoute(
                 builder: (context) => BottomNavigationScreen(
-                      selectedIndex: '4',
+                      selectedIndex: '2',
                     )),
           ),
         ),

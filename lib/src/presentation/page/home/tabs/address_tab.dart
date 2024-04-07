@@ -1,6 +1,7 @@
 import 'package:csc_picker/csc_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:globedock/src/common/constant.dart';
 import 'package:globedock/src/common/icons.dart';
@@ -10,6 +11,10 @@ class AddressTab extends StatelessWidget {
   Widget build(BuildContext context) {
     final _formKey = GlobalKey<FormBuilderState>();
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      Row(children: [Text('Mandatory / required*')]),
+      SizedBox(
+        height: 10.h,
+      ),
       FormBuilder(
           key: _formKey,
           child: Column(children: [
@@ -66,7 +71,7 @@ class AddressTab extends StatelessWidget {
               isExpanded: true,
               decoration: InputDecoration(
                   focusColor: Colors.black,
-                  label: Text('State / Province',
+                  label: Text('Region',
                       style: Theme.of(context).textTheme.titleMedium),
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(RADIUS),
@@ -108,45 +113,6 @@ class AddressTab extends StatelessWidget {
                       borderRadius: BorderRadius.circular(RADIUS),
                       borderSide:
                           BorderSide(color: Theme.of(context).disabledColor))),
-            ),
-            const SizedBox(
-              height: SPACE20,
-            ),
-            FormBuilderTextField(
-              name: 'woreda',
-              onChanged: (val) {
-                print(val);
-              },
-              style: Theme.of(context).textTheme.bodyMedium,
-              decoration: InputDecoration(
-                  focusColor: Colors.black,
-                  label: Text('Woreda',
-                      style: Theme.of(context).textTheme.titleMedium),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(RADIUS),
-                      borderSide:
-                          BorderSide(color: Theme.of(context).disabledColor))),
-            ),
-            const SizedBox(
-              height: SPACE20,
-            ),
-            FormBuilderTextField(
-              name: 'housenumber',
-              onChanged: (val) {
-                print(val);
-              },
-              style: Theme.of(context).textTheme.bodyMedium,
-              decoration: InputDecoration(
-                  focusColor: Colors.black,
-                  label: Text('House Number',
-                      style: Theme.of(context).textTheme.titleMedium),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(RADIUS),
-                      borderSide:
-                          BorderSide(color: Theme.of(context).disabledColor))),
-            ),
-            const SizedBox(
-              height: SPACE20,
             ),
           ]))
     ]);

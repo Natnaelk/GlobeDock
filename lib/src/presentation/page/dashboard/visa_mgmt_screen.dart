@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:globedock/src/common/constant.dart';
 import 'package:globedock/src/common/custom_font_size.dart';
-import 'package:globedock/src/common/icons.dart';
-import 'package:globedock/src/common/routes.dart';
 import 'package:globedock/src/presentation/page/bottomNavigation/bottom_navigation_screen.dart';
 import 'package:globedock/src/presentation/widget/custom_widget.dart';
-import 'package:go_router/go_router.dart';
 
 class VisaMgmtScreen extends StatelessWidget {
   const VisaMgmtScreen({Key? key}) : super(key: key);
@@ -15,6 +11,7 @@ class VisaMgmtScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).bottomAppBarColor,
       appBar: AppBar(
         backgroundColor: Theme.of(context).cardColor,
         leading: IconButton(
@@ -25,7 +22,7 @@ class VisaMgmtScreen extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                       builder: (context) => BottomNavigationScreen(
-                            selectedIndex: '4',
+                            selectedIndex: '2',
                           )),
                 )),
         title: Text(

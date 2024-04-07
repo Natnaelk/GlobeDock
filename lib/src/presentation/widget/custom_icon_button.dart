@@ -5,28 +5,28 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class CustomIconButton extends StatelessWidget {
-  const CustomIconButton({
-    required this.onTap,
-    key,
-    required this.label,
-    this.labelLoading,
-    required this.color,
-    required this.labelColor,
-    this.child,
-    this.isLoading = false,
-    this.width = double.infinity,
-    this.height = 52,
-    this.labelSize,
-    this.margin,
-    required this.icon,
-    this.borderColor = Colors.black,
-    this.isIconLeading = true,
-    this.isContentCentered = false,
-    this.borderRadius = RADIUS_SMALL,
-    this.iconColor,
-    this.showBorder = true,
-    this.textSize = 16,
-  });
+  const CustomIconButton(
+      {required this.onTap,
+      key,
+      required this.label,
+      this.labelLoading,
+      required this.color,
+      required this.labelColor,
+      this.child,
+      this.isLoading = false,
+      this.width = double.infinity,
+      this.height = 52,
+      this.labelSize,
+      this.margin,
+      required this.icon,
+      this.borderColor = Colors.black,
+      this.isIconLeading = true,
+      this.isContentCentered = false,
+      this.borderRadius = RADIUS_SMALL,
+      this.iconColor,
+      this.showBorder = true,
+      this.textSize = 16,
+      this.alignIconOnStart = false});
 
   final Widget? child;
   final String? label;
@@ -47,6 +47,7 @@ class CustomIconButton extends StatelessWidget {
   final Color? iconColor;
   final bool showBorder;
   final double textSize;
+  final bool alignIconOnStart;
 
   @override
   Widget build(BuildContext context) {
@@ -66,21 +67,51 @@ class CustomIconButton extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               isIconLeading
-                  ? Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        icon!,
-                        SizedBox(
-                          width: 15.w,
-                        ),
-                        Text(
-                          label!,
-                          style: TextStyle(
-                            color: labelColor,
+                  ? alignIconOnStart
+                      ? Padding(
+                          padding: EdgeInsets.only(left: MAIN_PADDING.w),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              icon!,
+                              SizedBox(
+                                width: 15.w,
+                              ),
+                              Expanded(
+                                child: Padding(
+                                  padding:
+                                      EdgeInsets.only(right: MAIN_PADDING.w),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        label!,
+                                        style: TextStyle(
+                                          color: labelColor,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              )
+                            ],
                           ),
                         )
-                      ],
-                    )
+                      : Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            icon!,
+                            SizedBox(
+                              width: 15.w,
+                            ),
+                            Text(
+                              label!,
+                              style: TextStyle(
+                                color: labelColor,
+                              ),
+                            )
+                          ],
+                        )
                   : Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -101,5 +132,19 @@ class CustomIconButton extends StatelessWidget {
             ],
           )),
     );
+  }
+}
+
+class MobileLoginTab extends StatefulWidget {
+  const MobileLoginTab({Key? key}) : super(key: key);
+
+  @override
+  State<MobileLoginTab> createState() => _MobileLoginTabState();
+}
+
+class _MobileLoginTabState extends State<MobileLoginTab> {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }

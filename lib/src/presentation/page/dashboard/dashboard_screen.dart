@@ -12,13 +12,35 @@ import 'package:globedock/src/presentation/page/dashboard/my_profile_screen.dart
 import 'package:globedock/src/presentation/page/dashboard/ready_to_fly_screen.dart';
 import 'package:globedock/src/presentation/page/dashboard/university_application_mgmt_screen.dart';
 import 'package:globedock/src/presentation/page/dashboard/visa_mgmt_screen.dart';
+import 'package:globedock/src/presentation/page/destination/tabs/faq_tab.dart';
 import 'package:globedock/src/presentation/page/home/drawer_widget.dart';
+import 'package:globedock/src/presentation/page/universities/universities_detail_screen.dart';
 import 'package:globedock/src/presentation/widget/custom_icon_button.dart';
 import 'package:go_router/go_router.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
-class DashboardScreen extends StatelessWidget {
+class DashboardScreen extends StatefulWidget {
   const DashboardScreen({Key? key}) : super(key: key);
+
+  @override
+  State<DashboardScreen> createState() => _DashboardScreenState();
+}
+
+class _DashboardScreenState extends State<DashboardScreen>
+    with SingleTickerProviderStateMixin {
+  late TabController _tabController;
+  int _selectedIndex = 0;
+
+  final List<Widget> _tabs = [
+    ServiceOne(),
+    ServiceTwo(),
+  ];
+
+  @override
+  void initState() {
+    _tabController = TabController(length: _tabs.length, vsync: this);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +72,7 @@ class DashboardScreen extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              color: Colors.white,
+              color: Theme.of(context).cardColor,
               child: Padding(
                 padding: EdgeInsets.only(left: 15),
                 child: Row(
@@ -63,12 +85,13 @@ class DashboardScreen extends StatelessWidget {
                     Expanded(
                       child: Container(
                         width: double.infinity,
-                        color: Colors.white,
+                        color: Theme.of(context).cardColor,
                         child: StepProgressIndicator(
                           totalSteps: 5,
                           currentStep: currentStep,
                           size: 50,
-                          selectedColor: Colors.black,
+                          selectedColor:
+                              Theme.of(context).dialogBackgroundColor,
                           padding: 0,
                           unselectedColor: Colors.grey,
                           direction: Axis.horizontal,
@@ -138,32 +161,9 @@ class DashboardScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
-              height: SMALL_PADDING,
-            ),
             Padding(
               padding: EdgeInsets.all(MAIN_PADDING),
               child: Column(children: [
-                CustomIconButton(
-                  onTap: () {},
-                  label: 'Get University Admits in 14 Days',
-                  color: Theme.of(context).primaryColor,
-                  labelColor: Theme.of(context).cardColor,
-                  icon: SvgPicture.asset(CustomIcons.FORWARD_ARROW),
-                  isIconLeading: false,
-                  borderRadius: 8,
-                  height: 40.h,
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  'Complete onboarding to unlock dashboard',
-                  style: Theme.of(context).textTheme.titleMedium,
-                ),
-                SizedBox(
-                  height: 25,
-                ),
                 GestureDetector(
                   onTap: () => Navigator.push(
                       context,
@@ -186,6 +186,75 @@ class DashboardScreen extends StatelessWidget {
                       alwaysIncludeSemantics: true,
                       opacity: isProfileCompleted ? 1 : 0.3,
                       child: Image.asset(Images.WORKING_ON_APPS)),
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                CustomIconButton(
+                  onTap: () {
+                    showModalBottomSheet(
+                        isScrollControlled: true,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(RADIUS)),
+                        context: context,
+                        builder: (BuildContext context) {
+                          return StatefulBuilder(
+                            builder:
+                                (BuildContext context, StateSetter setState) {
+                              return Container(
+                                  height:
+                                      MediaQuery.of(context).size.height - 200,
+                                  padding: EdgeInsets.only(
+                                      top: MAIN_PADDING, bottom: MAIN_PADDING),
+                                  color: Theme.of(context).cardColor,
+                                  child: SingleChildScrollView(
+                                    child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          TabBar(
+                                            tabAlignment: TabAlignment.fill,
+                                            controller: _tabController,
+                                            indicatorSize:
+                                                TabBarIndicatorSize.tab,
+                                            physics:
+                                                const ClampingScrollPhysics(),
+                                            padding: EdgeInsets.zero,
+                                            dividerColor: Colors.transparent,
+                                            labelStyle: TextStyle(fontSize: 15),
+                                            onTap: (index) {
+                                              setState(() {
+                                                _selectedIndex = index;
+                                              });
+                                            },
+                                            tabs: ['Service One', 'Service Two']
+                                                .map(
+                                                    (title) => Tab(text: title))
+                                                .toList(),
+                                          ),
+                                          _tabs[_selectedIndex],
+                                        ]),
+                                  ));
+                            },
+                          );
+                        });
+                  },
+                  label: 'Get University Admits in 14 Days',
+                  color: Theme.of(context).primaryColor,
+                  labelColor: Theme.of(context).cardColor,
+                  icon: SvgPicture.asset(CustomIcons.FORWARD_ARROW),
+                  isIconLeading: false,
+                  borderRadius: 8,
+                  height: 30.h,
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  'Complete onboarding to unlock the below features',
+                  style: Theme.of(context).textTheme.titleSmall,
+                  textAlign: TextAlign.center,
                 ),
                 SizedBox(
                   height: 20,
@@ -256,5 +325,33 @@ class DashboardScreen extends StatelessWidget {
       ),
     );
     ;
+  }
+}
+
+class ServiceOne extends StatefulWidget {
+  const ServiceOne({Key? key}) : super(key: key);
+
+  @override
+  State<ServiceOne> createState() => _ServiceOneState();
+}
+
+class _ServiceOneState extends State<ServiceOne> {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+
+class ServiceTwo extends StatefulWidget {
+  const ServiceTwo({Key? key}) : super(key: key);
+
+  @override
+  State<ServiceTwo> createState() => _ServiceTwoState();
+}
+
+class _ServiceTwoState extends State<ServiceTwo> {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }

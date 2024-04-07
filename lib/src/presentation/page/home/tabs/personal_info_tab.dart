@@ -13,8 +13,13 @@ class PersonalInfoTab extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        Row(children: [Text('Mandatory / required*')]),
+        SizedBox(
+          height: 10.h,
+        ),
         FormBuilder(
           key: _formKey,
+          autovalidateMode: AutovalidateMode.always,
           child: Column(
             children: [
               FormBuilderTextField(
@@ -22,6 +27,7 @@ class PersonalInfoTab extends StatelessWidget {
                 onChanged: (val) {
                   print(val);
                 },
+                autovalidateMode: AutovalidateMode.always,
                 style: Theme.of(context).textTheme.bodyMedium,
                 decoration: InputDecoration(
                     focusColor: Colors.black,
@@ -41,9 +47,10 @@ class PersonalInfoTab extends StatelessWidget {
                   print(val);
                 },
                 style: Theme.of(context).textTheme.bodyMedium,
+                autovalidateMode: AutovalidateMode.always,
                 decoration: InputDecoration(
                     focusColor: Colors.black,
-                    label: Text('Fathers Name',
+                    label: Text('Father\'s Name',
                         style: Theme.of(context).textTheme.titleMedium),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(RADIUS),
@@ -58,10 +65,11 @@ class PersonalInfoTab extends StatelessWidget {
                 onChanged: (val) {
                   print(val);
                 },
+                autovalidateMode: AutovalidateMode.always,
                 style: Theme.of(context).textTheme.bodyMedium,
                 decoration: InputDecoration(
                     focusColor: Colors.black,
-                    label: Text('Grand Fathers Name',
+                    label: Text('Grand Father\'s Name',
                         style: Theme.of(context).textTheme.titleMedium),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(RADIUS),
@@ -73,6 +81,7 @@ class PersonalInfoTab extends StatelessWidget {
               ),
               FormBuilderDropdown(
                 elevation: 0,
+                autovalidateMode: AutovalidateMode.always,
                 icon: Padding(
                   padding: const EdgeInsetsDirectional.only(end: 12.0),
                   child: SvgPicture.asset(
@@ -110,6 +119,7 @@ class PersonalInfoTab extends StatelessWidget {
                 height: SPACE20,
               ),
               FormBuilderDateTimePicker(
+                autovalidateMode: AutovalidateMode.always,
                 initialDatePickerMode: DatePickerMode.day,
                 name: 'dob',
                 onChanged: (val) {
@@ -167,6 +177,7 @@ class PersonalInfoTab extends StatelessWidget {
                 height: SPACE20,
               ),
               FormBuilderDropdown(
+                autovalidateMode: AutovalidateMode.always,
                 elevation: 0,
                 icon: Padding(
                   padding: const EdgeInsetsDirectional.only(end: 12.0),
@@ -232,6 +243,7 @@ class PersonalInfoTab extends StatelessWidget {
                 height: SPACE20,
               ),
               FormBuilderDropdown(
+                autovalidateMode: AutovalidateMode.always,
                 elevation: 0,
                 icon: Padding(
                   padding: const EdgeInsetsDirectional.only(end: 12.0),
@@ -285,6 +297,7 @@ class PersonalInfoTab extends StatelessWidget {
                 height: SPACE20,
               ),
               FormBuilderDateTimePicker(
+                autovalidateMode: AutovalidateMode.always,
                 initialDatePickerMode: DatePickerMode.day,
                 name: 'passportvaliddate',
                 onChanged: (val) {
@@ -305,7 +318,7 @@ class PersonalInfoTab extends StatelessWidget {
                       ),
                     ),
                     focusColor: Colors.black,
-                    label: Text('Valid Till (Select Date Calender)',
+                    label: Text('Expiry Date (Select Date Calender)',
                         style: Theme.of(context).textTheme.titleMedium),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(RADIUS),
@@ -331,6 +344,7 @@ class PersonalInfoTab extends StatelessWidget {
                 ],
               ),
               FormBuilderDropdown(
+                autovalidateMode: AutovalidateMode.always,
                 elevation: 0,
                 icon: Padding(
                   padding: const EdgeInsetsDirectional.only(end: 12.0),
@@ -345,14 +359,12 @@ class PersonalInfoTab extends StatelessWidget {
                         ))
                     .toList(),
                 name: 'firstlanguage',
-                onChanged: (val) {
-                  print(val);
-                },
+                onChanged: (val) {},
                 style: Theme.of(context).textTheme.bodyMedium,
                 isExpanded: true,
                 decoration: InputDecoration(
                     focusColor: Colors.black,
-                    label: Text('First Language',
+                    label: Text('Mother Tongue',
                         style: Theme.of(context).textTheme.titleMedium),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(RADIUS),

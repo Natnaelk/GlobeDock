@@ -14,4 +14,12 @@ List<Country> countries = [
   Country(name: 'Germany', image: Images.GERMANY_FLAG),
   Country(name: 'Australia', image: Images.AUSTRALIA_FLAG),
   Country(name: 'Canada', image: Images.CANADA_FLAG),
+  Country(name: 'Cyprus', image: Images.GERMANY_FLAG),
+  Country(name: 'Dubai', image: Images.AUSTRALIA_FLAG),
+  Country(name: 'Finland', image: Images.CANADA_FLAG),
+  Country(name: 'Czech Republic', image: Images.GERMANY_FLAG),
+  Country(name: 'Malaysia', image: Images.AUSTRALIA_FLAG),
+  Country(name: 'Russia', image: Images.CANADA_FLAG),
+  Country(name: 'South Korea', image: Images.CANADA_FLAG),
+  Country(name: 'Philippines ', image: Images.CANADA_FLAG),
 ];

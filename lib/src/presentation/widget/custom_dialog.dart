@@ -2,14 +2,78 @@
 
 import 'dart:async';
 
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:globedock/src/common/colors.dart';
 import 'package:globedock/src/common/constant.dart';
+import 'package:globedock/src/common/icons.dart';
 import 'package:globedock/src/common/screens.dart';
+import 'package:globedock/src/common/toast.dart';
 import 'package:globedock/src/presentation/cubit/theme/theme_cubit.dart';
 import 'package:globedock/src/presentation/widget/custom_elevated_button.dart';
+import 'package:globedock/src/presentation/widget/custom_icon_button.dart';
 import 'package:globedock/src/presentation/widget/custom_outlined_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+showCallDialog(BuildContext context) {
+  return showModalBottomSheet<void>(
+    context: context,
+    builder: (BuildContext context) => SafeArea(
+      child: SizedBox(
+        height: 170,
+        width: double.infinity,
+        child: Container(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(left: 20, right: 20),
+                child: SizedBox(
+                  child: CustomIconButton(
+                    icon: SvgPicture.asset(
+                      CustomIcons.CALL,
+                      color: Theme.of(context).dialogBackgroundColor,
+                    ),
+                    onTap: () async {
+                      if (await canLaunch('tel:098765432')) {
+                        launch('tel:098765432');
+                      } else {
+                        showToast(
+                            msg: 'Can not launch',
+                            textColor: Colors.white,
+                            backgroundColor: Colors.red);
+                      }
+                    },
+                    color: Theme.of(context).cardColor,
+                    label: 'Call 0987654356',
+                    labelColor: Theme.of(context).dialogBackgroundColor,
+                    borderColor: Colors.transparent,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 10.h,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 20, right: 20),
+                child: SizedBox(
+                  child: CustomElevatedButton(
+                    onTap: () => Navigator.of(context).pop(),
+                    color: Theme.of(context).cardColor,
+                    label: 'Cancel',
+                    labelColor: Theme.of(context).primaryColor,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    ),
+  );
+}
 
 FutureOr<dynamic> showBottomDialog(
   BuildContext context, {

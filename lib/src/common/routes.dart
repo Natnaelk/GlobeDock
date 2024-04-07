@@ -79,4 +79,10 @@ class AppRoutes {
 
   static const String HELP_ROUTE_NAME = 'helpandsupport';
   static const String HELP_ROUTE_PATH = '/helpandsupport';
+
+  static const String UNIVERSITIES_ROUTE_NAME = 'universities';
+  static const String UNIVERSITIES_ROUTE_PATH = '/universities';
+
+  static const String UNIVERSITIES_DETAIL_ROUTE_NAME = 'universitiesdetail';
+  static const String UNIVERSITIES_DETAIL_ROUTE_PATH = '/universitiesdetail';
 }

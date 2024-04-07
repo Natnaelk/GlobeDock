@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:globedock/src/common/constant.dart';
+import 'package:globedock/src/presentation/widget/upload_document_widget.dart';
 
 class EducationUploadTab extends StatelessWidget {
   const EducationUploadTab({Key? key}) : super(key: key);
@@ -13,7 +14,7 @@ class EducationUploadTab extends StatelessWidget {
           Row(
             children: [
               Text(
-                'Completed or Pursuing Secondary Education ',
+                'Completed or pursuing my secondary education ',
                 style: Theme.of(context).textTheme.titleSmall,
               )
             ],
@@ -31,13 +32,14 @@ class EducationUploadTab extends StatelessWidget {
                 .map((lang) => FormBuilderFieldOption(value: lang))
                 .toList(growable: false),
           ),
-          const SizedBox(
-            height: SPACE20,
+          UploadDocumentWidget(
+            labelString: 'Highshool Diploma*',
           ),
+          SizedBox(height: SPACE20),
           Row(
             children: [
               Text(
-                'Completed or Pursuing Undergraduate Education ',
+                'Completed or pursuing my bachelor\'s degree',
                 style: Theme.of(context).textTheme.titleSmall,
                 maxLines: 3,
               )
@@ -62,7 +64,7 @@ class EducationUploadTab extends StatelessWidget {
           Row(
             children: [
               Text(
-                'Completed or Pursuing Post Graduate Education ',
+                'Completed or pursuing my master\'s degree',
                 style: Theme.of(context).textTheme.titleSmall,
                 maxLines: 3,
               )

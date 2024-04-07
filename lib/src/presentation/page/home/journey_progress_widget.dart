@@ -5,6 +5,7 @@ import 'package:globedock/src/common/constant.dart';
 import 'package:globedock/src/common/custom_font_size.dart';
 import 'package:globedock/src/common/icons.dart';
 import 'package:globedock/src/common/routes.dart';
+import 'package:globedock/src/presentation/page/bottomNavigation/bottom_navigation_screen.dart';
 import 'package:globedock/src/presentation/widget/custom_icon_button.dart';
 import 'package:go_router/go_router.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
@@ -18,7 +19,7 @@ class JourneyProgressWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height / 1.7,
+      height: MediaQuery.of(context).size.height / 1.75,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(RADIUS),
           color: Theme.of(context).cardColor,
@@ -53,8 +54,8 @@ class JourneyProgressWidget extends StatelessWidget {
           selectedColor: Theme.of(context).primaryColor,
           unselectedColor: Theme.of(context).primaryColorLight,
           padding: 0,
-          width: 300,
-          height: 300,
+          width: 280,
+          height: 280,
           selectedStepSize: 18,
           startingAngle: 2 * 3.5 / math.pi,
           arcSize: math.pi * 1.4,
@@ -128,8 +129,13 @@ class JourneyProgressWidget extends StatelessWidget {
         ),
         Center(
           child: CustomIconButton(
-            onTap: () => GoRouter.of(context)
-                .go(AppRoutes.COMPLETE_ONBOARDING_ROUTE_PATH),
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => BottomNavigationScreen(
+                        selectedIndex: '2',
+                      )),
+            ),
             label: 'Track Your Journey',
             color: Theme.of(context).cardColor,
             labelColor: Theme.of(context).primaryColor,

@@ -5,6 +5,7 @@ import 'package:globedock/src/common/constant.dart';
 import 'package:globedock/src/common/custom_font_size.dart';
 import 'package:globedock/src/common/images.dart';
 import 'package:globedock/src/common/routes.dart';
+import 'package:globedock/src/presentation/page/question/question_two_screen.dart';
 import 'package:globedock/src/presentation/widget/custom_elevated_button.dart';
 import 'package:go_router/go_router.dart';
 
@@ -28,13 +29,17 @@ class QuestionOneWidget extends StatelessWidget {
         ),
         Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [SvgPicture.asset(Images.QUESTION_ONE)]),
+            children: [SvgPicture.asset(Images.LEVEL_OF_EDUCATION)]),
         SizedBox(
           height: 30.h,
         ),
-        Text(
-          PREFERRED_LEVEL_OF_STUDY,
-          style: Theme.of(context).textTheme.headlineSmall,
+        Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Text(
+            PREFERRED_LEVEL_OF_STUDY,
+            style: Theme.of(context).textTheme.headlineSmall,
+            textAlign: TextAlign.center,
+          ),
         ),
         SizedBox(
           height: 10.h,
@@ -44,7 +49,7 @@ class QuestionOneWidget extends StatelessWidget {
           child: Column(
             children: [
               Text(
-                PERSONALIZE_INFO,
+                'This will help us find the right study options for you.',
                 style: Theme.of(context).textTheme.titleSmall,
                 textAlign: TextAlign.center,
               ),
@@ -52,7 +57,10 @@ class QuestionOneWidget extends StatelessWidget {
                 height: 40.h,
               ),
               CustomElevatedButton(
-                onTap: () => onPressed(context),
+                onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => QuestionTwoWidget())),
                 label: HIGHSCHOOL,
                 color: Theme.of(context).cardColor,
                 labelColor: Theme.of(context).disabledColor,
@@ -61,7 +69,10 @@ class QuestionOneWidget extends StatelessWidget {
                 height: 10.h,
               ),
               CustomElevatedButton(
-                onTap: () => onPressed(context),
+                onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => QuestionTwoWidget())),
                 label: UNDERGRADUATE,
                 color: Colors.white,
                 labelColor: Theme.of(context).disabledColor,
@@ -70,7 +81,10 @@ class QuestionOneWidget extends StatelessWidget {
                 height: 10.h,
               ),
               CustomElevatedButton(
-                onTap: () => onPressed(context),
+                onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => QuestionTwoWidget())),
                 label: POSTGRADUATE,
                 color: Theme.of(context).cardColor,
                 labelColor: Theme.of(context).disabledColor,
@@ -82,8 +96,8 @@ class QuestionOneWidget extends StatelessWidget {
     );
   }
 
-  void onPressed(BuildContext context) {
-    return GoRouter.of(context).goNamed(AppRoutes.QUESTION_ROUTE_NAME,
-        queryParameters: {'questionNumber': '2'});
-  }
+  // void onPressed(BuildContext context) {
+  //   return Navigator.push(
+  //       context, MaterialPageRoute(builder: (context) => QuestionTwoWidget()));
+  // }
 }

@@ -27,7 +27,7 @@ class ReadyToFlyScreen extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                       builder: (context) => BottomNavigationScreen(
-                            selectedIndex: '4',
+                            selectedIndex: '2',
                           )),
                 )),
         title: Text("Ready to fly"),

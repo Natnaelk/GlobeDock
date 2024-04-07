@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:globedock/src/common/colors.dart';
 import 'package:globedock/src/common/constant.dart';
 import 'package:globedock/src/common/custom_font_size.dart';
 import 'package:globedock/src/common/images.dart';
@@ -23,7 +24,7 @@ class OnboardingScreen extends StatelessWidget {
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.start, children: [
               Row(
-                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SvgPicture.asset(Images.LOGIN),
                 ],
@@ -33,30 +34,56 @@ class OnboardingScreen extends StatelessWidget {
               ),
               Text(
                 JOURNEY_STARTS_HERE,
+                textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.headlineMedium,
               ),
               SizedBox(
                 height: SPACE12.h,
               ),
-              Text(
-                JOIN_US,
-                style: Theme.of(context).textTheme.titleMedium,
-              ),
+              RichText(
+                  textAlign: TextAlign.center,
+                  text: TextSpan(
+                    style: Theme.of(context).textTheme.titleMedium,
+                    children: <TextSpan>[
+                      TextSpan(
+                        text: JOIN_US_START_TEXT,
+                        style: TextStyle(
+                          fontSize: 12,
+                        ),
+                      ),
+                      TextSpan(
+                        text: JOIN_US_NUMBER,
+                        style: TextStyle(
+                          color: Theme.of(context).dialogBackgroundColor,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w900,
+                        ),
+                      ),
+                      TextSpan(
+                        text: JOIN_US_END_TEXT,
+                      ),
+                    ],
+                  )),
               SizedBox(
                 height: SPACE35.h,
               ),
               CustomIconButton(
+                alignIconOnStart: true,
                 onTap: () =>
                     GoRouter.of(context).go(AppRoutes.SIGNIN_ROUTE_PATH),
                 label: EMAIL_OR_PHONE,
                 labelColor: Theme.of(context).cardColor,
-                icon: SvgPicture.asset(Images.EMAIL_LOGIN),
+                icon: SvgPicture.asset(
+                  Images.EMAIL_LOGIN,
+                  color: Theme.of(context).cardColor,
+                ),
                 color: Theme.of(context).dialogBackgroundColor,
               ),
               SizedBox(
                 height: 16.h,
               ),
               CustomIconButton(
+                alignIconOnStart: true,
                 onTap: () {},
                 label: GOOGLE,
                 labelColor: Theme.of(context).dialogBackgroundColor,
@@ -68,13 +95,13 @@ class OnboardingScreen extends StatelessWidget {
                 height: 16.h,
               ),
               CustomIconButton(
+                alignIconOnStart: true,
                 onTap: () {},
                 label: APPLE,
                 labelColor: Theme.of(context).dialogBackgroundColor,
                 icon: SvgPicture.asset(
                   Images.APPLE_LOGIN,
                   height: 20.h,
-                  width: 20.w,
                 ),
                 color: Theme.of(context).cardColor,
                 borderColor: Theme.of(context).canvasColor,
@@ -109,29 +136,29 @@ class OnboardingScreen extends StatelessWidget {
                                 ),
                               )
                             ]),
-                        SizedBox(
-                          height: SPACE20.h,
-                        ),
-                        Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'By continuing, you agree to GlobDock\'s',
-                                style: TextStyle(
-                                    fontSize: CustomFontSize.s8,
-                                    color: Theme.of(context).disabledColor),
-                              ),
-                              SizedBox(
-                                width: 2.w,
-                              ),
-                              Text(
-                                'Terms & Conditions and Privacy Policy',
-                                style: TextStyle(
-                                    fontSize: CustomFontSize.s8,
-                                    fontWeight: FontWeight.bold,
-                                    color: Theme.of(context).primaryColor),
-                              )
-                            ])
+                        // SizedBox(
+                        //   height: SPACE20.h,
+                        // ),
+                        // Row(
+                        //     mainAxisAlignment: MainAxisAlignment.center,
+                        //     children: [
+                        //       Text(
+                        //         'By continuing, you agree to GlobDock\'s',
+                        //         style: TextStyle(
+                        //             fontSize: CustomFontSize.s8,
+                        //             color: Theme.of(context).disabledColor),
+                        //       ),
+                        //       SizedBox(
+                        //         width: 2.w,
+                        //       ),
+                        //       Text(
+                        //         'Terms & Conditions and Privacy Policy',
+                        //         style: TextStyle(
+                        //             fontSize: CustomFontSize.s8,
+                        //             fontWeight: FontWeight.bold,
+                        //             color: Theme.of(context).primaryColor),
+                        //       )
+                        //     ])
                       ],
                     )),
               ),

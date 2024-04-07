@@ -34,4 +34,5 @@ class CustomIcons {
   static const String UPLOAD_FILLED = 'assets/icons/upload_filled.svg';
   static const String CLOSE_FILLED = 'assets/icons/close_filled.svg';
   static const String CAMERA_FILLED = 'assets/icons/camera_filled.svg';
+  static const String WEB = 'assets/icons/web.svg';
 }

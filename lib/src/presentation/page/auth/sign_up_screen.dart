@@ -1,3 +1,4 @@
+import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -7,6 +8,7 @@ import 'package:globedock/src/common/custom_font_size.dart';
 import 'package:globedock/src/common/images.dart';
 import 'package:globedock/src/common/routes.dart';
 import 'package:globedock/src/presentation/bloc/authenticator_watcher/authenticator_watcher_bloc.dart';
+import 'package:globedock/src/presentation/widget/country_picker_widget.dart';
 import 'package:globedock/src/presentation/widget/custom_app_bar.dart';
 import 'package:globedock/src/presentation/widget/custom_elevated_button.dart';
 import 'package:globedock/src/presentation/widget/custom_textfield.dart';
@@ -24,8 +26,10 @@ class _SignUpScreenState extends State<SignUpScreen>
     with SingleTickerProviderStateMixin {
   bool _showOTPField = false;
   bool _isPhoneVerified = false;
+  String? _countryDialCode;
   @override
   void initState() {
+    _countryDialCode = '+251';
     super.initState();
   }
 
@@ -55,9 +59,8 @@ class _SignUpScreenState extends State<SignUpScreen>
         body: Stack(
           children: [
             Padding(
-              padding: EdgeInsets.only(left: 20.w, right: 20.w, bottom: 250.h),
+              padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 75.h),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -75,15 +78,37 @@ class _SignUpScreenState extends State<SignUpScreen>
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       CustomTextField(
-                        width: 80.w,
+                        width: 95.w,
                         height: 35.h,
+                        isWidget: true,
+                        childWidget: CodePickerWidget(
+                          alignLeft: true,
+                          onChanged: (CountryCode countryCode) {
+                            setState(() {
+                              _countryDialCode = countryCode.dialCode;
+                            });
+                          },
+                          initialSelection: 'ET',
+                          favorite: [_countryDialCode!],
+                          flagDecoration: BoxDecoration(
+                              shape: BoxShape.rectangle,
+                              borderRadius: BorderRadius.circular(5)),
+                          showCountryOnly: true,
+                          showDropDownButton: true,
+                          backgroundColor: Theme.of(context).cardColor,
+                          flagWidth: 30,
+                          hideMainText: true,
+                        ),
                       ),
                       SizedBox(
                         width: 10.w,
                       ),
                       Expanded(
                           child: CustomTextField(
-                              width: double.infinity, height: 35.h)),
+                        width: double.infinity,
+                        height: 35.h,
+                        labelText: 'Mobile number',
+                      )),
                     ],
                   ),
                   SizedBox(
@@ -91,7 +116,11 @@ class _SignUpScreenState extends State<SignUpScreen>
                   ),
                   _showOTPField && !_isPhoneVerified
                       ? Column(children: [
-                          CustomTextField(width: double.infinity, height: 35.h),
+                          CustomTextField(
+                            width: double.infinity,
+                            height: 35.h,
+                            labelText: 'OTP',
+                          ),
                           SizedBox(
                             height: 15.h,
                           ),
@@ -134,19 +163,10 @@ class _SignUpScreenState extends State<SignUpScreen>
                           },
                           label: VERIFY,
                         )
-                      : SizedBox()
-                ],
-              ),
-            ),
-            SizedBox(
-              height: SPACE15.h,
-            ),
-            Positioned.fill(
-              top: _showOTPField == true
-                  ? MediaQuery.of(context).size.height * 0.48
-                  : MediaQuery.of(context).size.height * 0.41,
-              child: Column(
-                children: [
+                      : SizedBox(),
+                  SizedBox(
+                    height: 15.h,
+                  ),
                   Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                     Text(
                       HAVE_AN_ACCOUNT,
@@ -165,9 +185,6 @@ class _SignUpScreenState extends State<SignUpScreen>
                           color: Theme.of(context).primaryColor),
                     )
                   ]),
-                  SizedBox(
-                    height: SPACE45.h,
-                  ),
                 ],
               ),
             ),

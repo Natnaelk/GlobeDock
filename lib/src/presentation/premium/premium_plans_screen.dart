@@ -5,6 +5,7 @@ import 'package:globedock/src/common/constant.dart';
 import 'package:globedock/src/common/custom_font_size.dart';
 import 'package:globedock/src/common/icons.dart';
 import 'package:globedock/src/common/routes.dart';
+import 'package:globedock/src/presentation/page/bottomNavigation/bottom_navigation_screen.dart';
 import 'package:globedock/src/presentation/premium/tabs/elite_tab.dart';
 import 'package:globedock/src/presentation/premium/tabs/executive_tab.dart';
 import 'package:globedock/src/presentation/premium/tabs/premium_tab.dart';
@@ -45,13 +46,17 @@ class _PremiumPlansScreenState extends State<PremiumPlansScreen>
         appBar: AppBar(
           backgroundColor: Theme.of(context).indicatorColor,
           leading: IconButton(
-            icon: Icon(
-              Icons.chevron_left,
-              color: Theme.of(context).cardColor,
-            ),
-            onPressed: () =>
-                GoRouter.of(context).go(AppRoutes.DASHBOARD_ROUTE_PATH),
-          ),
+              icon: Icon(
+                Icons.chevron_left,
+                color: Theme.of(context).cardColor,
+              ),
+              onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => BottomNavigationScreen(
+                              selectedIndex: '4',
+                            )),
+                  )),
           actions: [
             InkWell(
               onTap: () {

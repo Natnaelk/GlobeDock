@@ -4,11 +4,12 @@ import 'package:globedock/src/common/constant.dart';
 import 'package:globedock/src/common/icons.dart';
 import 'package:globedock/src/common/routes.dart';
 import 'package:globedock/src/presentation/page/home/tabs/education_upload_tab.dart';
-import 'package:globedock/src/presentation/page/home/tabs/english_proficiency_test_tab.dart';
+import 'package:globedock/src/presentation/page/home/tabs/international_exam_tab.dart';
 import 'package:globedock/src/presentation/page/home/tabs/extra_curricular_upload_tab.dart';
 import 'package:globedock/src/presentation/page/home/tabs/identity_tab.dart';
 import 'package:globedock/src/presentation/page/home/tabs/other_tab.dart';
 import 'package:globedock/src/presentation/page/home/tabs/recommendation_upload_tab.dart';
+import 'package:globedock/src/presentation/page/home/tabs/supporting_documents_upload_tab.dart';
 import 'package:globedock/src/presentation/page/home/tabs/work_experience_upload_tab.dart';
 import 'package:globedock/src/presentation/widget/custom_icon_button.dart';
 import 'package:go_router/go_router.dart';
@@ -29,7 +30,8 @@ class _UploadDocumentsScreenState extends State<UploadDocumentsScreen>
     const IdentityTab(),
     const EducationUploadTab(),
     const WorkExperienceUploadTab(),
-    const EnglishProficiencyTestTab(),
+    const InternationalExamTab(),
+    const SupportingDocumentsUploadTab(),
     const ExtraCurriuclarUploadTab(),
     const RecommendationUploadTab(),
     const OtherTab()

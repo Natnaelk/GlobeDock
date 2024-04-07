@@ -1,6 +1,7 @@
 import 'package:csc_picker/csc_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:globedock/src/common/constant.dart';
 import 'package:globedock/src/common/icons.dart';
@@ -12,10 +13,15 @@ class EducationTab extends StatelessWidget {
     return SingleChildScrollView(
       physics: const ClampingScrollPhysics(),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        Row(children: [Text('Mandatory / required*')]),
+        SizedBox(
+          height: 10.h,
+        ),
         FormBuilder(
             key: _formKey,
             child: Column(children: [
               FormBuilderDropdown(
+                dropdownColor: Theme.of(context).cardColor,
                 elevation: 0,
                 icon: Padding(
                   padding: const EdgeInsetsDirectional.only(end: 12.0),
@@ -25,14 +31,30 @@ class EducationTab extends StatelessWidget {
                 ),
                 items: [
                   DropdownMenuItem<String>(
-                      value: 'sample1r',
+                      value: 'middleschoolcompleted',
                       child: Container(
-                        child: const Text('Sample 1'),
+                        child: const Text(
+                            'Middle School Completed (8th Grade Ministry)'),
                       )),
                   DropdownMenuItem<String>(
-                      value: 'sample2',
+                      value: 'highscoolincomplete',
                       child: Container(
-                        child: const Text('Sample 2'),
+                        child: const Text('Highschool Incomplete'),
+                      )),
+                  DropdownMenuItem<String>(
+                      value: 'highschooldiploma',
+                      child: Container(
+                        child: const Text('Highschool Diploma'),
+                      )),
+                  DropdownMenuItem<String>(
+                      value: 'bsc',
+                      child: Container(
+                        child: const Text('Bachelor\'s Degree'),
+                      )),
+                  DropdownMenuItem<String>(
+                      value: 'mastersorabove',
+                      child: Container(
+                        child: const Text('Master\'s Degree and Above'),
                       )),
                 ],
                 name: 'highestqualification',
@@ -68,7 +90,7 @@ class EducationTab extends StatelessWidget {
                   border: InputBorder.none,
                 ),
                 options: [
-                  'Pursuing',
+                  'Currently Studying',
                   'Completed',
                 ]
                     .map((lang) => FormBuilderFieldOption(value: lang))
@@ -120,7 +142,7 @@ class EducationTab extends StatelessWidget {
                 style: Theme.of(context).textTheme.bodyMedium,
                 decoration: InputDecoration(
                     focusColor: Colors.black,
-                    label: Text('Grade / Mark Obtained',
+                    label: Text('Average Grade / Average Mark Obtained',
                         style: Theme.of(context).textTheme.titleMedium),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(RADIUS),
@@ -239,42 +261,6 @@ class EducationTab extends StatelessWidget {
                 decoration: InputDecoration(
                     focusColor: Colors.black,
                     label: Text('City / Town',
-                        style: Theme.of(context).textTheme.titleMedium),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(RADIUS),
-                        borderSide: BorderSide(
-                            color: Theme.of(context).disabledColor))),
-              ),
-              const SizedBox(
-                height: SPACE20,
-              ),
-              FormBuilderTextField(
-                name: 'address',
-                onChanged: (val) {
-                  print(val);
-                },
-                style: Theme.of(context).textTheme.bodyMedium,
-                decoration: InputDecoration(
-                    focusColor: Colors.black,
-                    label: Text('Address',
-                        style: Theme.of(context).textTheme.titleMedium),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(RADIUS),
-                        borderSide: BorderSide(
-                            color: Theme.of(context).disabledColor))),
-              ),
-              const SizedBox(
-                height: SPACE20,
-              ),
-              FormBuilderTextField(
-                name: 'zipcode',
-                onChanged: (val) {
-                  print(val);
-                },
-                style: Theme.of(context).textTheme.bodyMedium,
-                decoration: InputDecoration(
-                    focusColor: Colors.black,
-                    label: Text('Zip Code',
                         style: Theme.of(context).textTheme.titleMedium),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(RADIUS),

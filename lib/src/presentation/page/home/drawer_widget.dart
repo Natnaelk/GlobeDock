@@ -8,6 +8,7 @@ import 'package:globedock/src/common/routes.dart';
 import 'package:globedock/src/presentation/page/bottomNavigation/bottom_navigation_screen.dart';
 import 'package:globedock/src/presentation/page/home/profile_widget.dart';
 import 'package:globedock/src/presentation/page/successstories/success_stories_onboarding_screen.dart';
+import 'package:globedock/src/presentation/page/videos/videos_screen.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:share_plus/share_plus.dart';
@@ -205,8 +206,7 @@ class DrawerWidget extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(
-                    builder: (context) => SuccessStoriesOnboardingScreen()),
+                MaterialPageRoute(builder: (context) => VideosScreen()),
               );
             },
           ),

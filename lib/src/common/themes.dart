@@ -112,22 +112,26 @@ ThemeData themeDark(BuildContext context) {
   return ThemeData(
     brightness: Brightness.dark,
     backgroundColor: ColorDark.fontSubtitle,
+    canvasColor: ColorDark.canvasColor,
     cardColor: ColorDark.card,
     disabledColor: ColorDark.disabledButton,
     errorColor: ColorDark.error,
     // highlightColor: ColorDark.fontTitle,
     hintColor: ColorDark.fontSubtitle,
-    indicatorColor: ColorLight.primary,
+    indicatorColor: ColorDark.primary,
     iconTheme: const IconThemeData(
       color: ColorDark.fontTitle,
     ),
-    primaryColor: ColorLight.primary,
+    dialogBackgroundColor: ColorDark.whiteBackground,
+    primaryColor: ColorDark.primary,
+    primaryColorLight: ColorDark.primaryDark,
+    bottomAppBarColor: ColorDark.primaryVeryDark,
     textSelectionTheme: const TextSelectionThemeData(
-      cursorColor: ColorLight.primary,
+      cursorColor: ColorDark.primary,
     ),
     checkboxTheme: const CheckboxThemeData(
       side: BorderSide(
-        color: ColorLight.disabledButton,
+        color: ColorDark.disabledButton,
       ),
     ),
     scaffoldBackgroundColor: ColorDark.background,
@@ -187,7 +191,7 @@ ThemeData themeDark(BuildContext context) {
         fontWeight: FontWeight.normal,
       ),
       labelLarge: GoogleFonts.rubik(
-        color: Colors.white,
+        color: ColorDark.card,
         fontSize: 14,
         fontWeight: FontWeight.normal,
       ),

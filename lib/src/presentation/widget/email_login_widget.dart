@@ -2,18 +2,28 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:globedock/src/common/constant.dart';
 import 'package:globedock/src/common/custom_font_size.dart';
+import 'package:globedock/src/common/routes.dart';
 import 'package:globedock/src/presentation/widget/custom_elevated_button.dart';
 import 'package:globedock/src/presentation/widget/custom_textfield.dart';
+import 'package:go_router/go_router.dart';
 
 Widget emailLoginWidget(BuildContext context,
     {String buttonLabel = LOGIN, bool showOTP = true}) {
   return Column(
     children: [
-      CustomTextField(width: double.infinity, height: 35.h),
+      CustomTextField(
+        width: double.infinity,
+        height: 45.h,
+        labelText: 'Email Address',
+      ),
       SizedBox(
         height: 15.h,
       ),
-      CustomTextField(width: double.infinity, height: 35.h),
+      CustomTextField(
+        width: double.infinity,
+        height: 35.h,
+        labelText: 'OTP',
+      ),
       SizedBox(
         height: 10.h,
       ),
@@ -41,7 +51,7 @@ Widget emailLoginWidget(BuildContext context,
         height: 25.h,
       ),
       CustomElevatedButton(
-        onTap: () {},
+        onTap: () => GoRouter.of(context).go(AppRoutes.DASHBOARD_ROUTE_PATH),
         label: buttonLabel,
       ),
     ],

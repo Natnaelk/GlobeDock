@@ -26,6 +26,15 @@ class HomeScreen extends StatelessWidget {
         title: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: const [Text('👋 User')]),
+        actions: [
+          Padding(
+            padding: EdgeInsetsDirectional.only(end: MAIN_PADDING),
+            child: SvgPicture.asset(
+              Images.HOME_ICON,
+              width: 25.w,
+            ),
+          )
+        ],
       ),
       drawer: const DrawerWidget(),
       floatingActionButton: FloatingActionButton(
@@ -119,6 +128,53 @@ class HomeScreen extends StatelessWidget {
                             child: GestureDetector(
                                 onTap: () => GoRouter.of(context)
                                     .go(AppRoutes.DESTINATION_ROUTE_PATH),
+                                child:
+                                    HomeCountryTile(country: countries[index])),
+                          );
+                        })),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: MAIN_PADDING,
+                    right: MAIN_PADDING,
+                  ),
+                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Universities',
+                          style: Theme.of(context).textTheme.headlineMedium,
+                        ),
+                        GestureDetector(
+                          onTap: () => GoRouter.of(context)
+                              .go(AppRoutes.UNIVERSITIES_ROUTE_PATH),
+                          child: Text(
+                            'View all',
+                            style: TextStyle(
+                                color: Theme.of(context).primaryColor),
+                          ),
+                        )
+                      ]),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                      left: MAIN_PADDING,
+                      right: MAIN_PADDING,
+                      top: MAIN_PADDING,
+                      bottom: MAIN_PADDING * 2),
+                  child: SizedBox(
+                    height: 170.h,
+                    child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: countries.length,
+                        shrinkWrap: true,
+                        itemBuilder: ((context, index) {
+                          return Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: GestureDetector(
+                                onTap: () => GoRouter.of(context).go(
+                                    AppRoutes.UNIVERSITIES_DETAIL_ROUTE_PATH),
                                 child:
                                     HomeCountryTile(country: countries[index])),
                           );

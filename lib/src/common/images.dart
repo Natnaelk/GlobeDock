@@ -26,7 +26,7 @@ class Images {
   static const String PLACEHOLDER = 'assets/images/placeholder.jpg';
   static const String PREMIUM_ROCKET = 'assets/images/premium_rocket.png';
   static const String PLANE = 'assets/icons/plane.svg';
-  static const String MATCH_WITH_TEAM = 'assets/images/match_with_team.png';
+  static const String MATCH_WITH_TEAM = 'assets/images/match_with_team_two.png';
   static const String WORKING_ON_APPS = 'assets/images/working_on_my_apps.png';
   static const String APPLICATIONS_MGMT = 'assets/images/apps_mgmt.png';
   static const String VISA_MGMT = 'assets/images/visa_mgmt.png';
@@ -46,4 +46,10 @@ class Images {
   static const String CURRENCY = 'assets/images/currency.png';
   static const String SUCCESS_STORIES =
       'assets/images/success_story_onboarding.svg';
+  static const String HOME_ICON = 'assets/images/home_icon.svg';
+  static const String LEVEL_OF_EDUCATION = 'assets/images/level_of_edu.svg';
+  static const String HIGHSHOOL_ATTENDED =
+      'assets/images/highshool_attended.svg';
+  static const String TROPHY = 'assets/images/winner.png';
+  static const String PLAN = 'assets/images/plan.svg';
 }

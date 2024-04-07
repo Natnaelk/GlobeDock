@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:globedock/src/presentation/page/question/question_four_screen.dart';
-import 'package:globedock/src/presentation/page/question/question_one_screen.dart';
 import 'package:globedock/src/presentation/page/question/question_three_screen.dart';
+import 'package:globedock/src/presentation/page/question/question_one_screen.dart';
+import 'package:globedock/src/presentation/page/question/question_four_screen.dart';
 import 'package:globedock/src/presentation/page/question/question_two_screen.dart';
 
 class QuestionScreen extends StatelessWidget {

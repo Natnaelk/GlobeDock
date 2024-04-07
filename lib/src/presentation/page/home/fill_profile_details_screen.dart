@@ -30,12 +30,12 @@ class _FillProfileDetilsScreenState extends State<FillProfileDetilsScreen>
   final List<Widget> _tabs = [
     PersonalInfoTab(),
     AddressTab(),
-    FamilyTab(),
     EducationTab(),
+    FamilyTab(),
     TestScoreTab(),
     WorkExperience(),
-    ExtraCurricularDocumentsTab(),
-    RecommendationsTab()
+    //  ExtraCurricularDocumentsTab(),
+    //RecommendationsTab()
   ];
 
   @override

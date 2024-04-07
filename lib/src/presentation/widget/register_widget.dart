@@ -10,11 +10,19 @@ import 'package:go_router/go_router.dart';
 Widget registerWidget(BuildContext context) {
   return Column(
     children: [
-      CustomTextField(width: double.infinity, height: 35.h),
+      CustomTextField(
+        width: double.infinity,
+        height: 35.h,
+        labelText: 'Full Name',
+      ),
       SizedBox(
         height: 15.h,
       ),
-      CustomTextField(width: double.infinity, height: 35.h),
+      CustomTextField(
+        width: double.infinity,
+        height: 35.h,
+        labelText: 'Email',
+      ),
       SizedBox(
         height: 10.h,
       ),

@@ -6,9 +6,12 @@ const String ACCESS_TOKEN = 'access_token';
 const String ONBOARDING = 'onboarding';
 const String JOURNEY_STARTS_HERE = 'Your Global Education Journey starts here';
 const String JOIN_US =
-    "Join us and start your journey to one of 2000 universities around the world.";
+    "Join us and start your journey to one of 500 universities around the world.";
+const String JOIN_US_START_TEXT = 'Join us and start your journey to one of ';
+const String JOIN_US_NUMBER = '500+';
+const String JOIN_US_END_TEXT = ' universities around the world.';
 const String EMAIL_OR_PHONE = 'Continue with Email or Phone';
-const String GOOGLE = 'Continue with Goole';
+const String GOOGLE = 'Continue with Google';
 const String APPLE = 'Continue with Apple';
 const String DONT_HAVE_AN_ACCOUNT = 'Don\'t have an account?';
 const String SIGN_UP_FOR_FREE = 'Sign up for Free!';
@@ -27,14 +30,14 @@ const String SEND_OTP = 'Send OTP';
 const String SIGN_UP = 'Sign Up';
 const String COMPLETE_PROFIE = 'Complete Your Profile';
 const String PERSONALIZE_INFO =
-    'We will personalize your further process accordingly. This won\'t take more than a minute.';
-const String LETS_GO = 'Let’s Go';
+    'Finish setting up your account - it will only take a minute';
+const String LETS_GO = 'Let’s start';
 const String PREFERRED_LEVEL_OF_STUDY =
-    'What is your preferred level of study?';
+    'What level of education are you planning to study abroad?';
 const String HIGHSCHOOL = 'Highschool';
 const String UNDERGRADUATE = 'Undergraduate';
 const String POSTGRADUATE = 'Postgraduate';
-const String DESTINATION_PREFERENCE = 'Select your destination preference';
+const String DESTINATION_PREFERENCE = 'Select your dream destination';
 const String HIGHSCHOOL_ATTENDED = 'Which Highschool did you attend in?';
 const String CONTINUE = 'Continue';
 const String NO_NOTIFICATION = 'No new notification';
@@ -184,19 +187,20 @@ final Map<String, String> languages = {
 final List<String> fillProfileDetilsTabTitles = [
   'Personal Information',
   'Address & Contact',
-  'Family',
   'Education',
+  'Family',
   'Test Score',
   'Work Experience',
-  'Extra Curricular Documents',
-  'Recommendation'
+  //'Extra Curricular Documents',
+  //'Recommendation'
 ];
 
 final List<String> uploadDocumentsTabTitles = [
   'Identity',
   'Education',
   'Work Experience',
-  'English Proficiency Test',
+  'International Exam',
+  'Supporting Documents',
   'Extra Curricular',
   'Recommendation',
   'Other',
@@ -222,6 +226,8 @@ final List<String> premiumPlansFeatures = [
 ];
 
 final List<String> destinationTabs = ['Overview', 'Universities', 'FAQ\'S'];
+
+final List<String> universitiesTabs = ['Overview', 'FAQ\'S'];
 
 final List<String> destinationOverviewCardImages = [
   Images.CAPITAL,

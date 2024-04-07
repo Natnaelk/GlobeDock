@@ -10,17 +10,15 @@ class IdentityTab extends StatelessWidget {
     return Container(
       child: Column(children: const [
         UploadDocumentWidget(
-          labelString: 'Passport front',
-        ),
-        SizedBox(
-          height: SPACE15,
-        ),
-        UploadDocumentWidget(
-          labelString: 'Passport back',
+          labelString: 'Passport',
         ),
         SizedBox(height: SPACE15),
         UploadDocumentWidget(
           labelString: 'Visa',
+        ),
+        SizedBox(height: SPACE15),
+        UploadDocumentWidget(
+          labelString: 'Photo 3x4*',
         )
       ]),
     );

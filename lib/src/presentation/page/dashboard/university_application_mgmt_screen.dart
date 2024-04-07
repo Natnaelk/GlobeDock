@@ -6,6 +6,7 @@ import 'package:globedock/src/common/custom_font_size.dart';
 import 'package:globedock/src/common/icons.dart';
 import 'package:globedock/src/common/routes.dart';
 import 'package:globedock/src/presentation/page/bottomNavigation/bottom_navigation_screen.dart';
+import 'package:globedock/src/presentation/widget/custom_elevated_button.dart';
 import 'package:globedock/src/presentation/widget/custom_widget.dart';
 import 'package:go_router/go_router.dart';
 
@@ -15,6 +16,7 @@ class UniversityApplicationMgmtScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).bottomAppBarColor,
       appBar: AppBar(
         backgroundColor: Theme.of(context).cardColor,
         leading: IconButton(
@@ -25,7 +27,7 @@ class UniversityApplicationMgmtScreen extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                       builder: (context) => BottomNavigationScreen(
-                            selectedIndex: '4',
+                            selectedIndex: '2',
                           )),
                 )),
         title: Text(
@@ -81,7 +83,7 @@ class UniversityMgmtCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: EdgeInsets.only(
+        padding: const EdgeInsets.only(
             left: MAIN_PADDING, right: SMALL_PADDING, top: MAIN_PADDING),
         width: double.infinity,
         decoration: BoxDecoration(
@@ -111,7 +113,7 @@ class UniversityMgmtCard extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 48.h,
+                  height: 85.h,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -200,7 +202,31 @@ class UniversityMgmtCard extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
+                    height: 10.h,
+                  ),
+                  SizedBox(
                     height: 5.h,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(right: 15.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text('\$500'),
+                        Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(RADIUS),
+                                color: Theme.of(context).primaryColorLight),
+                            child: Padding(
+                              padding: const EdgeInsets.only(
+                                  left: 8, right: 8, top: 5, bottom: 5),
+                              child: Text(
+                                'Pay Now',
+                                style: TextStyle(fontSize: 13),
+                              ),
+                            )),
+                      ],
+                    ),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,

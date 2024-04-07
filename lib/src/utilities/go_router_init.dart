@@ -24,6 +24,8 @@ import 'package:globedock/src/presentation/page/profile/profile_screen.dart';
 import 'package:globedock/src/presentation/page/question/question_onboarding_screen.dart';
 import 'package:globedock/src/presentation/page/question/question_screen.dart';
 import 'package:globedock/src/presentation/page/splash/splash_screen.dart';
+import 'package:globedock/src/presentation/page/universities/universities_detail_screen.dart';
+import 'package:globedock/src/presentation/page/universities/universities_view_all_screen.dart';
 import 'package:globedock/src/presentation/page/videos/videos_screen.dart';
 import 'package:globedock/src/presentation/premium/premium_plans_screen.dart';
 import 'package:go_router/go_router.dart';
@@ -228,6 +230,21 @@ GoRouter routerinit = GoRouter(
       path: AppRoutes.HELP_ROUTE_PATH,
       builder: (BuildContext context, GoRouterState state) {
         return const HelpAndSupportScreen();
+      },
+    ),
+
+    GoRoute(
+      name: AppRoutes.UNIVERSITIES_ROUTE_NAME,
+      path: AppRoutes.UNIVERSITIES_ROUTE_PATH,
+      builder: (BuildContext context, GoRouterState state) {
+        return const UniversitiesViewAllScreen();
+      },
+    ),
+    GoRoute(
+      name: AppRoutes.UNIVERSITIES_DETAIL_ROUTE_NAME,
+      path: AppRoutes.UNIVERSITIES_DETAIL_ROUTE_PATH,
+      builder: (BuildContext context, GoRouterState state) {
+        return const UniversitiesDetailScreen();
       },
     ),
   ],

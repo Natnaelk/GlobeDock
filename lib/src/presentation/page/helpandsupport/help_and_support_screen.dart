@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:globedock/src/common/constant.dart';
 import 'package:globedock/src/common/icons.dart';
 import 'package:globedock/src/common/routes.dart';
+import 'package:globedock/src/presentation/widget/custom_dialog.dart';
 import 'package:go_router/go_router.dart';
 
 class HelpAndSupportScreen extends StatelessWidget {
@@ -11,6 +12,7 @@ class HelpAndSupportScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).bottomAppBarColor,
       appBar: AppBar(
         backgroundColor: Theme.of(context).cardColor,
         leading: IconButton(
@@ -22,16 +24,9 @@ class HelpAndSupportScreen extends StatelessWidget {
               GoRouter.of(context).go(AppRoutes.DASHBOARD_ROUTE_PATH),
         ),
         actions: [
-          InkWell(
+          GestureDetector(
             onTap: () {
-              // showModalBottomSheet(
-              //     isScrollControlled: true,
-              //     shape: RoundedRectangleBorder(
-              //         borderRadius: BorderRadius.circular(RADIUS)),
-              //     context: context,
-              //     builder: (BuildContext context) {
-              //       return PremiumPlanInfoBottomSheet(context);
-              //     });
+              showCallDialog(context);
             },
             child: Padding(
               padding: const EdgeInsets.only(right: MAIN_PADDING),

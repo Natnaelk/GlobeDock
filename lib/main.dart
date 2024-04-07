@@ -1,3 +1,4 @@
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:globedock/src/common/themes.dart';
@@ -11,7 +12,9 @@ import 'package:intl/date_symbol_data_local.dart';
 import 'src/utilities/go_router_init.dart';
 
 void main() {
-  initializeDateFormatting().then((_) => runApp(const MyApp()));
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]).then(
+      (_) => initializeDateFormatting().then((_) => runApp(const MyApp())));
 }
 
 class MyApp extends StatelessWidget {
@@ -34,7 +37,7 @@ class MyApp extends StatelessWidget {
               debugShowCheckedModeBanner: false,
               theme: themeLight(context),
               darkTheme: themeDark(context),
-              themeMode: ThemeMode.system,
+              themeMode: ThemeMode.light,
               routerConfig: routerinit,
             );
           }),

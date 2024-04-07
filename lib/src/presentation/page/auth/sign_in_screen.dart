@@ -49,8 +49,10 @@ class _SignInScreenState extends State<SignInScreen>
         );
       },
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         backgroundColor: Theme.of(context).bottomAppBarColor,
         appBar: CustomAppBar(
+          backgroundColor: Theme.of(context).bottomAppBarColor,
           isBackButtonExist: true,
           onBackButtonPressed: () =>
               GoRouter.of(context).go(AppRoutes.ONBOARDING_ROUTE_PATH),
@@ -58,9 +60,9 @@ class _SignInScreenState extends State<SignInScreen>
         body: Stack(
           children: [
             Padding(
-              padding: EdgeInsets.only(left: 20.w, right: 20.w, bottom: 270.h),
+              padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 75.h),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                // mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -84,6 +86,7 @@ class _SignInScreenState extends State<SignInScreen>
                       controller: _tabController,
                       labelPadding: EdgeInsets.symmetric(horizontal: 2.w),
                       indicator: const BoxDecoration(),
+                      dividerColor: Theme.of(context).bottomAppBarColor,
                       tabs: [
                         CustomTab(
                           text: MOBILE,
@@ -107,25 +110,22 @@ class _SignInScreenState extends State<SignInScreen>
               ),
             ),
             Positioned.fill(
-              top: MediaQuery.of(context).size.height * 0.33,
+              top: MediaQuery.of(context).size.height * 0.25,
               child: Padding(
-                padding: EdgeInsets.only(left: 20.w, right: 20.w),
+                padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 20.h),
                 child: TabBarView(
                   controller: _tabController,
                   children: [
-                    mobileLoginWidget(context),
+                    MobileLoginTab(),
                     emailLoginWidget(context),
                   ],
                 ),
               ),
             ),
-            SizedBox(
-              height: SPACE15.h,
-            ),
             Positioned.fill(
               top: _tabController.index == 0
-                  ? MediaQuery.of(context).size.height * 0.51
-                  : MediaQuery.of(context).size.height * 0.65, //
+                  ? MediaQuery.of(context).size.height * 0.45
+                  : MediaQuery.of(context).size.height * 0.57,
               child: Column(
                 children: [
                   Row(mainAxisAlignment: MainAxisAlignment.center, children: [

@@ -6,14 +6,16 @@ import 'package:globedock/src/data/model/country.dart';
 
 class CountryTile extends StatelessWidget {
   final Country country;
+  final Color? backgroundColor;
 
-  const CountryTile({Key? key, required this.country}) : super(key: key);
+  const CountryTile({Key? key, required this.country, this.backgroundColor})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Theme.of(context).cardColor,
+        color: backgroundColor,
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.2),

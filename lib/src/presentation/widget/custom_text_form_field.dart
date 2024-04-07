@@ -155,7 +155,7 @@ class CustomTextFormField extends StatelessWidget {
     }
 
     return Padding(
-      padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
+      padding: const EdgeInsets.only(top: 0.0, bottom: 0.0),
       child: TextFormField(
         controller: controller,
         maxLines: maxLines,
@@ -164,7 +164,7 @@ class CustomTextFormField extends StatelessWidget {
         onChanged: onChanged,
         textAlign: textAlign ?? TextAlign.left,
         obscureText: obscureText ?? false,
-        style: theme.textTheme.bodyText1,
+        style: theme.textTheme.bodyMedium,
         inputFormatters: inputFormatters ?? [],
         keyboardType: textInputType ?? keyboardType(textFieldType),
         validator: validator(textFieldType),

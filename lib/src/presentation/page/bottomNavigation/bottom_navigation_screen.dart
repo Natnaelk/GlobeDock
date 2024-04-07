@@ -43,9 +43,9 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
       "title": "Notification"
     },
     {
-      "icon": "assets/icons/crown_icon.svg",
-      "selected_icon": "assets/icons/crown_icon_selected.svg",
-      "title": "One"
+      "icon": "assets/icons/dashboard_icon.svg",
+      "selected_icon": "assets/icons/dashboard_icon_selected.svg",
+      "title": "Journey"
     },
     {
       "icon": "assets/icons/todo_icon.svg",
@@ -53,18 +53,18 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
       "title": "Todo"
     },
     {
-      "icon": "assets/icons/dashboard_icon.svg",
-      "selected_icon": "assets/icons/dashboard_icon_selected.svg",
-      "title": "Dashboard"
+      "icon": "assets/icons/crown_icon.svg",
+      "selected_icon": "assets/icons/crown_icon_selected.svg",
+      "title": "VIP"
     },
   ];
 
   final List<Widget> _screens = [
     HomeScreen(),
     NotificationScreen(),
-    PremiumScreen(),
+    DashboardScreen(),
     TodoScreen(),
-    DashboardScreen()
+    PremiumScreen(),
   ];
 
   @override
@@ -73,7 +73,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
       backgroundColor: Theme.of(context).bottomAppBarColor,
       body: _screens[_selectedIndex],
       bottomNavigationBar: CupertinoTabBar(
-        backgroundColor: _selectedIndex == 2
+        backgroundColor: _selectedIndex == 4
             ? Theme.of(context).secondaryHeaderColor
             : Theme.of(context).cardColor,
         onTap: (value) {
@@ -86,7 +86,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
         inactiveColor: Theme.of(context).disabledColor,
         height: 55.h,
         border: Border.all(
-            color: _selectedIndex == 2
+            color: _selectedIndex == 4
                 ? Colors.transparent
                 : Theme.of(context).dividerColor),
         items: List.generate(
