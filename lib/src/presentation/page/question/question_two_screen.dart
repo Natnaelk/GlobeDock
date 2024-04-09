@@ -4,13 +4,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:globedock/src/common/constant.dart';
 import 'package:globedock/src/common/custom_font_size.dart';
 import 'package:globedock/src/common/images.dart';
-import 'package:globedock/src/common/routes.dart';
 import 'package:globedock/src/data/model/country.dart';
 import 'package:globedock/src/presentation/page/question/question_three_screen.dart';
-import 'package:globedock/src/presentation/page/question/question_four_screen.dart';
 import 'package:globedock/src/presentation/widget/country_tile.dart';
 import 'package:globedock/src/presentation/widget/custom_elevated_button.dart';
-import 'package:go_router/go_router.dart';
 
 class QuestionTwoWidget extends StatefulWidget {
   const QuestionTwoWidget({
@@ -114,7 +111,8 @@ class _QuestionTwoWidgetState extends State<QuestionTwoWidget> {
             ),
             SizedBox(height: 20.h),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: SMALL_PADDING.w),
+              padding: EdgeInsets.symmetric(
+                  horizontal: SMALL_PADDING.w, vertical: SMALL_PADDING.h),
               child: CustomElevatedButton(
                 onTap: () => Navigator.push(
                     context,

@@ -5,6 +5,7 @@ import 'package:globedock/src/common/constant.dart';
 import 'package:globedock/src/common/icons.dart';
 import 'package:globedock/src/common/images.dart';
 import 'package:globedock/src/common/routes.dart';
+import 'package:globedock/src/presentation/page/question/question_one_screen.dart';
 import 'package:globedock/src/presentation/widget/custom_icon_button.dart';
 import 'package:go_router/go_router.dart';
 
@@ -46,9 +47,10 @@ class QuestionOnboardingScreen extends StatelessWidget {
                     height: 40.h,
                   ),
                   CustomIconButton(
-                    onTap: () => GoRouter.of(context).goNamed(
-                        AppRoutes.QUESTION_ROUTE_NAME,
-                        queryParameters: {'questionNumber': '1'}),
+                    onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => QuestionOneWidget())),
                     label: LETS_GO,
                     color: Theme.of(context).primaryColor,
                     labelColor: Theme.of(context).cardColor,

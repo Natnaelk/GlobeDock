@@ -235,7 +235,30 @@ final List<String> destinationOverviewCardImages = [
   Images.LANGUAGE,
   Images.STUDENTS,
   Images.GDP,
+  Images.DIAL_CODE,
   Images.CURRENCY,
   Images.UNIVERSITIES,
   Images.TEMPERATURE
+];
+final List<String> destinationOverviewCardText = [
+  'London',
+  '68 Mn',
+  'English',
+  '459,399',
+  '\$ 3.12 Trillion',
+  '+44',
+  'Pound Sterling',
+  '378',
+  '4 to 30 °C'
+];
+final List<String> destinationOverviewCardTextBody = [
+  'Capital',
+  'Population',
+  'Language',
+  'International Students',
+  'GDP',
+  'Dialing Code',
+  'Currency',
+  'Universities and Colleges',
+  'Temperature'
 ];

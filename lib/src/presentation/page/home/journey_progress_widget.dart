@@ -9,6 +9,7 @@ import 'package:globedock/src/common/routes.dart';
 import 'package:globedock/src/presentation/page/bottomNavigation/bottom_navigation_screen.dart';
 import 'package:globedock/src/presentation/widget/custom_icon_button.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 import 'dart:math' as math;
 
@@ -41,7 +42,11 @@ class JourneyProgressWidget extends StatelessWidget {
           children: [
             Text(
               'Journey Progress',
-              style: Theme.of(context).textTheme.headlineMedium,
+              style: GoogleFonts.rubik(
+                color: ColorLight.fontTitle,
+                fontSize: 17,
+                fontWeight: FontWeight.w400,
+              ),
             )
           ],
         ),
@@ -55,30 +60,35 @@ class JourneyProgressWidget extends StatelessWidget {
           selectedColor: Theme.of(context).primaryColor,
           unselectedColor: Theme.of(context).primaryColorLight,
           padding: 0,
-          width: 230,
-          height: 230,
-          selectedStepSize: 15,
+          width: 228,
+          height: 228,
+          selectedStepSize: 18,
           startingAngle: 2 * 3.5 / math.pi,
           arcSize: math.pi * 1.4,
           roundedCap: (_, __) => true,
           removeRoundedCapExtraAngle: false,
           circularDirection: CircularDirection.clockwise,
           child: Container(
-            alignment: Alignment.bottomCenter,
+            //   alignment: Alignment.bottomCenter,
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              // mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Expanded(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
+                      // SizedBox(
+                      //   height: 60,
+                      // ),
                       Text(
                         '1/9',
-                        style: Theme.of(context).textTheme.displayLarge,
+                        style: GoogleFonts.rubik(
+                          color: ColorLight.primary,
+                          fontSize: 25,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
-                      SizedBox(
-                        height: 4.h,
-                      ),
+
                       Text(
                         'Stages Completed',
                         style: TextStyle(
@@ -94,9 +104,9 @@ class JourneyProgressWidget extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      SizedBox(
-                        height: 5.h,
-                      ),
+                      // SizedBox(
+                      //   height: 55.h,
+                      // ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.end,
@@ -146,6 +156,9 @@ class JourneyProgressWidget extends StatelessWidget {
               ],
             ),
           ),
+        ),
+        SizedBox(
+          height: 15.h,
         ),
         Center(
           child: CustomIconButton(

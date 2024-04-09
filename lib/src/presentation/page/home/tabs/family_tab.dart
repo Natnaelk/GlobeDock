@@ -63,8 +63,6 @@ class FamilyForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      firstTime! ? Row(children: [Text('Mandatory / required*')]) : SizedBox(),
-      !firstTime! ? Divider() : SizedBox(),
       SizedBox(
         height: 10.h,
       ),

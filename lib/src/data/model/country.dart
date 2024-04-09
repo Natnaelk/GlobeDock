@@ -23,3 +23,15 @@ List<Country> countries = [
   Country(name: 'South Korea', image: Images.CANADA_FLAG),
   Country(name: 'Philippines ', image: Images.CANADA_FLAG),
 ];
+
+List<Country> universities = [
+  Country(
+      name: 'Queen Mary University of London',
+      image: Images.UNIVERSITY_PLACEHOLDER),
+  Country(
+      name: 'Queen Mary University of London',
+      image: Images.UNIVERSITY_PLACEHOLDER),
+  Country(
+      name: 'Queen Mary University of London',
+      image: Images.UNIVERSITY_PLACEHOLDER),
+];

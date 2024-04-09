@@ -7,20 +7,22 @@ class IdentityTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(children: const [
-        UploadDocumentWidget(
-          labelString: 'Passport',
-        ),
-        SizedBox(height: SPACE15),
-        UploadDocumentWidget(
-          labelString: 'Visa',
-        ),
-        SizedBox(height: SPACE15),
-        UploadDocumentWidget(
-          labelString: 'Photo 3x4*',
-        )
-      ]),
+    return SingleChildScrollView(
+      child: Container(
+        child: Column(children: const [
+          UploadDocumentWidget(
+            labelString: 'Passport',
+          ),
+          SizedBox(height: SPACE15),
+          UploadDocumentWidget(
+            labelString: 'Visa',
+          ),
+          SizedBox(height: SPACE15),
+          UploadDocumentWidget(
+            labelString: 'Photo 3x4*',
+          )
+        ]),
+      ),
     );
   }
 }

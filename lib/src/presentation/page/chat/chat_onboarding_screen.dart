@@ -222,7 +222,7 @@ class RelationshipManagerCard extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        GestureDetector(
+                        InkWell(
                           onTap: () => GoRouter.of(context)
                               .go(AppRoutes.CHAT_ROOM_ROUTE_PATH),
                           child: Row(

@@ -20,7 +20,7 @@ class Images {
   static const String GERMANY_FLAG = 'assets/images/germany.png';
   static const String POLAND_FLAG = 'assets/images/poland.png';
   static const String WATCH_VIDEOS = 'assets/images/watch_videos.png';
-  static const String GLOBEDOCK_IMAGE = 'assets/images/watch_vids.png';
+  static const String GLOBEDOCK_IMAGE = 'assets/images/watch_vids2.png';
   static const String EMPTY_NOTIFICATION =
       'assets/images/empty_notification.svg';
   static const String PLACEHOLDER = 'assets/images/placeholder.jpg';
@@ -52,4 +52,9 @@ class Images {
       'assets/images/highshool_attended.svg';
   static const String TROPHY = 'assets/images/winner.png';
   static const String PLAN = 'assets/images/plan.svg';
+  static const String UNIVERSITY_PLACEHOLDER =
+      'assets/images/univertity_ph.png';
+  static const String DIAL_CODE = 'assets/images/dialcode.png';
+  static const String COURSES_ICON = 'assets/images/courses_icon.png';
+  static const String RANKING_ICON = 'assets/images/ranking_icon.png';
 }

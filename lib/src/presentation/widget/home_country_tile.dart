@@ -6,13 +6,17 @@ import 'package:globedock/src/data/model/country.dart';
 
 class HomeCountryTile extends StatelessWidget {
   final Country country;
+  final bool isUniversity;
 
-  const HomeCountryTile({Key? key, required this.country}) : super(key: key);
+  const HomeCountryTile(
+      {Key? key, required this.country, this.isUniversity = false})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(15),
+      width: 132.h,
       decoration: BoxDecoration(
         color: Theme.of(context).cardColor,
         boxShadow: [
@@ -36,13 +40,17 @@ class HomeCountryTile extends StatelessWidget {
           SizedBox(height: 12.h),
           Text(
             country.name,
+            textAlign: TextAlign.center,
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
             style: TextStyle(
-                fontSize: CustomFontSize.s13,
+                fontSize: CustomFontSize.s11,
                 color: Theme.of(context).dialogBackgroundColor),
           ),
-          SizedBox(height: 4.h),
+          SizedBox(height: 7.h),
           Text(
-            '640+ Universities',
+            isUniversity ? '640+ Courses' : '640+ Universities',
+            overflow: TextOverflow.ellipsis,
             style: TextStyle(
                 fontSize: CustomFontSize.s12,
                 color: Theme.of(context).disabledColor),

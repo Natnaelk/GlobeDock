@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:globedock/src/common/constant.dart';
+import 'package:globedock/src/presentation/widget/upload_document_widget.dart';
 
-class ExtraCurriuclarUploadTab extends StatelessWidget {
+class ExtraCurriuclarUploadTab extends StatefulWidget {
   const ExtraCurriuclarUploadTab({Key? key}) : super(key: key);
 
+  @override
+  State<ExtraCurriuclarUploadTab> createState() =>
+      _ExtraCurriuclarUploadTabState();
+}
+
+class _ExtraCurriuclarUploadTabState extends State<ExtraCurriuclarUploadTab> {
+  bool iHaveExtracurrcular = false;
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -24,6 +33,11 @@ class ExtraCurriuclarUploadTab extends StatelessWidget {
             decoration: const InputDecoration(
               border: InputBorder.none,
             ),
+            onChanged: (value) {
+              setState(() {
+                iHaveExtracurrcular = value == 'Yes';
+              });
+            },
             options: [
               'Yes',
               'No',
@@ -31,6 +45,12 @@ class ExtraCurriuclarUploadTab extends StatelessWidget {
                 .map((lang) => FormBuilderFieldOption(value: lang))
                 .toList(growable: false),
           ),
+          iHaveExtracurrcular
+              ? UploadDocumentWidget(
+                  labelString:
+                      'Letter of certificate of your Extra Curricular Activity',
+                )
+              : SizedBox(),
         ],
       ),
     );

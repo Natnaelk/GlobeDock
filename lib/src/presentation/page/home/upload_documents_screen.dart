@@ -62,6 +62,7 @@ class _UploadDocumentsScreenState extends State<UploadDocumentsScreen>
           physics: const ClampingScrollPhysics(),
           isScrollable: true,
           padding: EdgeInsets.zero,
+          dividerColor: Colors.transparent,
           onTap: (index) {
             setState(() {
               _selectedIndex = index;
@@ -72,37 +73,33 @@ class _UploadDocumentsScreenState extends State<UploadDocumentsScreen>
               .toList(),
         ),
       ),
-      body: Stack(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(
-                top: MAIN_PADDING,
-                left: MAIN_PADDING * 1.1,
-                right: MAIN_PADDING * 1.1,
-                bottom: MAIN_PADDING * 7),
-            child: SingleChildScrollView(child: _tabs[_selectedIndex]),
-          ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              color: Colors.white,
-              padding: const EdgeInsets.only(
-                left: MAIN_PADDING,
-                bottom: MAIN_PADDING * 3,
-                right: MAIN_PADDING,
-                top: MAIN_PADDING,
-              ),
-              child: CustomIconButton(
-                onTap: () {},
-                color: Theme.of(context).primaryColor,
-                label: 'Save and Next',
-                isIconLeading: false,
-                labelColor: Colors.white,
-                icon: SvgPicture.asset(CustomIcons.FORWARD_ARROW),
-              ),
-            ),
-          ),
-        ],
+      body: Padding(
+        padding: const EdgeInsets.only(
+          top: MAIN_PADDING,
+          left: MAIN_PADDING * 1.1,
+          right: MAIN_PADDING * 1.1,
+        ),
+        child: TabBarView(
+          controller: _tabController,
+          children: _tabs,
+        ),
+      ),
+      bottomNavigationBar: Container(
+        color: Colors.white,
+        padding: const EdgeInsets.only(
+          left: MAIN_PADDING,
+          bottom: MAIN_PADDING * 1.3,
+          right: MAIN_PADDING,
+          top: MAIN_PADDING,
+        ),
+        child: CustomIconButton(
+          onTap: () {},
+          color: Theme.of(context).primaryColor,
+          label: 'Save and Next',
+          isIconLeading: false,
+          labelColor: Colors.white,
+          icon: SvgPicture.asset(CustomIcons.FORWARD_ARROW),
+        ),
       ),
     );
   }

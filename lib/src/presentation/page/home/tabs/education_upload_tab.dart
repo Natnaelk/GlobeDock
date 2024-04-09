@@ -12,6 +12,8 @@ class EducationUploadTab extends StatefulWidget {
 
 class _EducationUploadTabState extends State<EducationUploadTab> {
   bool pursuingSecondaryEducation = false;
+  bool pursuingBachelors = false;
+  bool pursuingMasters = false;
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -50,7 +52,7 @@ class _EducationUploadTabState extends State<EducationUploadTab> {
                   labelString: 'Highshool Diploma*',
                 )
               : SizedBox(),
-          SizedBox(height: SPACE20),
+          SizedBox(height: !pursuingSecondaryEducation ? 0 : SPACE20),
           Row(
             children: [
               Text(
@@ -61,11 +63,16 @@ class _EducationUploadTabState extends State<EducationUploadTab> {
             ],
           ),
           FormBuilderRadioGroup(
-            name: 'educationstatus',
+            name: 'pursuingbachelors',
             separator: const SizedBox(),
             decoration: const InputDecoration(
               border: InputBorder.none,
             ),
+            onChanged: (value) {
+              setState(() {
+                pursuingBachelors = value == 'Yes'; // Simplified assignment
+              });
+            },
             options: [
               'Yes',
               'No',
@@ -73,9 +80,24 @@ class _EducationUploadTabState extends State<EducationUploadTab> {
                 .map((lang) => FormBuilderFieldOption(value: lang))
                 .toList(growable: false),
           ),
-          const SizedBox(
-            height: SPACE20,
-          ),
+          pursuingBachelors
+              ? UploadDocumentWidget(
+                  labelString: 'Undergraduate Degree Certificate',
+                )
+              : SizedBox(),
+          SizedBox(height: pursuingBachelors ? SPACE20 : 0),
+          pursuingBachelors
+              ? UploadDocumentWidget(
+                  labelString: 'Tempo',
+                )
+              : SizedBox(),
+          SizedBox(height: pursuingBachelors ? SPACE20 : 0),
+          pursuingBachelors
+              ? UploadDocumentWidget(
+                  labelString: 'Student Copy',
+                )
+              : SizedBox(),
+          SizedBox(height: pursuingBachelors ? SPACE20 : 0),
           Row(
             children: [
               Text(
@@ -86,11 +108,16 @@ class _EducationUploadTabState extends State<EducationUploadTab> {
             ],
           ),
           FormBuilderRadioGroup(
-            name: 'educationstatus',
+            name: 'pursuingmasters',
             separator: const SizedBox(),
             decoration: const InputDecoration(
               border: InputBorder.none,
             ),
+            onChanged: (value) {
+              setState(() {
+                pursuingMasters = value == 'Yes'; // Simplified assignment
+              });
+            },
             options: [
               'Yes',
               'No',
@@ -98,6 +125,23 @@ class _EducationUploadTabState extends State<EducationUploadTab> {
                 .map((lang) => FormBuilderFieldOption(value: lang))
                 .toList(growable: false),
           ),
+          pursuingMasters
+              ? UploadDocumentWidget(
+                  labelString: 'Postgraduage Degree Certificate',
+                )
+              : SizedBox(),
+          SizedBox(height: SPACE20),
+          pursuingMasters
+              ? UploadDocumentWidget(
+                  labelString: 'Tempo',
+                )
+              : SizedBox(),
+          SizedBox(height: SPACE20),
+          pursuingMasters
+              ? UploadDocumentWidget(
+                  labelString: 'Student Copy',
+                )
+              : SizedBox(),
         ],
       ),
     );

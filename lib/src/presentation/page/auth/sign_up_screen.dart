@@ -177,12 +177,17 @@ class _SignUpScreenState extends State<SignUpScreen>
                     SizedBox(
                       width: 2.w,
                     ),
-                    Text(
-                      LOGIN,
-                      style: TextStyle(
-                          fontSize: CustomFontSize.s10,
-                          fontWeight: FontWeight.bold,
-                          color: Theme.of(context).primaryColor),
+                    GestureDetector(
+                      onTap: () {
+                        GoRouter.of(context).go(AppRoutes.SIGNIN_ROUTE_PATH);
+                      },
+                      child: Text(
+                        LOGIN,
+                        style: TextStyle(
+                            fontSize: CustomFontSize.s10,
+                            fontWeight: FontWeight.bold,
+                            color: Theme.of(context).primaryColor),
+                      ),
                     )
                   ]),
                 ],

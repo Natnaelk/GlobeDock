@@ -48,7 +48,7 @@ class QuickActionsWidget extends StatelessWidget {
                       children: [
                         Text(
                           'Fill Profile Details',
-                          style: Theme.of(context).textTheme.titleLarge,
+                          style: Theme.of(context).textTheme.titleMedium,
                         ),
                         IconButton(
                             onPressed: () {
@@ -86,7 +86,7 @@ class QuickActionsWidget extends StatelessWidget {
                       children: [
                         Text(
                           'Upload Documents',
-                          style: Theme.of(context).textTheme.titleLarge,
+                          style: Theme.of(context).textTheme.titleMedium,
                         ),
                         IconButton(
                             onPressed: () {

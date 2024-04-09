@@ -164,10 +164,10 @@ class HomeScreen extends StatelessWidget {
                       top: MAIN_PADDING,
                       bottom: MAIN_PADDING * 2),
                   child: SizedBox(
-                    height: 170.h,
+                    height: 179.h,
                     child: ListView.builder(
                         scrollDirection: Axis.horizontal,
-                        itemCount: countries.length,
+                        itemCount: universities.length,
                         shrinkWrap: true,
                         itemBuilder: ((context, index) {
                           return Padding(
@@ -175,8 +175,9 @@ class HomeScreen extends StatelessWidget {
                             child: GestureDetector(
                                 onTap: () => GoRouter.of(context).go(
                                     AppRoutes.UNIVERSITIES_DETAIL_ROUTE_PATH),
-                                child:
-                                    HomeCountryTile(country: countries[index])),
+                                child: HomeCountryTile(
+                                    isUniversity: true,
+                                    country: universities[index])),
                           );
                         })),
                   ),

@@ -66,7 +66,7 @@ class _UniversitiesDetailScreenState extends State<UniversitiesDetailScreen>
               GoRouter.of(context).go(AppRoutes.DASHBOARD_ROUTE_PATH),
         ),
         title: Text(
-          "UK",
+          "Queen Mary University of London",
         ),
       ),
       body: Stack(
@@ -74,7 +74,7 @@ class _UniversitiesDetailScreenState extends State<UniversitiesDetailScreen>
           SingleChildScrollView(
             child: Column(children: [
               Image.asset(
-                'assets/images/uk_pic.png',
+                Images.GLOBEDOCK_WORKERS,
                 height: 200.h,
                 width: double.infinity,
                 fit: BoxFit.cover,
@@ -93,7 +93,7 @@ class _UniversitiesDetailScreenState extends State<UniversitiesDetailScreen>
                         Column(
                           children: [
                             Image.asset(
-                              Images.UK_FLAG,
+                              Images.UNIVERSITY_PLACEHOLDER,
                               width: 60.h,
                               height: 60.h,
                             )
@@ -249,7 +249,7 @@ class _OverviewTabState extends State<OverviewTab> {
                                 children: [
                                   ClipOval(
                                     child: Image.asset(
-                                      Images.UK_FLAG,
+                                      Images.COURSES_ICON,
                                       width: 30.h,
                                       height: 25.h,
                                     ),
@@ -257,7 +257,7 @@ class _OverviewTabState extends State<OverviewTab> {
                                 ],
                               ),
                               SizedBox(
-                                width: 15.w,
+                                width: 10.w,
                               ),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -306,14 +306,14 @@ class _OverviewTabState extends State<OverviewTab> {
                                 padding: const EdgeInsets.all(8.0),
                                 child: ClipOval(
                                   child: Image.asset(
-                                    Images.UK_FLAG,
+                                    Images.RANKING_ICON,
                                     width: 30.h,
                                     height: 25.h,
                                   ),
                                 ),
                               ),
                               SizedBox(
-                                width: 15.w,
+                                width: 10.w,
                               ),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,

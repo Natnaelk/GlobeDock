@@ -54,10 +54,10 @@ class _OverviewTabState extends State<OverviewTab> {
           Padding(
             padding: const EdgeInsets.only(left: MAIN_PADDING),
             child: SizedBox(
-              height: 125.h,
+              height: 140.h,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                itemCount: countries.length,
+                itemCount: destinationOverviewCardImages.length,
                 itemBuilder: ((context, index) {
                   return Padding(
                     padding: const EdgeInsets.only(
@@ -65,9 +65,10 @@ class _OverviewTabState extends State<OverviewTab> {
                     child: OverviewTile(
                       isCareeir: false,
                       showBody: true,
+                      index: index,
                       country: Country(
                           image: destinationOverviewCardImages[index],
-                          name: 'UK'),
+                          name: destinationOverviewCardText[index]),
                     ),
                   );
                 }),
@@ -603,18 +604,21 @@ class OverviewTile extends StatelessWidget {
   final Country country;
   final bool showBody;
   final bool isCareeir;
+  final int index;
 
   const OverviewTile({
     Key? key,
     required this.country,
     required this.showBody,
     required this.isCareeir,
+    required this.index,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(5),
+      width: 100.h,
       decoration: BoxDecoration(
         color: Theme.of(context).cardColor,
         boxShadow: [
@@ -641,14 +645,16 @@ class OverviewTile extends StatelessWidget {
               : SizedBox(height: isCareeir ? 10.h : 32.h),
           Text(
             country.name,
+            textAlign: TextAlign.center,
             style: TextStyle(
                 fontSize: CustomFontSize.s13,
                 color: Theme.of(context).dialogBackgroundColor),
           ),
-          SizedBox(height: 3.h),
+          SizedBox(height: 10.h),
           showBody
               ? Text(
-                  '640+ Universities',
+                  destinationOverviewCardTextBody[index],
+                  textAlign: TextAlign.center,
                   style: TextStyle(
                       fontSize: CustomFontSize.s12,
                       color: Theme.of(context).disabledColor),

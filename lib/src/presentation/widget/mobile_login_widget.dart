@@ -27,15 +27,15 @@ class _MobileLoginTabState extends State<MobileLoginTab> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(
-          height: 3.h,
-        ),
+        // SizedBox(
+        //   height: 3.h,
+        // ),
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             CustomTextField(
               width: 95.w,
-              height: 35.h,
+              height: 32.h,
               isWidget: true,
               childWidget: CodePickerWidget(
                 alignLeft: true,
