@@ -26,7 +26,7 @@ class _TestScoreTabState extends State<TestScoreTab> {
               Row(
                 children: [
                   Text(
-                    'Have you taken any International Exam?',
+                    'Have you taken any English Language Test?',
                     style: Theme.of(context).textTheme.headlineSmall,
                   ),
                 ],
@@ -74,6 +74,11 @@ class _TestScoreTabState extends State<TestScoreTab> {
                                 value: 'tofel',
                                 child: Container(
                                   child: const Text('TOFEL'),
+                                )),
+                            DropdownMenuItem<String>(
+                                value: 'duolingo  ',
+                                child: Container(
+                                  child: const Text('Duolingo'),
                                 )),
                           ],
                           name: 'select_test',

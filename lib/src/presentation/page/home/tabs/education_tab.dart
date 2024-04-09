@@ -13,7 +13,6 @@ class EducationTab extends StatelessWidget {
     return SingleChildScrollView(
       physics: const ClampingScrollPhysics(),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Row(children: [Text('Mandatory / required*')]),
         SizedBox(
           height: 10.h,
         ),
@@ -108,12 +107,17 @@ class EducationTab extends StatelessWidget {
                   DropdownMenuItem<String>(
                       value: 'gpa',
                       child: Container(
-                        child: const Text('GPA'),
+                        child: const Text('GPA (0 to 4)'),
                       )),
                   DropdownMenuItem<String>(
-                      value: 'mark',
+                      value: 'percentage',
                       child: Container(
-                        child: const Text('Mark'),
+                        child: const Text('Percentage (0 to 100)'),
+                      )),
+                  DropdownMenuItem<String>(
+                      value: 'lettergrade',
+                      child: Container(
+                        child: const Text('Letter Grade (A+ to F)'),
                       )),
                 ],
                 name: 'gradescheme',
@@ -192,24 +196,6 @@ class EducationTab extends StatelessWidget {
                 ),
                 searchBarRadius: 10.0,
                 onCountryChanged: (value) {},
-              ),
-              const SizedBox(
-                height: SPACE20,
-              ),
-              FormBuilderTextField(
-                name: 'state',
-                onChanged: (val) {
-                  print(val);
-                },
-                style: Theme.of(context).textTheme.bodyMedium,
-                decoration: InputDecoration(
-                    focusColor: Colors.black,
-                    label: Text('State / Province',
-                        style: Theme.of(context).textTheme.titleMedium),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(RADIUS),
-                        borderSide: BorderSide(
-                            color: Theme.of(context).disabledColor))),
               ),
               const SizedBox(
                 height: SPACE20,

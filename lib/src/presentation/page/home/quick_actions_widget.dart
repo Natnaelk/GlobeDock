@@ -51,7 +51,10 @@ class QuickActionsWidget extends StatelessWidget {
                           style: Theme.of(context).textTheme.titleLarge,
                         ),
                         IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              GoRouter.of(context)
+                                  .go(AppRoutes.FILL_PROFILE_ROUTE_PATH);
+                            },
                             icon: const Icon(Icons.chevron_right))
                       ],
                     ),
@@ -86,7 +89,10 @@ class QuickActionsWidget extends StatelessWidget {
                           style: Theme.of(context).textTheme.titleLarge,
                         ),
                         IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              GoRouter.of(context)
+                                  .go(AppRoutes.UPLOAD_DOCUMENTS_ROUTE_PATH);
+                            },
                             icon: const Icon(Icons.chevron_right))
                       ],
                     ),

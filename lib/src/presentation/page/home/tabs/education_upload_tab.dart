@@ -3,9 +3,15 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:globedock/src/common/constant.dart';
 import 'package:globedock/src/presentation/widget/upload_document_widget.dart';
 
-class EducationUploadTab extends StatelessWidget {
+class EducationUploadTab extends StatefulWidget {
   const EducationUploadTab({Key? key}) : super(key: key);
 
+  @override
+  State<EducationUploadTab> createState() => _EducationUploadTabState();
+}
+
+class _EducationUploadTabState extends State<EducationUploadTab> {
+  bool pursuingSecondaryEducation = false;
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -31,10 +37,19 @@ class EducationUploadTab extends StatelessWidget {
             ]
                 .map((lang) => FormBuilderFieldOption(value: lang))
                 .toList(growable: false),
+            initialValue: pursuingSecondaryEducation,
+            onChanged: (value) {
+              setState(() {
+                pursuingSecondaryEducation =
+                    value == 'Yes'; // Simplified assignment
+              });
+            },
           ),
-          UploadDocumentWidget(
-            labelString: 'Highshool Diploma*',
-          ),
+          pursuingSecondaryEducation
+              ? UploadDocumentWidget(
+                  labelString: 'Highshool Diploma*',
+                )
+              : SizedBox(),
           SizedBox(height: SPACE20),
           Row(
             children: [

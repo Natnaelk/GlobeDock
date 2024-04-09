@@ -100,19 +100,24 @@ class UploadDocumentWidget extends StatelessWidget {
                                             )
                                           ],
                                         ),
-                                        Column(
-                                          children: [
-                                            SvgPicture.asset(
-                                                CustomIcons.CLOSE_FILLED),
-                                            SizedBox(
-                                              height: 4.h,
-                                            ),
-                                            Text(
-                                              'Close',
-                                              style: TextStyle(
-                                                  color: Colors.black),
-                                            )
-                                          ],
+                                        GestureDetector(
+                                          onTap: () {
+                                            Navigator.of(context).pop();
+                                          },
+                                          child: Column(
+                                            children: [
+                                              SvgPicture.asset(
+                                                  CustomIcons.CLOSE_FILLED),
+                                              SizedBox(
+                                                height: 4.h,
+                                              ),
+                                              Text(
+                                                'Close',
+                                                style: TextStyle(
+                                                    color: Colors.black),
+                                              )
+                                            ],
+                                          ),
                                         ),
                                       ],
                                     )

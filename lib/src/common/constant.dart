@@ -190,7 +190,7 @@ final List<String> fillProfileDetilsTabTitles = [
   'Education',
   'Family',
   'Test Score',
-  'Work Experience',
+  // 'Work Experience',
   //'Extra Curricular Documents',
   //'Recommendation'
 ];

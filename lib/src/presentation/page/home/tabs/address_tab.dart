@@ -11,7 +11,6 @@ class AddressTab extends StatelessWidget {
   Widget build(BuildContext context) {
     final _formKey = GlobalKey<FormBuilderState>();
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      Row(children: [Text('Mandatory / required*')]),
       SizedBox(
         height: 10.h,
       ),
@@ -108,6 +107,24 @@ class AddressTab extends StatelessWidget {
               decoration: InputDecoration(
                   focusColor: Colors.black,
                   label: Text('Sub City',
+                      style: Theme.of(context).textTheme.titleMedium),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(RADIUS),
+                      borderSide:
+                          BorderSide(color: Theme.of(context).disabledColor))),
+            ),
+            const SizedBox(
+              height: SPACE20,
+            ),
+            FormBuilderTextField(
+              name: 'housenumber',
+              onChanged: (val) {
+                print(val);
+              },
+              style: Theme.of(context).textTheme.bodyMedium,
+              decoration: InputDecoration(
+                  focusColor: Colors.black,
+                  label: Text('House Number',
                       style: Theme.of(context).textTheme.titleMedium),
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(RADIUS),

@@ -37,12 +37,9 @@ class _QuestionTwoWidgetState extends State<QuestionTwoWidget> {
                 Padding(
                   padding: EdgeInsets.only(left: 10.w),
                   child: IconButton(
-                    icon: const Icon(Icons.arrow_back_ios),
-                    color: Theme.of(context).dialogBackgroundColor,
-                    onPressed: () => GoRouter.of(context).goNamed(
-                        AppRoutes.QUESTION_ROUTE_NAME,
-                        queryParameters: {'questionNumber': '1'}),
-                  ),
+                      icon: const Icon(Icons.chevron_left),
+                      color: Theme.of(context).dialogBackgroundColor,
+                      onPressed: () => Navigator.of(context).pop()),
                 ),
                 Expanded(
                   child: Container(

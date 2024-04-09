@@ -139,14 +139,17 @@ class _DestinationScreenState extends State<DestinationScreen>
               color: Colors.white,
               padding: const EdgeInsets.only(
                 left: MAIN_PADDING,
-                bottom: MAIN_PADDING * 3,
+                bottom: MAIN_PADDING,
                 right: MAIN_PADDING,
                 top: MAIN_PADDING,
               ),
               child: CustomIconButton(
-                onTap: () {},
+                onTap: () {
+                  GoRouter.of(context)
+                      .goNamed(AppRoutes.CHAT_ONBORADING_ROUTE_NAME);
+                },
                 color: Theme.of(context).primaryColor,
-                label: 'Talk to a UK Expert for FREE',
+                label: 'Talk to my Counselor',
                 isIconLeading: false,
                 labelColor: Colors.white,
                 icon: SvgPicture.asset(CustomIcons.FORWARD_ARROW),

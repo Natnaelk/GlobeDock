@@ -55,7 +55,7 @@ class _UploadDocumentsScreenState extends State<UploadDocumentsScreen>
           onPressed: () =>
               GoRouter.of(context).go(AppRoutes.DASHBOARD_ROUTE_PATH),
         ),
-        title: const Text('Fill Profile Details'),
+        title: const Text('Upload Documents'),
         bottom: TabBar(
           tabAlignment: TabAlignment.start,
           controller: _tabController,

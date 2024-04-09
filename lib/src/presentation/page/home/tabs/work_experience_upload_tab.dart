@@ -15,6 +15,7 @@ class WorkExperienceUploadTab extends StatefulWidget {
 class _WorkExperienceUploadTabState extends State<WorkExperienceUploadTab> {
   int itemIndex = 1;
   ScrollController _scrollController = ScrollController();
+
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -44,7 +45,7 @@ class _WorkExperienceUploadTabState extends State<WorkExperienceUploadTab> {
   }
 }
 
-class WorkExperienceUploadForm extends StatelessWidget {
+class WorkExperienceUploadForm extends StatefulWidget {
   const WorkExperienceUploadForm({
     Key? key,
     this.onAddNewPressed,
@@ -55,11 +56,19 @@ class WorkExperienceUploadForm extends StatelessWidget {
   final VoidCallback? onAddNewPressed;
   final bool? firstTime;
   final bool? lastTime;
+
+  @override
+  State<WorkExperienceUploadForm> createState() =>
+      _WorkExperienceUploadFormState();
+}
+
+class _WorkExperienceUploadFormState extends State<WorkExperienceUploadForm> {
+  bool haveWorkExperience = false;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        firstTime!
+        widget.firstTime!
             ? Column(
                 children: [
                   Row(
@@ -77,6 +86,11 @@ class WorkExperienceUploadForm extends StatelessWidget {
                     decoration: const InputDecoration(
                       border: InputBorder.none,
                     ),
+                    onChanged: (value) {
+                      setState(() {
+                        haveWorkExperience = value == 'Yes';
+                      });
+                    },
                     options: [
                       'Yes',
                       'No',
@@ -87,17 +101,19 @@ class WorkExperienceUploadForm extends StatelessWidget {
                 ],
               )
             : SizedBox(),
-        UploadDocumentWidget(
-          labelString: firstTime!
-              ? 'Experience Letter*'
-              : 'Additional Experience Letter*',
-        ),
+        haveWorkExperience
+            ? UploadDocumentWidget(
+                labelString: widget.firstTime!
+                    ? 'Experience Letter*'
+                    : 'Additional Experience Letter*',
+              )
+            : SizedBox(),
         SizedBox(
           height: SPACE20,
         ),
-        lastTime!
+        widget.lastTime! && haveWorkExperience
             ? GestureDetector(
-                onTap: onAddNewPressed,
+                onTap: widget.onAddNewPressed,
                 child:
                     Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                   Text('Add New+',

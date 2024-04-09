@@ -16,13 +16,34 @@ class QuestionOneWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(
-          'Question 1 of 4',
-          style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                fontSize: CustomFontSize.s12,
-                color: Theme.of(context).disabledColor,
-                fontWeight: FontWeight.w400,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Padding(
+              padding: EdgeInsets.only(left: 10.w),
+              child: IconButton(
+                icon: const Icon(Icons.chevron_left),
+                color: Theme.of(context).dialogBackgroundColor,
+                onPressed: () => GoRouter.of(context).goNamed(
+                  AppRoutes.QUESTION_ONBOARDING_ROUTE_NAME,
+                ),
               ),
+            ),
+            Expanded(
+              child: Container(
+                padding: EdgeInsets.only(
+                    left: MediaQuery.of(context).size.width / 4),
+                child: Text(
+                  'Question 1 of 4',
+                  style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                        fontSize: CustomFontSize.s12,
+                        color: Theme.of(context).disabledColor,
+                        fontWeight: FontWeight.w400,
+                      ),
+                ),
+              ),
+            ),
+          ],
         ),
         SizedBox(
           height: 50.h,

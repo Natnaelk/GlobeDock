@@ -11,7 +11,7 @@ class ProfileWidget extends StatelessWidget {
       padding: const EdgeInsets.all(8),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         InkWell(
-          onTap: () async {},
+          onTap: () => GoRouter.of(context).go(AppRoutes.PROFILE_ROUTE_PATH),
           child: Row(children: [
             Padding(
               padding: const EdgeInsets.only(left: 5, top: 5),

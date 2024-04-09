@@ -175,6 +175,7 @@ class CustomTextFormField extends StatelessWidget {
           hintStyle: theme.textTheme.subtitle2,
           labelText: labelText,
           labelStyle: theme.textTheme.titleMedium,
+          alignLabelWithHint: true,
           suffixIcon: suffixIcon,
           prefixIcon: prefixIcon,
           helperMaxLines: helperMaxLines,

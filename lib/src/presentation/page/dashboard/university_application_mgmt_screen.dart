@@ -112,21 +112,21 @@ class UniversityMgmtCard extends StatelessWidget {
                     image: image,
                   ),
                 ),
-                SizedBox(
-                  height: 85.h,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text(
-                      'See details',
-                      style: TextStyle(
-                          color: Theme.of(context).primaryColor,
-                          fontWeight: FontWeight.w600,
-                          fontSize: 14),
-                    ),
-                  ],
-                )
+                // SizedBox(
+                //   height: 85.h,
+                // ),
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.end,
+                //   children: [
+                //     Text(
+                //       'See details',
+                //       style: TextStyle(
+                //           color: Theme.of(context).primaryColor,
+                //           fontWeight: FontWeight.w600,
+                //           fontSize: 14),
+                //     ),
+                //   ],
+                // )
               ],
             ),
             SizedBox(
@@ -207,35 +207,35 @@ class UniversityMgmtCard extends StatelessWidget {
                   SizedBox(
                     height: 5.h,
                   ),
-                  Padding(
-                    padding: EdgeInsets.only(right: 15.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text('\$500'),
-                        Container(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(RADIUS),
-                                color: Theme.of(context).primaryColorLight),
-                            child: Padding(
-                              padding: const EdgeInsets.only(
-                                  left: 8, right: 8, top: 5, bottom: 5),
-                              child: Text(
-                                'Pay Now',
-                                style: TextStyle(fontSize: 13),
-                              ),
-                            )),
-                      ],
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      IconButton(
-                          onPressed: () {},
-                          icon: const Icon(Icons.chevron_right)),
-                    ],
-                  )
+                  // Padding(
+                  //   padding: EdgeInsets.only(right: 15.0),
+                  //   child: Row(
+                  //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  //     children: [
+                  //       Text('\$500'),
+                  //       Container(
+                  //           decoration: BoxDecoration(
+                  //               borderRadius: BorderRadius.circular(RADIUS),
+                  //               color: Theme.of(context).primaryColorLight),
+                  //           child: Padding(
+                  //             padding: const EdgeInsets.only(
+                  //                 left: 8, right: 8, top: 5, bottom: 5),
+                  //             child: Text(
+                  //               'Pay Now',
+                  //               style: TextStyle(fontSize: 13),
+                  //             ),
+                  //           )),
+                  //     ],
+                  //   ),
+                  // ),
+                  // Row(
+                  //   mainAxisAlignment: MainAxisAlignment.end,
+                  //   children: [
+                  //     IconButton(
+                  //         onPressed: () {},
+                  //         icon: const Icon(Icons.chevron_right)),
+                  //   ],
+                  // )
                 ],
               ),
             ),

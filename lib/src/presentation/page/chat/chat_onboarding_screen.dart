@@ -60,7 +60,7 @@ class _ChatOnboardingScreenState extends State<ChatOnboardingScreen> {
               height: 5.h,
             ),
             Center(
-              child: Text('Relationship Manager',
+              child: Text('My Counselor',
                   style: Theme.of(context).textTheme.headlineMedium),
             ),
             SizedBox(
@@ -199,7 +199,7 @@ class RelationshipManagerCard extends StatelessWidget {
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
                                         children: <Widget>[
-                                          Text('Change relationship manager')
+                                          Text('Change Counselor')
                                         ],
                                       ),
                                     ),

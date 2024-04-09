@@ -32,7 +32,7 @@ class MyProfileScreen extends StatelessWidget {
           ),
         ),
         title: Text(
-          "working on my apps",
+          "My profile and documents",
         ),
       ),
       body: SingleChildScrollView(
@@ -50,8 +50,8 @@ class MyProfileScreen extends StatelessWidget {
                 padding: EdgeInsets.only(
                     left: MAIN_PADDING.w, right: MAIN_PADDING.w),
                 child: Text(
-                  'To add your applications your coach needs your profile details & documents',
-                  style: TextStyle(fontSize: 22),
+                  'To start your University Applications your counselor needs your profile details & documents',
+                  style: TextStyle(fontSize: 18),
                 ),
               ),
               SizedBox(
@@ -84,10 +84,13 @@ class MyProfileScreen extends StatelessWidget {
                             children: [
                               Text(
                                 'Fill Profile Details',
-                                style: Theme.of(context).textTheme.titleLarge,
+                                style: Theme.of(context).textTheme.titleMedium,
                               ),
                               IconButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    GoRouter.of(context)
+                                        .go(AppRoutes.FILL_PROFILE_ROUTE_PATH);
+                                  },
                                   icon: const Icon(Icons.chevron_right))
                             ],
                           ),
@@ -142,10 +145,13 @@ class MyProfileScreen extends StatelessWidget {
                           children: [
                             Text(
                               'Upload Documents',
-                              style: Theme.of(context).textTheme.titleLarge,
+                              style: Theme.of(context).textTheme.titleMedium,
                             ),
                             IconButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  GoRouter.of(context).go(
+                                      AppRoutes.UPLOAD_DOCUMENTS_ROUTE_PATH);
+                                },
                                 icon: const Icon(Icons.chevron_right))
                           ],
                         ),

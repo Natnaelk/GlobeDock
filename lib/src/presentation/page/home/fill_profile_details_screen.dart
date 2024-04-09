@@ -33,7 +33,7 @@ class _FillProfileDetilsScreenState extends State<FillProfileDetilsScreen>
     EducationTab(),
     FamilyTab(),
     TestScoreTab(),
-    WorkExperience(),
+    // WorkExperience(),
     //  ExtraCurricularDocumentsTab(),
     //RecommendationsTab()
   ];
@@ -90,7 +90,7 @@ class _FillProfileDetilsScreenState extends State<FillProfileDetilsScreen>
               color: Colors.white,
               padding: const EdgeInsets.only(
                 left: MAIN_PADDING,
-                bottom: MAIN_PADDING * 3,
+                bottom: MAIN_PADDING,
                 right: MAIN_PADDING,
                 top: MAIN_PADDING,
               ),

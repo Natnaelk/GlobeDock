@@ -99,9 +99,9 @@ class FamilyForm extends StatelessWidget {
                 child: const Text('Sister'),
               )),
           DropdownMenuItem<String>(
-              value: 'gurdian',
+              value: 'guardian',
               child: Container(
-                child: const Text('Gurdian'),
+                child: const Text('Guardian'),
               )),
           DropdownMenuItem<String>(
               value: 'husband',

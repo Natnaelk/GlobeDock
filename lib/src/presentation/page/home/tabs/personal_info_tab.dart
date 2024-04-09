@@ -6,14 +6,20 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:globedock/src/common/constant.dart';
 import 'package:globedock/src/common/icons.dart';
 
-class PersonalInfoTab extends StatelessWidget {
+class PersonalInfoTab extends StatefulWidget {
+  @override
+  State<PersonalInfoTab> createState() => _PersonalInfoTabState();
+}
+
+class _PersonalInfoTabState extends State<PersonalInfoTab> {
+  String currentCountry = 'Birth country';
+  bool haveValidPassport = false;
   @override
   Widget build(BuildContext context) {
     final _formKey = GlobalKey<FormBuilderState>();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Row(children: [Text('Mandatory / required*')]),
         SizedBox(
           height: 10.h,
         ),
@@ -170,8 +176,14 @@ class PersonalInfoTab extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 14,
                 ),
+                currentCountry: currentCountry,
                 searchBarRadius: 10.0,
-                onCountryChanged: (value) {},
+                onCountryChanged: (value) {
+                  setState(() {
+                    currentCountry = value;
+                  });
+                },
+                countryDropdownLabel: 'Birth country',
               ),
               const SizedBox(
                 height: SPACE20,
@@ -215,72 +227,45 @@ class PersonalInfoTab extends StatelessWidget {
               const SizedBox(
                 height: SPACE20,
               ),
-              CSCPicker(
-                showStates: false,
-                showCities: false,
-                flagState: CountryFlag.SHOW_IN_DROP_DOWN_ONLY,
-                dropdownDecoration: BoxDecoration(
-                    borderRadius:
-                        const BorderRadius.all(Radius.circular(RADIUS)),
-                    border: Border.all(color: Theme.of(context).disabledColor)),
-                selectedItemStyle: const TextStyle(
-                  color: Colors.black,
-                  fontSize: 14,
-                ),
-                dropdownHeadingStyle: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 17,
-                    fontWeight: FontWeight.bold),
-                dropdownItemStyle: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 14,
-                ),
-                dropdownDialogRadius: 10.0,
-                searchBarRadius: 10.0,
-                onCountryChanged: (value) {},
-              ),
-              const SizedBox(
-                height: SPACE20,
-              ),
-              FormBuilderDropdown(
-                autovalidateMode: AutovalidateMode.always,
-                elevation: 0,
-                icon: Padding(
-                  padding: const EdgeInsetsDirectional.only(end: 12.0),
-                  child: SvgPicture.asset(
-                    CustomIcons.ARROW_DOWN,
-                  ),
-                ),
-                items: [
-                  DropdownMenuItem<String>(
-                      value: 'yes',
-                      child: Container(
-                        child: const Text('Yes'),
-                      )),
-                  DropdownMenuItem<String>(
-                      value: 'no',
-                      child: Container(
-                        child: const Text('No'),
-                      )),
-                ],
-                name: 'disability',
-                onChanged: (val) {
-                  print(val);
-                },
-                style: Theme.of(context).textTheme.bodyMedium,
-                isExpanded: true,
-                decoration: InputDecoration(
-                    focusColor: Colors.black,
-                    label: Text('Do you have disability of impairment',
-                        style: Theme.of(context).textTheme.titleMedium),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(RADIUS),
-                        borderSide: BorderSide(
-                            color: Theme.of(context).disabledColor))),
-              ),
-              const SizedBox(
-                height: SPACE20,
-              ),
+              // FormBuilderDropdown(
+              //   autovalidateMode: AutovalidateMode.always,
+              //   elevation: 0,
+              //   icon: Padding(
+              //     padding: const EdgeInsetsDirectional.only(end: 12.0),
+              //     child: SvgPicture.asset(
+              //       CustomIcons.ARROW_DOWN,
+              //     ),
+              //   ),
+              //   items: [
+              //     DropdownMenuItem<String>(
+              //         value: 'yes',
+              //         child: Container(
+              //           child: const Text('Yes'),
+              //         )),
+              //     DropdownMenuItem<String>(
+              //         value: 'no',
+              //         child: Container(
+              //           child: const Text('No'),
+              //         )),
+              //   ],
+              //   name: 'disability',
+              //   onChanged: (val) {
+              //     print(val);
+              //   },
+              //   style: Theme.of(context).textTheme.bodyMedium,
+              //   isExpanded: true,
+              //   decoration: InputDecoration(
+              //       focusColor: Colors.black,
+              //       label: Text('Do you have disability of impairment',
+              //           style: Theme.of(context).textTheme.titleMedium),
+              //       border: OutlineInputBorder(
+              //           borderRadius: BorderRadius.circular(RADIUS),
+              //           borderSide: BorderSide(
+              //               color: Theme.of(context).disabledColor))),
+              // ),
+              // const SizedBox(
+              //   height: SPACE20,
+              // ),
               Row(
                 children: [
                   Text(
@@ -289,53 +274,46 @@ class PersonalInfoTab extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(
-                height: 10.h,
-              ),
-              Row(children: const [Text('Yes')]),
+
               const SizedBox(
-                height: SPACE20,
-              ),
-              FormBuilderDateTimePicker(
-                autovalidateMode: AutovalidateMode.always,
-                initialDatePickerMode: DatePickerMode.day,
-                name: 'passportvaliddate',
-                onChanged: (val) {
-                  print(val);
-                },
-                timePickerInitialEntryMode: TimePickerEntryMode.inputOnly,
-                style: Theme.of(context).textTheme.bodyMedium,
-                inputType: InputType.date,
-                decoration: InputDecoration(
-                    suffixIcon: Padding(
-                      padding: EdgeInsets.zero,
-                      child: Padding(
-                        padding: const EdgeInsetsDirectional.only(end: 12.0),
-                        child: SvgPicture.asset(
-                          CustomIcons.DATE,
-                          fit: BoxFit.none,
-                        ),
-                      ),
-                    ),
-                    focusColor: Colors.black,
-                    label: Text('Expiry Date (Select Date Calender)',
-                        style: Theme.of(context).textTheme.titleMedium),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(RADIUS),
-                        borderSide: BorderSide(
-                            color: Theme.of(context).disabledColor))),
+                height: SPACE10,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        setState(() {
+                          haveValidPassport = true;
+                        });
+                      },
                       icon: Icon(
-                        Icons.radio_button_unchecked,
+                        haveValidPassport
+                            ? Icons.radio_button_checked
+                            : Icons.radio_button_unchecked,
                         color: Theme.of(context).disabledColor,
                       )),
                   const SizedBox(
-                    width: 5,
+                    width: 3,
+                  ),
+                  Text(
+                    'Yes',
+                    style: Theme.of(context).textTheme.titleMedium,
+                  ),
+                  IconButton(
+                      onPressed: () {
+                        setState(() {
+                          haveValidPassport = false;
+                        });
+                      },
+                      icon: Icon(
+                        !haveValidPassport
+                            ? Icons.radio_button_checked
+                            : Icons.radio_button_unchecked,
+                        color: Theme.of(context).disabledColor,
+                      )),
+                  const SizedBox(
+                    width: 3,
                   ),
                   Text(
                     'No',
@@ -343,6 +321,46 @@ class PersonalInfoTab extends StatelessWidget {
                   )
                 ],
               ),
+              const SizedBox(
+                height: SPACE10,
+              ),
+              haveValidPassport
+                  ? FormBuilderDateTimePicker(
+                      autovalidateMode: AutovalidateMode.always,
+                      initialDatePickerMode: DatePickerMode.day,
+                      name: 'passportvaliddate',
+                      onChanged: (val) {
+                        print(val);
+                      },
+                      timePickerInitialEntryMode: TimePickerEntryMode.inputOnly,
+                      style: Theme.of(context).textTheme.bodyMedium,
+                      inputType: InputType.date,
+                      decoration: InputDecoration(
+                          suffixIcon: Padding(
+                            padding: EdgeInsets.zero,
+                            child: Padding(
+                              padding:
+                                  const EdgeInsetsDirectional.only(end: 12.0),
+                              child: SvgPicture.asset(
+                                CustomIcons.DATE,
+                                fit: BoxFit.none,
+                              ),
+                            ),
+                          ),
+                          focusColor: Colors.black,
+                          label: Text('Expiry Date (Select Date Calender)',
+                              style: Theme.of(context).textTheme.titleMedium),
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(RADIUS),
+                              borderSide: BorderSide(
+                                  color: Theme.of(context).disabledColor))),
+                    )
+                  : SizedBox(),
+              haveValidPassport
+                  ? const SizedBox(
+                      height: SPACE20,
+                    )
+                  : SizedBox(),
               FormBuilderDropdown(
                 autovalidateMode: AutovalidateMode.always,
                 elevation: 0,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:globedock/src/common/colors.dart';
 import 'package:globedock/src/common/constant.dart';
 import 'package:globedock/src/common/custom_font_size.dart';
 import 'package:globedock/src/common/icons.dart';
@@ -19,7 +20,7 @@ class JourneyProgressWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height / 1.75,
+      height: MediaQuery.of(context).size.height / 2,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(RADIUS),
           color: Theme.of(context).cardColor,
@@ -40,7 +41,7 @@ class JourneyProgressWidget extends StatelessWidget {
           children: [
             Text(
               'Journey Progress',
-              style: Theme.of(context).textTheme.headlineLarge,
+              style: Theme.of(context).textTheme.headlineMedium,
             )
           ],
         ),
@@ -50,13 +51,13 @@ class JourneyProgressWidget extends StatelessWidget {
         CircularStepProgressIndicator(
           totalSteps: 9,
           currentStep: 1,
-          stepSize: 10,
+          stepSize: 6,
           selectedColor: Theme.of(context).primaryColor,
           unselectedColor: Theme.of(context).primaryColorLight,
           padding: 0,
-          width: 280,
-          height: 280,
-          selectedStepSize: 18,
+          width: 230,
+          height: 230,
+          selectedStepSize: 15,
           startingAngle: 2 * 3.5 / math.pi,
           arcSize: math.pi * 1.4,
           roundedCap: (_, __) => true,
@@ -79,10 +80,10 @@ class JourneyProgressWidget extends StatelessWidget {
                         height: 4.h,
                       ),
                       Text(
-                        'Stage Completed',
+                        'Stages Completed',
                         style: TextStyle(
                           color: Theme.of(context).dialogBackgroundColor,
-                          fontSize: CustomFontSize.s15,
+                          fontSize: CustomFontSize.s12,
                           fontWeight: FontWeight.normal,
                         ),
                       ),
@@ -93,17 +94,28 @@ class JourneyProgressWidget extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
+                      SizedBox(
+                        height: 5.h,
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           Text(
                             'Current Stage',
-                            style: Theme.of(context).textTheme.titleSmall,
+                            style: TextStyle(
+                              fontSize: 10,
+                              color: ColorLight.fontSubtitle,
+                              fontWeight: FontWeight.normal,
+                            ),
                           ),
                           Text(
                             'Up Next',
-                            style: Theme.of(context).textTheme.titleSmall,
+                            style: TextStyle(
+                              fontSize: 10,
+                              color: ColorLight.fontSubtitle,
+                              fontWeight: FontWeight.normal,
+                            ),
                           ),
                         ],
                       ),
@@ -112,11 +124,19 @@ class JourneyProgressWidget extends StatelessWidget {
                         children: [
                           Text(
                             'Profile Building',
-                            style: Theme.of(context).textTheme.displaySmall,
+                            style: TextStyle(
+                              fontSize: 10,
+                              color: ColorLight.fontTitle,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
                           Text(
                             'Shortlisting',
-                            style: Theme.of(context).textTheme.displaySmall,
+                            style: TextStyle(
+                              fontSize: 10,
+                              color: ColorLight.fontTitle,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
                         ],
                       ),

@@ -77,26 +77,26 @@ class _UniversitiesViewAllScreenState extends State<UniversitiesViewAllScreen>
                 bottom: MAIN_PADDING * 7),
             child: SingleChildScrollView(child: _tabs[_selectedIndex]),
           ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              color: Colors.white,
-              padding: const EdgeInsets.only(
-                left: MAIN_PADDING,
-                bottom: MAIN_PADDING * 3,
-                right: MAIN_PADDING,
-                top: MAIN_PADDING,
-              ),
-              child: CustomIconButton(
-                onTap: () {},
-                color: Theme.of(context).primaryColor,
-                label: 'Save and Next',
-                isIconLeading: false,
-                labelColor: Colors.white,
-                icon: SvgPicture.asset(CustomIcons.FORWARD_ARROW),
-              ),
-            ),
-          ),
+          // Align(
+          //   alignment: Alignment.bottomCenter,
+          //   child: Container(
+          //     color: Colors.white,
+          //     padding: const EdgeInsets.only(
+          //       left: MAIN_PADDING,
+          //       bottom: MAIN_PADDING * 3,
+          //       right: MAIN_PADDING,
+          //       top: MAIN_PADDING,
+          //     ),
+          //     child: CustomIconButton(
+          //       onTap: () {},
+          //       color: Theme.of(context).primaryColor,
+          //       label: 'Save and Next',
+          //       isIconLeading: false,
+          //       labelColor: Colors.white,
+          //       icon: SvgPicture.asset(CustomIcons.FORWARD_ARROW),
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );

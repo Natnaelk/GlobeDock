@@ -10,7 +10,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:globedock/src/common/colors.dart';
 import 'package:globedock/src/common/constant.dart';
-import 'package:globedock/src/common/custom_font_size.dart';
 import 'package:globedock/src/common/icons.dart';
 import 'package:globedock/src/common/routes.dart';
 import 'package:globedock/src/presentation/widget/custom_widget.dart';
@@ -307,7 +306,7 @@ class _ChatRoomScreenState extends State<ChatRoomScreen> {
                     children: [
                       GestureDetector(
                           onTap: () {
-                            print('Hello');
+                            print('Hello camera');
                           },
                           child: SvgPicture.asset(
                             CustomIcons.GALLERY,

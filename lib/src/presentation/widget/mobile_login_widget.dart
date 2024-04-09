@@ -27,6 +27,9 @@ class _MobileLoginTabState extends State<MobileLoginTab> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        SizedBox(
+          height: 3.h,
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [

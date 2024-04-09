@@ -50,35 +50,35 @@ class DrawerWidget extends StatelessWidget {
           SizedBox(
             height: 15.h,
           ),
-          ListTile(
-            leading: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: SvgPicture.asset(
-                  CustomIcons.TASK,
-                  height: 20,
-                  width: 20,
-                  color: Theme.of(context).dialogBackgroundColor,
-                )),
-            title: Text(
-              'Pending Task',
-              style: GoogleFonts.rubik(
-                color: Theme.of(context).dialogBackgroundColor,
-                fontSize: CustomFontSize.s13,
-                fontWeight: FontWeight.normal,
-              ),
-            ),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => BottomNavigationScreen(
-                          selectedIndex: '3',
-                        )),
-              );
-            },
-          ),
+          // ListTile(
+          //   leading: Container(
+          //       decoration: BoxDecoration(
+          //         borderRadius: BorderRadius.circular(10),
+          //       ),
+          //       child: SvgPicture.asset(
+          //         CustomIcons.TASK,
+          //         height: 20,
+          //         width: 20,
+          //         color: Theme.of(context).dialogBackgroundColor,
+          //       )),
+          //   title: Text(
+          //     'Pending Task',
+          //     style: GoogleFonts.rubik(
+          //       color: Theme.of(context).dialogBackgroundColor,
+          //       fontSize: CustomFontSize.s13,
+          //       fontWeight: FontWeight.normal,
+          //     ),
+          //   ),
+          //   onTap: () {
+          //     Navigator.push(
+          //       context,
+          //       MaterialPageRoute(
+          //           builder: (context) => BottomNavigationScreen(
+          //                 selectedIndex: '3',
+          //               )),
+          //     );
+          //   },
+          // ),
           ListTile(
             leading: Container(
                 decoration: BoxDecoration(

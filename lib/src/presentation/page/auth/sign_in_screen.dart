@@ -112,7 +112,7 @@ class _SignInScreenState extends State<SignInScreen>
             Positioned.fill(
               top: MediaQuery.of(context).size.height * 0.25,
               child: Padding(
-                padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 20.h),
+                padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 10.h),
                 child: TabBarView(
                   controller: _tabController,
                   children: [

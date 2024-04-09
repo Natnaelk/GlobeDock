@@ -44,16 +44,16 @@ class _UniversitiesDetailScreenState extends State<UniversitiesDetailScreen>
       backgroundColor: Theme.of(context).bottomAppBarColor,
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Share.share('Hi anyone up for masters in UK for January 2023');
+          Share.share(
+              'Hi anyone up for masters in UK for January 2023 www.globedock.com');
         },
         isExtended: true,
         backgroundColor: Theme.of(context).primaryColor,
         shape: CircleBorder(),
-        child: SvgPicture.asset(
-          CustomIcons.SHARE,
+        child: Icon(
+          Icons.share,
           color: Theme.of(context).cardColor,
-          width: 23.w,
-          height: 23.h,
+          size: 23.h,
         ),
       ),
       appBar: AppBar(
@@ -341,265 +341,265 @@ class _OverviewTabState extends State<OverviewTab> {
               ),
             ],
           ),
-          SizedBox(
-            height: 5.h,
-          ),
-          Padding(
-            padding: EdgeInsets.only(
-                left: MAIN_PADDING, right: MAIN_PADDING, top: MAIN_PADDING),
-            child: Row(
-              children: [
-                Text(
-                  'Get in Touch',
-                  style: Theme.of(context).textTheme.headlineSmall,
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(
-                left: MAIN_PADDING, right: MAIN_PADDING, top: MAIN_PADDING),
-            child: Container(
-                height: 330.h,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Theme.of(context).cardColor,
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.2),
-                      spreadRadius: 1,
-                      blurRadius: 2,
-                      offset: Offset(0, 2),
-                    ),
-                  ],
-                  borderRadius: BorderRadius.circular(RADIUS),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.only(
-                      left: MAIN_PADDING,
-                      right: MAIN_PADDING,
-                      top: MAIN_PADDING),
-                  child: Column(children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          width: 30,
-                          height: 30,
-                          decoration: BoxDecoration(
-                              color: Theme.of(context).primaryColor,
-                              shape: BoxShape.circle),
-                          child: Padding(
-                            padding: const EdgeInsets.all(6.0),
-                            child: Center(
-                                child: SvgPicture.asset(CustomIcons.CALL)),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 20.w,
-                        ),
-                        Container(
-                          width: 30,
-                          height: 30,
-                          decoration: BoxDecoration(
-                              color: Theme.of(context).primaryColor,
-                              shape: BoxShape.circle),
-                          child: Padding(
-                            padding: const EdgeInsets.all(6.0),
-                            child: Center(
-                                child: SvgPicture.asset(
-                              CustomIcons.WEB,
-                            )),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 20.w,
-                        ),
-                        Container(
-                          width: 30,
-                          height: 30,
-                          decoration: BoxDecoration(
-                              color: Theme.of(context).primaryColor,
-                              shape: BoxShape.circle),
-                          child: Padding(
-                            padding: const EdgeInsets.all(6.0),
-                            child: Column(
-                              children: [
-                                SvgPicture.asset(Images.EMAIL_LOGIN),
-                              ],
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                    SizedBox(
-                      height: 3.h,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Phone',
-                          style: TextStyle(
-                              fontSize: 10,
-                              color: Theme.of(context)
-                                  .textTheme
-                                  .titleSmall!
-                                  .color),
-                        ),
-                        SizedBox(
-                          width: 18.w,
-                        ),
-                        Text(
-                          'Website',
-                          style: TextStyle(
-                              fontSize: 10,
-                              color: Theme.of(context)
-                                  .textTheme
-                                  .titleSmall!
-                                  .color),
-                        ),
-                        SizedBox(
-                          width: 18.w,
-                        ),
-                        Text(
-                          'Email',
-                          style: TextStyle(
-                              fontSize: 10,
-                              color: Theme.of(context)
-                                  .textTheme
-                                  .titleSmall!
-                                  .color),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 20.h,
-                    ),
-                    Image.asset(
-                      'assets/images/map.png',
-                      height: 300,
-                      width: double.infinity,
-                    )
-                  ]),
-                )),
-          ),
+          // SizedBox(
+          //   height: 5.h,
+          // ),
+          // Padding(
+          //   padding: EdgeInsets.only(
+          //       left: MAIN_PADDING, right: MAIN_PADDING, top: MAIN_PADDING),
+          //   child: Row(
+          //     children: [
+          //       Text(
+          //         'Get in Touch',
+          //         style: Theme.of(context).textTheme.headlineSmall,
+          //       ),
+          //     ],
+          //   ),
+          // ),
+          // Padding(
+          //   padding: EdgeInsets.only(
+          //       left: MAIN_PADDING, right: MAIN_PADDING, top: MAIN_PADDING),
+          //   child: Container(
+          //       height: 330.h,
+          //       width: double.infinity,
+          //       decoration: BoxDecoration(
+          //         color: Theme.of(context).cardColor,
+          //         boxShadow: [
+          //           BoxShadow(
+          //             color: Colors.grey.withOpacity(0.2),
+          //             spreadRadius: 1,
+          //             blurRadius: 2,
+          //             offset: Offset(0, 2),
+          //           ),
+          //         ],
+          //         borderRadius: BorderRadius.circular(RADIUS),
+          //       ),
+          //       child: Padding(
+          //         padding: EdgeInsets.only(
+          //             left: MAIN_PADDING,
+          //             right: MAIN_PADDING,
+          //             top: MAIN_PADDING),
+          //         child: Column(children: [
+          //           Row(
+          //             mainAxisAlignment: MainAxisAlignment.center,
+          //             children: [
+          //               Container(
+          //                 width: 30,
+          //                 height: 30,
+          //                 decoration: BoxDecoration(
+          //                     color: Theme.of(context).primaryColor,
+          //                     shape: BoxShape.circle),
+          //                 child: Padding(
+          //                   padding: const EdgeInsets.all(6.0),
+          //                   child: Center(
+          //                       child: SvgPicture.asset(CustomIcons.CALL)),
+          //                 ),
+          //               ),
+          //               SizedBox(
+          //                 width: 20.w,
+          //               ),
+          //               Container(
+          //                 width: 30,
+          //                 height: 30,
+          //                 decoration: BoxDecoration(
+          //                     color: Theme.of(context).primaryColor,
+          //                     shape: BoxShape.circle),
+          //                 child: Padding(
+          //                   padding: const EdgeInsets.all(6.0),
+          //                   child: Center(
+          //                       child: SvgPicture.asset(
+          //                     CustomIcons.WEB,
+          //                   )),
+          //                 ),
+          //               ),
+          //               SizedBox(
+          //                 width: 20.w,
+          //               ),
+          //               Container(
+          //                 width: 30,
+          //                 height: 30,
+          //                 decoration: BoxDecoration(
+          //                     color: Theme.of(context).primaryColor,
+          //                     shape: BoxShape.circle),
+          //                 child: Padding(
+          //                   padding: const EdgeInsets.all(6.0),
+          //                   child: Column(
+          //                     children: [
+          //                       SvgPicture.asset(Images.EMAIL_LOGIN),
+          //                     ],
+          //                   ),
+          //                 ),
+          //               )
+          //             ],
+          //           ),
+          //           SizedBox(
+          //             height: 3.h,
+          //           ),
+          //           Row(
+          //             mainAxisAlignment: MainAxisAlignment.center,
+          //             children: [
+          //               Text(
+          //                 'Phone',
+          //                 style: TextStyle(
+          //                     fontSize: 10,
+          //                     color: Theme.of(context)
+          //                         .textTheme
+          //                         .titleSmall!
+          //                         .color),
+          //               ),
+          //               SizedBox(
+          //                 width: 18.w,
+          //               ),
+          //               Text(
+          //                 'Website',
+          //                 style: TextStyle(
+          //                     fontSize: 10,
+          //                     color: Theme.of(context)
+          //                         .textTheme
+          //                         .titleSmall!
+          //                         .color),
+          //               ),
+          //               SizedBox(
+          //                 width: 18.w,
+          //               ),
+          //               Text(
+          //                 'Email',
+          //                 style: TextStyle(
+          //                     fontSize: 10,
+          //                     color: Theme.of(context)
+          //                         .textTheme
+          //                         .titleSmall!
+          //                         .color),
+          //               ),
+          //             ],
+          //           ),
+          //           SizedBox(
+          //             height: 20.h,
+          //           ),
+          //           Image.asset(
+          //             'assets/images/map.png',
+          //             height: 300,
+          //             width: double.infinity,
+          //           )
+          //         ]),
+          //       )),
+          // ),
           SizedBox(
             height: 10.h,
           ),
-          Padding(
-            padding: EdgeInsets.only(
-                left: MAIN_PADDING, right: MAIN_PADDING, top: MAIN_PADDING),
-            child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Popular Courses',
-                    style: Theme.of(context).textTheme.headlineSmall,
-                  ),
-                  GestureDetector(
-                    onTap: () => GoRouter.of(context)
-                        .go(AppRoutes.UNIVERSITIES_ROUTE_PATH),
-                    child: Text(
-                      'View all',
-                      style: TextStyle(
-                          color: Theme.of(context).primaryColor, fontSize: 15),
-                    ),
-                  )
-                ]),
-          ),
-          SizedBox(
-            height: 5.h,
-          ),
-          Padding(
-            padding: EdgeInsets.only(
-                left: MAIN_PADDING, right: MAIN_PADDING, top: MAIN_PADDING),
-            child: Row(
-              children: [
-                Column(
-                  children: [
-                    Image.asset(
-                      Images.UK_FLAG,
-                      width: 60.h,
-                      height: 60.h,
-                    )
-                  ],
-                ),
-                SizedBox(
-                  width: 15.w,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Masters Marketing Management',
-                      style: TextStyle(fontSize: 14),
-                    ),
-                    SizedBox(
-                      height: 3.h,
-                    ),
-                    Text('Lecister, United Kingdom',
-                        style: TextStyle(
-                            fontSize: 13, color: ColorLight.fontSubtitle)),
-                    Text('Fee: GBP 9,995 | Duration: 15 Months',
-                        style: TextStyle(
-                            fontSize: 13, color: ColorLight.fontSubtitle))
-                  ],
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(
-                left: MAIN_PADDING, right: MAIN_PADDING, top: MAIN_PADDING),
-            child: Row(
-              children: [
-                Text(
-                  'Similar Universities',
-                  style: Theme.of(context).textTheme.headlineSmall,
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(
-                left: MAIN_PADDING, right: MAIN_PADDING, top: MAIN_PADDING),
-            child: Row(
-              children: [
-                Column(
-                  children: [
-                    Image.asset(
-                      Images.UK_FLAG,
-                      width: 60.h,
-                      height: 60.h,
-                    )
-                  ],
-                ),
-                SizedBox(
-                  width: 15.w,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Masters Marketing Management',
-                      style: TextStyle(fontSize: 14),
-                    ),
-                    SizedBox(
-                      height: 3.h,
-                    ),
-                    Text('Lecister, United Kingdom',
-                        style: TextStyle(
-                            fontSize: 13, color: ColorLight.fontSubtitle)),
-                    Text('Privatej . | 10+ Courses',
-                        style: TextStyle(
-                            fontSize: 13,
-                            color: Theme.of(context).dialogBackgroundColor))
-                  ],
-                ),
-              ],
-            ),
-          ),
+          // Padding(
+          //   padding: EdgeInsets.only(
+          //       left: MAIN_PADDING, right: MAIN_PADDING, top: MAIN_PADDING),
+          //   child: Row(
+          //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //       children: [
+          //         Text(
+          //           'Popular Courses',
+          //           style: Theme.of(context).textTheme.headlineSmall,
+          //         ),
+          //         GestureDetector(
+          //           onTap: () => GoRouter.of(context)
+          //               .go(AppRoutes.UNIVERSITIES_ROUTE_PATH),
+          //           child: Text(
+          //             'View all',
+          //             style: TextStyle(
+          //                 color: Theme.of(context).primaryColor, fontSize: 15),
+          //           ),
+          //         )
+          //       ]),
+          // ),
+          // SizedBox(
+          //   height: 5.h,
+          // ),
+          // Padding(
+          //   padding: EdgeInsets.only(
+          //       left: MAIN_PADDING, right: MAIN_PADDING, top: MAIN_PADDING),
+          //   child: Row(
+          //     children: [
+          //       Column(
+          //         children: [
+          //           Image.asset(
+          //             Images.UK_FLAG,
+          //             width: 60.h,
+          //             height: 60.h,
+          //           )
+          //         ],
+          //       ),
+          //       SizedBox(
+          //         width: 15.w,
+          //       ),
+          //       Column(
+          //         crossAxisAlignment: CrossAxisAlignment.start,
+          //         children: [
+          //           Text(
+          //             'Masters Marketing Management',
+          //             style: TextStyle(fontSize: 14),
+          //           ),
+          //           SizedBox(
+          //             height: 3.h,
+          //           ),
+          //           Text('Lecister, United Kingdom',
+          //               style: TextStyle(
+          //                   fontSize: 13, color: ColorLight.fontSubtitle)),
+          //           Text('Fee: GBP 9,995 | Duration: 15 Months',
+          //               style: TextStyle(
+          //                   fontSize: 13, color: ColorLight.fontSubtitle))
+          //         ],
+          //       ),
+          //     ],
+          //   ),
+          // ),
+          // Padding(
+          //   padding: EdgeInsets.only(
+          //       left: MAIN_PADDING, right: MAIN_PADDING, top: MAIN_PADDING),
+          //   child: Row(
+          //     children: [
+          //       Text(
+          //         'Similar Universities',
+          //         style: Theme.of(context).textTheme.headlineSmall,
+          //       ),
+          //     ],
+          //   ),
+          // ),
+          // Padding(
+          //   padding: EdgeInsets.only(
+          //       left: MAIN_PADDING, right: MAIN_PADDING, top: MAIN_PADDING),
+          //   child: Row(
+          //     children: [
+          //       Column(
+          //         children: [
+          //           Image.asset(
+          //             Images.UK_FLAG,
+          //             width: 60.h,
+          //             height: 60.h,
+          //           )
+          //         ],
+          //       ),
+          //       SizedBox(
+          //         width: 15.w,
+          //       ),
+          //       Column(
+          //         crossAxisAlignment: CrossAxisAlignment.start,
+          //         children: [
+          //           Text(
+          //             'Masters Marketing Management',
+          //             style: TextStyle(fontSize: 14),
+          //           ),
+          //           SizedBox(
+          //             height: 3.h,
+          //           ),
+          //           Text('Lecister, United Kingdom',
+          //               style: TextStyle(
+          //                   fontSize: 13, color: ColorLight.fontSubtitle)),
+          //           Text('Privatej . | 10+ Courses',
+          //               style: TextStyle(
+          //                   fontSize: 13,
+          //                   color: Theme.of(context).dialogBackgroundColor))
+          //         ],
+          //       ),
+          //     ],
+          //   ),
+          // ),
         ],
       ),
     );

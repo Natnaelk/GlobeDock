@@ -11,9 +11,10 @@ Widget emailLoginWidget(BuildContext context,
     {String buttonLabel = LOGIN, bool showOTP = true}) {
   return Column(
     children: [
+      SizedBox(height: 3.h),
       CustomTextField(
         width: double.infinity,
-        height: 45.h,
+        height: 35.h,
         labelText: 'Email Address',
       ),
       SizedBox(
