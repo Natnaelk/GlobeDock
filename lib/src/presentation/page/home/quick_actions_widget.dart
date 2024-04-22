@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:globedock/src/common/constant.dart';
 import 'package:globedock/src/common/routes.dart';
+import 'package:globedock/src/presentation/page/home/fill_profile_details_screen.dart';
+import 'package:globedock/src/presentation/page/home/upload_documents_screen.dart';
 import 'package:go_router/go_router.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
@@ -38,9 +40,11 @@ class QuickActionsWidget extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(MAIN_PADDING),
             child: Column(children: [
-              GestureDetector(
-                onTap: () =>
-                    GoRouter.of(context).go(AppRoutes.FILL_PROFILE_ROUTE_PATH),
+              InkWell(
+                onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => FillProfileDetilsScreen())),
                 child: Column(
                   children: [
                     Row(
@@ -76,9 +80,11 @@ class QuickActionsWidget extends StatelessWidget {
               const SizedBox(
                 height: SPACE15,
               ),
-              GestureDetector(
-                onTap: () => GoRouter.of(context)
-                    .go(AppRoutes.UPLOAD_DOCUMENTS_ROUTE_PATH),
+              InkWell(
+                onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => UploadDocumentsScreen())),
                 child: Column(
                   children: [
                     Row(

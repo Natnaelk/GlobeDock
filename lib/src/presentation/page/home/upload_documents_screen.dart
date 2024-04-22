@@ -52,8 +52,7 @@ class _UploadDocumentsScreenState extends State<UploadDocumentsScreen>
           icon: const Icon(
             Icons.chevron_left,
           ),
-          onPressed: () =>
-              GoRouter.of(context).go(AppRoutes.DASHBOARD_ROUTE_PATH),
+          onPressed: () => GoRouter.of(context).pop(),
         ),
         title: const Text('Upload Documents'),
         bottom: TabBar(

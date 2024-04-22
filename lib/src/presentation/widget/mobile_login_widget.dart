@@ -27,9 +27,9 @@ class _MobileLoginTabState extends State<MobileLoginTab> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        // SizedBox(
-        //   height: 3.h,
-        // ),
+        SizedBox(
+          height: 3.h,
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -38,6 +38,7 @@ class _MobileLoginTabState extends State<MobileLoginTab> {
               height: 32.h,
               isWidget: true,
               childWidget: CodePickerWidget(
+                padding: EdgeInsets.zero,
                 alignLeft: true,
                 onChanged: (CountryCode countryCode) {
                   setState(() {
@@ -52,7 +53,7 @@ class _MobileLoginTabState extends State<MobileLoginTab> {
                 showCountryOnly: true,
                 showDropDownButton: true,
                 backgroundColor: Colors.white,
-                flagWidth: 30,
+                flagWidth: 25,
                 hideMainText: true,
               ),
             ),
@@ -62,7 +63,7 @@ class _MobileLoginTabState extends State<MobileLoginTab> {
             Expanded(
                 child: CustomTextField(
               width: double.infinity,
-              height: 35.h,
+              height: 32.h,
               labelText: 'Mobile number',
             )),
           ],

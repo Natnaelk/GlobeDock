@@ -6,6 +6,8 @@ import 'package:globedock/src/common/icons.dart';
 import 'package:globedock/src/common/images.dart';
 import 'package:globedock/src/common/routes.dart';
 import 'package:globedock/src/presentation/page/bottomNavigation/bottom_navigation_screen.dart';
+import 'package:globedock/src/presentation/page/home/fill_profile_details_screen.dart';
+import 'package:globedock/src/presentation/page/home/upload_documents_screen.dart';
 import 'package:globedock/src/presentation/widget/custom_icon_button.dart';
 import 'package:go_router/go_router.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
@@ -20,17 +22,10 @@ class MyProfileScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Theme.of(context).cardColor,
         leading: IconButton(
-          icon: Icon(
-            Icons.chevron_left,
-          ),
-          onPressed: () => Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => BottomNavigationScreen(
-                      selectedIndex: '2',
-                    )),
-          ),
-        ),
+            icon: Icon(
+              Icons.chevron_left,
+            ),
+            onPressed: () => Navigator.of(context).pop()),
         title: Text(
           "My profile and documents",
         ),
@@ -57,87 +52,102 @@ class MyProfileScreen extends StatelessWidget {
               SizedBox(
                 height: 13.h,
               ),
-              Container(
-                margin: EdgeInsets.only(
-                    left: MAIN_PADDING.w * 1.5, right: MAIN_PADDING.w * 1.5),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(RADIUS),
-                    color: Theme.of(context).cardColor,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.2),
-                        spreadRadius: 1,
-                        blurRadius: 2,
-                        offset: Offset(0, 2),
-                      )
-                    ]),
-                child: Padding(
-                  padding: const EdgeInsets.all(SMALL_PADDING),
-                  child: Column(children: [
-                    GestureDetector(
-                      onTap: () => GoRouter.of(context)
-                          .go(AppRoutes.FILL_PROFILE_ROUTE_PATH),
-                      child: Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                'Fill Profile Details',
-                                style: Theme.of(context).textTheme.titleMedium,
-                              ),
-                              IconButton(
-                                  onPressed: () {
-                                    GoRouter.of(context)
-                                        .go(AppRoutes.FILL_PROFILE_ROUTE_PATH);
-                                  },
-                                  icon: const Icon(Icons.chevron_right))
-                            ],
-                          ),
-                          const SizedBox(
-                            height: SPACE10,
-                          ),
-                          StepProgressIndicator(
-                            totalSteps: 100,
-                            currentStep: 32,
-                            size: 12,
-                            padding: 0,
-                            selectedColor: Theme.of(context).primaryColor,
-                            unselectedColor:
-                                Theme.of(context).primaryColorLight,
-                            roundedEdges: const Radius.circular(RADIUS),
-                          ),
-                        ],
+              InkWell(
+                onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => FillProfileDetilsScreen())),
+                child: Container(
+                  margin: EdgeInsets.only(
+                      left: MAIN_PADDING.w * 1.5, right: MAIN_PADDING.w * 1.5),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(RADIUS),
+                      color: Theme.of(context).cardColor,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.2),
+                          spreadRadius: 1,
+                          blurRadius: 2,
+                          offset: Offset(0, 2),
+                        )
+                      ]),
+                  child: Padding(
+                    padding: const EdgeInsets.all(SMALL_PADDING),
+                    child: Column(children: [
+                      GestureDetector(
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    FillProfileDetilsScreen())),
+                        child: Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'Fill Profile Details',
+                                  style:
+                                      Theme.of(context).textTheme.titleMedium,
+                                ),
+                                IconButton(
+                                    onPressed: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  FillProfileDetilsScreen()));
+                                    },
+                                    icon: const Icon(Icons.chevron_right))
+                              ],
+                            ),
+                            const SizedBox(
+                              height: SPACE10,
+                            ),
+                            StepProgressIndicator(
+                              totalSteps: 100,
+                              currentStep: 32,
+                              size: 12,
+                              padding: 0,
+                              selectedColor: Theme.of(context).primaryColor,
+                              unselectedColor:
+                                  Theme.of(context).primaryColorLight,
+                              roundedEdges: const Radius.circular(RADIUS),
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                    const SizedBox(
-                      height: SPACE10,
-                    ),
-                  ]),
+                      const SizedBox(
+                        height: SPACE10,
+                      ),
+                    ]),
+                  ),
                 ),
               ),
               SizedBox(
                 height: 10.h,
               ),
-              Container(
-                margin: EdgeInsets.only(
-                    left: MAIN_PADDING.w * 1.5, right: MAIN_PADDING.w * 1.5),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(RADIUS),
-                    color: Theme.of(context).cardColor,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.2),
-                        spreadRadius: 1,
-                        blurRadius: 2,
-                        offset: Offset(0, 2),
-                      )
-                    ]),
-                child: Padding(
-                  padding: const EdgeInsets.all(SMALL_PADDING),
-                  child: GestureDetector(
-                    onTap: () => GoRouter.of(context)
-                        .go(AppRoutes.UPLOAD_DOCUMENTS_ROUTE_PATH),
+              InkWell(
+                onTap: (() => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => UploadDocumentsScreen()))),
+                child: Container(
+                  margin: EdgeInsets.only(
+                      left: MAIN_PADDING.w * 1.5, right: MAIN_PADDING.w * 1.5),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(RADIUS),
+                      color: Theme.of(context).cardColor,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.2),
+                          spreadRadius: 1,
+                          blurRadius: 2,
+                          offset: Offset(0, 2),
+                        )
+                      ]),
+                  child: Padding(
+                    padding: const EdgeInsets.all(SMALL_PADDING),
                     child: Column(
                       children: [
                         Row(
@@ -149,8 +159,11 @@ class MyProfileScreen extends StatelessWidget {
                             ),
                             IconButton(
                                 onPressed: () {
-                                  GoRouter.of(context).go(
-                                      AppRoutes.UPLOAD_DOCUMENTS_ROUTE_PATH);
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              UploadDocumentsScreen()));
                                 },
                                 icon: const Icon(Icons.chevron_right))
                           ],

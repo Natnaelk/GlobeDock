@@ -24,7 +24,7 @@ class _UniversitiesViewAllScreenState extends State<UniversitiesViewAllScreen>
 
   final List<Widget> _tabs = [
     UK(),
-    US(),
+    UK(),
   ];
 
   @override
@@ -43,8 +43,7 @@ class _UniversitiesViewAllScreenState extends State<UniversitiesViewAllScreen>
           icon: const Icon(
             Icons.chevron_left,
           ),
-          onPressed: () =>
-              GoRouter.of(context).go(AppRoutes.DASHBOARD_ROUTE_PATH),
+          onPressed: () => GoRouter.of(context).pop(),
         ),
         title: Text(
           'Search university',
@@ -67,37 +66,16 @@ class _UniversitiesViewAllScreenState extends State<UniversitiesViewAllScreen>
           tabs: countries.map((title) => Tab(text: title.name)).toList(),
         ),
       ),
-      body: Stack(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(
-                top: MAIN_PADDING,
-                left: MAIN_PADDING * 1.1,
-                right: MAIN_PADDING * 1.1,
-                bottom: MAIN_PADDING * 7),
-            child: SingleChildScrollView(child: _tabs[_selectedIndex]),
-          ),
-          // Align(
-          //   alignment: Alignment.bottomCenter,
-          //   child: Container(
-          //     color: Colors.white,
-          //     padding: const EdgeInsets.only(
-          //       left: MAIN_PADDING,
-          //       bottom: MAIN_PADDING * 3,
-          //       right: MAIN_PADDING,
-          //       top: MAIN_PADDING,
-          //     ),
-          //     child: CustomIconButton(
-          //       onTap: () {},
-          //       color: Theme.of(context).primaryColor,
-          //       label: 'Save and Next',
-          //       isIconLeading: false,
-          //       labelColor: Colors.white,
-          //       icon: SvgPicture.asset(CustomIcons.FORWARD_ARROW),
-          //     ),
-          //   ),
-          // ),
-        ],
+      body: Padding(
+        padding: const EdgeInsets.only(
+          top: MAIN_PADDING,
+          left: MAIN_PADDING * 1.1,
+          right: MAIN_PADDING * 1.1,
+        ),
+        child: TabBarView(
+          controller: _tabController,
+          children: _tabs,
+        ),
       ),
     );
   }

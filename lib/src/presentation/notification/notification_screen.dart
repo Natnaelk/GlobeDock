@@ -18,100 +18,115 @@ class _NotificationScreenState extends State<NotificationScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: Theme.of(context).bottomAppBarColor,
-        appBar: AppBar(
-            backgroundColor: Theme.of(context).cardColor,
-            title: const Text('Notifications'),
-            actions: [
-              InkWell(
-                onTap: () {
-                  showModalBottomSheet(
-                      isScrollControlled: true,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(RADIUS)),
-                      context: context,
-                      builder: (BuildContext context) {
-                        return VieosFilterBottomSheet(() {
-                          Navigator.of(context).pop();
-                          setState(() {
-                            isNotificationEmpty = true;
+    return PopScope(
+      onPopInvoked: (didPop) => {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => BottomNavigationScreen(
+                      selectedIndex: '0',
+                    )))
+      },
+      child: Scaffold(
+          backgroundColor: Theme.of(context).bottomAppBarColor,
+          appBar: AppBar(
+              backgroundColor: Theme.of(context).cardColor,
+              title: const Text('Notifications'),
+              actions: [
+                InkWell(
+                  onTap: () {
+                    showModalBottomSheet(
+                        isScrollControlled: true,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(RADIUS)),
+                        context: context,
+                        builder: (BuildContext context) {
+                          return VieosFilterBottomSheet(() {
+                            Navigator.of(context).pop();
+                            setState(() {
+                              isNotificationEmpty = true;
+                            });
                           });
                         });
-                      });
-                },
-                child: const Padding(
-                  padding: EdgeInsetsDirectional.only(end: SMALL_PADDING),
-                  child: Icon(
-                    Icons.more_vert,
-                    size: 30,
+                  },
+                  child: const Padding(
+                    padding: EdgeInsetsDirectional.only(end: SMALL_PADDING),
+                    child: Icon(
+                      Icons.more_vert,
+                      size: 30,
+                    ),
                   ),
-                ),
-              )
-            ]),
-        body: isNotificationEmpty
-            ? Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-                Padding(
-                  padding: EdgeInsets.only(bottom: 50.h),
-                  child: Row(
+                )
+              ]),
+          body: isNotificationEmpty
+              ? Container(
+                  child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        SvgPicture.asset(
-                          Images.EMPTY_NOTIFICATION,
+                        Padding(
+                          padding: EdgeInsets.only(bottom: 50.h),
+                          child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                SvgPicture.asset(
+                                  Images.EMPTY_NOTIFICATION,
+                                )
+                              ]),
+                        ),
+                        SizedBox(
+                          height: 30.h,
+                        ),
+                        Text(
+                          NO_NOTIFICATION,
+                          style: Theme.of(context).textTheme.headlineMedium,
+                        ),
+                        SizedBox(
+                          height: 10.h,
+                        ),
+                        Text(
+                          THINGS_NEED_ATTENTION,
+                          style: Theme.of(context).textTheme.titleMedium,
+                        ),
+                        SizedBox(
+                          height: 30.h,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              left: MAIN_PADDING, right: MAIN_PADDING),
+                          child: CustomIconButton(
+                              onTap: () => Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            BottomNavigationScreen(
+                                              selectedIndex: '0',
+                                            )),
+                                  ),
+                              label: BACK_TO_HOME,
+                              color: Theme.of(context).primaryColor,
+                              labelColor: Theme.of(context).cardColor,
+                              icon: SvgPicture.asset(CustomIcons.BACK_ARROW)),
                         )
                       ]),
-                ),
-                SizedBox(
-                  height: 30.h,
-                ),
-                Text(
-                  NO_NOTIFICATION,
-                  style: Theme.of(context).textTheme.headlineMedium,
-                ),
-                SizedBox(
-                  height: 10.h,
-                ),
-                Text(
-                  THINGS_NEED_ATTENTION,
-                  style: Theme.of(context).textTheme.titleMedium,
-                ),
-                SizedBox(
-                  height: 30.h,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                      left: MAIN_PADDING, right: MAIN_PADDING),
-                  child: CustomIconButton(
-                      onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => BottomNavigationScreen(
-                                      selectedIndex: '0',
-                                    )),
-                          ),
-                      label: BACK_TO_HOME,
-                      color: Theme.of(context).primaryColor,
-                      labelColor: Theme.of(context).cardColor,
-                      icon: SvgPicture.asset(CustomIcons.BACK_ARROW)),
                 )
-              ])
-            : Padding(
-                padding: const EdgeInsets.all(30),
-                child: Column(
-                  children: [
-                    NotificationWidget(),
-                    // SizedBox(
-                    //   height: 10.h,
-                    // ),
-                    Divider(),
-                    SizedBox(
-                      height: 10.h,
-                    ),
-                    NotificationWidget(),
-                    Divider(),
-                  ],
-                ),
-              ));
+              : Padding(
+                  padding: const EdgeInsets.all(30),
+                  child: Column(
+                    children: [
+                      NotificationWidget(),
+                      // SizedBox(
+                      //   height: 10.h,
+                      // ),
+                      Divider(),
+                      SizedBox(
+                        height: 10.h,
+                      ),
+                      NotificationWidget(),
+                      Divider(),
+                    ],
+                  ),
+                )),
+    );
   }
 }
 

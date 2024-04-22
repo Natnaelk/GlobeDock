@@ -7,6 +7,7 @@ import 'package:globedock/src/common/images.dart';
 import 'package:globedock/src/common/routes.dart';
 import 'package:globedock/src/presentation/page/question/question_two_screen.dart';
 import 'package:globedock/src/presentation/widget/custom_elevated_button.dart';
+import 'package:globedock/src/presentation/widget/custom_outlined_button.dart';
 import 'package:go_router/go_router.dart';
 
 class QuestionOneWidget extends StatelessWidget {
@@ -79,7 +80,7 @@ class QuestionOneWidget extends StatelessWidget {
                   SizedBox(
                     height: 40.h,
                   ),
-                  CustomElevatedButton(
+                  CustomOutlinedButton(
                     onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -91,7 +92,7 @@ class QuestionOneWidget extends StatelessWidget {
                   SizedBox(
                     height: 10.h,
                   ),
-                  CustomElevatedButton(
+                  CustomOutlinedButton(
                     onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -103,7 +104,7 @@ class QuestionOneWidget extends StatelessWidget {
                   SizedBox(
                     height: 10.h,
                   ),
-                  CustomElevatedButton(
+                  CustomOutlinedButton(
                     onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(

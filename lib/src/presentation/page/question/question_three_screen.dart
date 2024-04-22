@@ -8,6 +8,7 @@ import 'package:globedock/src/common/routes.dart';
 import 'package:globedock/src/presentation/page/question/question_four_screen.dart';
 import 'package:globedock/src/presentation/page/question/question_two_screen.dart';
 import 'package:globedock/src/presentation/widget/custom_elevated_button.dart';
+import 'package:globedock/src/presentation/widget/custom_outlined_button.dart';
 import 'package:go_router/go_router.dart';
 
 class QuestionThreeScreen extends StatelessWidget {
@@ -77,7 +78,7 @@ class QuestionThreeScreen extends StatelessWidget {
                   SizedBox(
                     height: 20.h,
                   ),
-                  CustomElevatedButton(
+                  CustomOutlinedButton(
                     onTap: () => onPressed(context),
                     label: 'Jan 2024',
                     color: Theme.of(context).cardColor,
@@ -86,7 +87,7 @@ class QuestionThreeScreen extends StatelessWidget {
                   SizedBox(
                     height: 10.h,
                   ),
-                  CustomElevatedButton(
+                  CustomOutlinedButton(
                     onTap: () => onPressed(context),
                     label: 'Feb 2024',
                     color: Colors.white,
@@ -95,7 +96,7 @@ class QuestionThreeScreen extends StatelessWidget {
                   SizedBox(
                     height: 10.h,
                   ),
-                  CustomElevatedButton(
+                  CustomOutlinedButton(
                     onTap: () => onPressed(context),
                     label: 'Mar 2024',
                     color: Theme.of(context).cardColor,
@@ -104,7 +105,7 @@ class QuestionThreeScreen extends StatelessWidget {
                   SizedBox(
                     height: 10.h,
                   ),
-                  CustomElevatedButton(
+                  CustomOutlinedButton(
                     onTap: () => onPressed(context),
                     label: 'Apr 2024',
                     color: Theme.of(context).cardColor,

@@ -47,11 +47,11 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
       "selected_icon": "assets/icons/dashboard_icon_selected.svg",
       "title": "Journey"
     },
-    {
-      "icon": "assets/icons/todo_icon.svg",
-      "selected_icon": "assets/icons/todo_icon_selected.svg",
-      "title": "Todo"
-    },
+    // {
+    //   "icon": "assets/icons/todo_icon.svg",
+    //   "selected_icon": "assets/icons/todo_icon_selected.svg",
+    //   "title": "Todo"
+    // },
     {
       "icon": "assets/icons/crown_icon.svg",
       "selected_icon": "assets/icons/crown_icon_selected.svg",
@@ -63,7 +63,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
     HomeScreen(),
     NotificationScreen(),
     DashboardScreen(),
-    TodoScreen(),
+    // TodoScreen(),
     PremiumScreen(),
   ];
 
@@ -73,7 +73,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
       backgroundColor: Theme.of(context).bottomAppBarColor,
       body: _screens[_selectedIndex],
       bottomNavigationBar: CupertinoTabBar(
-        backgroundColor: _selectedIndex == 4
+        backgroundColor: _selectedIndex == 3
             ? Theme.of(context).secondaryHeaderColor
             : Theme.of(context).cardColor,
         onTap: (value) {
@@ -82,11 +82,13 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
           });
         },
         currentIndex: _selectedIndex,
-        activeColor: Theme.of(context).primaryColor,
+        activeColor: _selectedIndex == 3
+            ? Theme.of(context).primaryColorLight
+            : Theme.of(context).primaryColor,
         inactiveColor: Theme.of(context).disabledColor,
         height: 55.h,
         border: Border.all(
-            color: _selectedIndex == 4
+            color: _selectedIndex == 3
                 ? Colors.transparent
                 : Theme.of(context).dividerColor),
         items: List.generate(

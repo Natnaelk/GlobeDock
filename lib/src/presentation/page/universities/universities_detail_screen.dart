@@ -6,11 +6,8 @@ import 'package:globedock/src/common/constant.dart';
 import 'package:globedock/src/common/custom_font_size.dart';
 import 'package:globedock/src/common/icons.dart';
 import 'package:globedock/src/common/images.dart';
-import 'package:globedock/src/common/routes.dart';
 import 'package:globedock/src/data/model/country.dart';
-import 'package:globedock/src/presentation/page/chat/chat_onboarding_screen.dart';
 import 'package:globedock/src/presentation/page/destination/tabs/faq_tab.dart';
-import 'package:globedock/src/presentation/widget/custom_icon_button.dart';
 import 'package:go_router/go_router.dart';
 import 'package:share_plus/share_plus.dart';
 
@@ -62,8 +59,7 @@ class _UniversitiesDetailScreenState extends State<UniversitiesDetailScreen>
           icon: Icon(
             Icons.chevron_left,
           ),
-          onPressed: () =>
-              GoRouter.of(context).go(AppRoutes.DASHBOARD_ROUTE_PATH),
+          onPressed: () => GoRouter.of(context).pop(),
         ),
         title: Text(
           "Queen Mary University of London",

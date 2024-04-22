@@ -187,75 +187,75 @@ class _DashboardScreenState extends State<DashboardScreen>
                       opacity: isProfileCompleted ? 1 : 0.3,
                       child: Image.asset(Images.WORKING_ON_APPS)),
                 ),
-                SizedBox(
-                  height: 30,
-                ),
-                CustomIconButton(
-                  onTap: () {
-                    showModalBottomSheet(
-                        isScrollControlled: true,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(RADIUS)),
-                        context: context,
-                        builder: (BuildContext context) {
-                          return StatefulBuilder(
-                            builder:
-                                (BuildContext context, StateSetter setState) {
-                              return Container(
-                                  height:
-                                      MediaQuery.of(context).size.height - 200,
-                                  padding: EdgeInsets.only(
-                                      top: MAIN_PADDING, bottom: MAIN_PADDING),
-                                  color: Theme.of(context).cardColor,
-                                  child: SingleChildScrollView(
-                                    child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: [
-                                          TabBar(
-                                            tabAlignment: TabAlignment.fill,
-                                            controller: _tabController,
-                                            indicatorSize:
-                                                TabBarIndicatorSize.tab,
-                                            physics:
-                                                const ClampingScrollPhysics(),
-                                            padding: EdgeInsets.zero,
-                                            dividerColor: Colors.transparent,
-                                            labelStyle: TextStyle(fontSize: 15),
-                                            onTap: (index) {
-                                              setState(() {
-                                                _selectedIndex = index;
-                                              });
-                                            },
-                                            tabs: ['Service One', 'Service Two']
-                                                .map(
-                                                    (title) => Tab(text: title))
-                                                .toList(),
-                                          ),
-                                          _tabs[_selectedIndex],
-                                        ]),
-                                  ));
-                            },
-                          );
-                        });
-                  },
-                  label: 'Get University Admits in 14 Days',
-                  color: Theme.of(context).primaryColor,
-                  labelColor: Theme.of(context).cardColor,
-                  icon: SvgPicture.asset(CustomIcons.FORWARD_ARROW),
-                  isIconLeading: false,
-                  borderRadius: 8,
-                  height: 30.h,
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  'Complete onboarding to unlock the below features',
-                  style: Theme.of(context).textTheme.titleSmall,
-                  textAlign: TextAlign.center,
-                ),
+                // SizedBox(
+                //   height: 30,
+                // ),
+                // CustomIconButton(
+                //   onTap: () {
+                //     showModalBottomSheet(
+                //         isScrollControlled: true,
+                //         shape: RoundedRectangleBorder(
+                //             borderRadius: BorderRadius.circular(RADIUS)),
+                //         context: context,
+                //         builder: (BuildContext context) {
+                //           return StatefulBuilder(
+                //             builder:
+                //                 (BuildContext context, StateSetter setState) {
+                //               return Container(
+                //                   height:
+                //                       MediaQuery.of(context).size.height - 200,
+                //                   padding: EdgeInsets.only(
+                //                       top: MAIN_PADDING, bottom: MAIN_PADDING),
+                //                   color: Theme.of(context).cardColor,
+                //                   child: SingleChildScrollView(
+                //                     child: Column(
+                //                         crossAxisAlignment:
+                //                             CrossAxisAlignment.start,
+                //                         mainAxisSize: MainAxisSize.min,
+                //                         children: [
+                //                           TabBar(
+                //                             tabAlignment: TabAlignment.fill,
+                //                             controller: _tabController,
+                //                             indicatorSize:
+                //                                 TabBarIndicatorSize.tab,
+                //                             physics:
+                //                                 const ClampingScrollPhysics(),
+                //                             padding: EdgeInsets.zero,
+                //                             dividerColor: Colors.transparent,
+                //                             labelStyle: TextStyle(fontSize: 15),
+                //                             onTap: (index) {
+                //                               setState(() {
+                //                                 _selectedIndex = index;
+                //                               });
+                //                             },
+                //                             tabs: ['Service One', 'Service Two']
+                //                                 .map(
+                //                                     (title) => Tab(text: title))
+                //                                 .toList(),
+                //                           ),
+                //                           _tabs[_selectedIndex],
+                //                         ]),
+                //                   ));
+                //             },
+                //           );
+                //         });
+                //   },
+                //   label: 'Get University Admits in 14 Days',
+                //   color: Theme.of(context).primaryColor,
+                //   labelColor: Theme.of(context).cardColor,
+                //   icon: SvgPicture.asset(CustomIcons.FORWARD_ARROW),
+                //   isIconLeading: false,
+                //   borderRadius: 8,
+                //   height: 30.h,
+                // ),
+                // SizedBox(
+                //   height: 10,
+                // ),
+                // Text(
+                //   'Complete onboarding to unlock the below features',
+                //   style: Theme.of(context).textTheme.titleSmall,
+                //   textAlign: TextAlign.center,
+                // ),
                 SizedBox(
                   height: 20,
                 ),

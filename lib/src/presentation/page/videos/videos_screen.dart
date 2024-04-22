@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:globedock/src/common/constant.dart';
 import 'package:globedock/src/common/custom_font_size.dart';
 import 'package:globedock/src/common/icons.dart';
 import 'package:globedock/src/common/images.dart';
-import 'package:globedock/src/common/routes.dart';
 import 'package:globedock/src/data/model/country.dart';
 import 'package:globedock/src/presentation/page/bottomNavigation/bottom_navigation_screen.dart';
 import 'package:globedock/src/presentation/widget/custom_elevated_button.dart';
-import 'package:go_router/go_router.dart';
 
 class VideosScreen extends StatelessWidget {
   const VideosScreen({Key? key}) : super(key: key);
@@ -22,16 +19,10 @@ class VideosScreen extends StatelessWidget {
       appBar: AppBar(
           backgroundColor: Theme.of(context).cardColor,
           leading: IconButton(
-            icon: const Icon(
-              Icons.chevron_left,
-            ),
-            onPressed: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => BottomNavigationScreen(
-                          selectedIndex: '2',
-                        ))),
-          ),
+              icon: const Icon(
+                Icons.chevron_left,
+              ),
+              onPressed: () => Navigator.pop(context)),
           title: const Text('Videos'),
           actions: [
             InkWell(
@@ -82,7 +73,7 @@ class VideoTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 275.h,
+      height: 279.h,
       decoration: BoxDecoration(
         color: Theme.of(context).cardColor,
         boxShadow: [

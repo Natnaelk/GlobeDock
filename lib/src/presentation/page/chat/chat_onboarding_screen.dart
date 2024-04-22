@@ -9,11 +9,8 @@ import 'package:globedock/src/common/routes.dart';
 import 'package:globedock/src/common/toast.dart';
 import 'package:globedock/src/presentation/page/bottomNavigation/bottom_navigation_screen.dart';
 import 'package:globedock/src/presentation/widget/custom_dialog.dart';
-import 'package:globedock/src/presentation/widget/custom_elevated_button.dart';
-import 'package:globedock/src/presentation/widget/custom_icon_button.dart';
 import 'package:globedock/src/presentation/widget/custom_widget.dart';
 import 'package:go_router/go_router.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class ChatOnboardingScreen extends StatefulWidget {
   const ChatOnboardingScreen({Key? key}) : super(key: key);
@@ -33,16 +30,11 @@ class _ChatOnboardingScreenState extends State<ChatOnboardingScreen> {
       appBar: AppBar(
         backgroundColor: Theme.of(context).cardColor,
         leading: IconButton(
-            icon: Icon(
-              Icons.chevron_left,
-            ),
-            onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => BottomNavigationScreen(
-                            selectedIndex: '2',
-                          )),
-                )),
+          icon: Icon(
+            Icons.chevron_left,
+          ),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
         title: Text(
           "Chat",
         ),

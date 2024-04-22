@@ -36,7 +36,7 @@ class DrawerWidget extends StatelessWidget {
                   right: MAIN_PADDING,
                   left: MAIN_PADDING),
               child: Container(
-                height: 72.h,
+                height: 60.h,
                 width: double.infinity,
                 decoration: BoxDecoration(
                     color: Theme.of(context).primaryColor,
@@ -48,7 +48,7 @@ class DrawerWidget extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 15.h,
+            height: 10.h,
           ),
           // ListTile(
           //   leading: Container(
@@ -175,7 +175,7 @@ class DrawerWidget extends StatelessWidget {
             ),
             onTap: () {
               Share.share(
-                  'Interested in studying abroad? Check out the GlobeDock app');
+                  'Interested in studying abroad? Check out the GlobeDock app https://globedock.et/');
             },
           ),
           Padding(

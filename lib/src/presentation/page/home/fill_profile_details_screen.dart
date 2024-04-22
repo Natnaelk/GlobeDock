@@ -50,8 +50,7 @@ class _FillProfileDetilsScreenState extends State<FillProfileDetilsScreen>
         appBar: AppBar(
           leading: IconButton(
             icon: const Icon(Icons.chevron_left),
-            onPressed: () =>
-                GoRouter.of(context).go(AppRoutes.DASHBOARD_ROUTE_PATH),
+            onPressed: () => GoRouter.of(context).pop(),
           ),
           title: const Text('Fill Profile Details'),
           bottom: TabBar(

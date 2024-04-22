@@ -36,13 +36,13 @@ GoRouter routerinit = GoRouter(
     ///  ********************** Splash Route *****************************
     /// ==================================================================
 
-    GoRoute(
-      name: AppRoutes.ONBOARDING_ROUTE_NAME,
-      path: AppRoutes.ONBOARDING_ROUTE_PATH,
-      builder: (BuildContext context, GoRouterState state) {
-        return const OnboardingScreen();
-      },
-    ),
+    // GoRoute(
+    //   name: AppRoutes.ONBOARDING_ROUTE_NAME,
+    //   path: AppRoutes.ONBOARDING_ROUTE_PATH,
+    //   builder: (BuildContext context, GoRouterState state) {
+    //     return const OnboardingScreen();
+    //   },
+    // ),
     GoRoute(
       name: AppRoutes.SPLASH_ROUTE_NAME,
       path: AppRoutes.SPLASH_ROUTE_PATH,

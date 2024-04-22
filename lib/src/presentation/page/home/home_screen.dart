@@ -7,9 +7,14 @@ import 'package:globedock/src/common/icons.dart';
 import 'package:globedock/src/common/images.dart';
 import 'package:globedock/src/common/routes.dart';
 import 'package:globedock/src/data/model/country.dart';
+import 'package:globedock/src/presentation/page/chat/chat_onboarding_screen.dart';
+import 'package:globedock/src/presentation/page/destination/destination_screen.dart';
 import 'package:globedock/src/presentation/page/home/drawer_widget.dart';
 import 'package:globedock/src/presentation/page/home/journey_progress_widget.dart';
 import 'package:globedock/src/presentation/page/home/quick_actions_widget.dart';
+import 'package:globedock/src/presentation/page/universities/universities_detail_screen.dart';
+import 'package:globedock/src/presentation/page/universities/universities_view_all_screen.dart';
+import 'package:globedock/src/presentation/page/videos/videos_screen.dart';
 import 'package:globedock/src/presentation/widget/custom_icon_button.dart';
 import 'package:globedock/src/presentation/widget/home_country_tile.dart';
 import 'package:go_router/go_router.dart';
@@ -26,20 +31,20 @@ class HomeScreen extends StatelessWidget {
         title: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: const [Text('👋 User')]),
-        actions: [
-          Padding(
-            padding: EdgeInsetsDirectional.only(end: MAIN_PADDING),
-            child: SvgPicture.asset(
-              Images.HOME_ICON,
-              width: 25.w,
-            ),
-          )
-        ],
+        // actions: [
+        //   Padding(
+        //     padding: EdgeInsetsDirectional.only(end: MAIN_PADDING),
+        //     child: SvgPicture.asset(
+        //       Images.HOME_ICON,
+        //       width: 25.w,
+        //     ),
+        //   )
+        // ],
       ),
       drawer: const DrawerWidget(),
       floatingActionButton: FloatingActionButton(
-        onPressed: () =>
-            GoRouter.of(context).go(AppRoutes.CHAT_ONBORADING_ROUTE_PATH),
+        onPressed: () => Navigator.push(context,
+            MaterialPageRoute(builder: (context) => ChatOnboardingScreen())),
         backgroundColor: Theme.of(context).primaryColor,
         shape: CircleBorder(),
         child: SvgPicture.asset(
@@ -51,19 +56,19 @@ class HomeScreen extends StatelessWidget {
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Column(children: [
-          CustomIconButton(
-            onTap: () {},
-            // => GoRouter.of(context).goNamed(
-            //     AppRoutes.QUESTION_ROUTE_NAME,
-            //     queryParameters: {'questionNumber': '1'}),
-            label: 'Get University Admits in 14 Days',
-            color: Theme.of(context).primaryColor,
-            labelColor: Theme.of(context).cardColor,
-            icon: SvgPicture.asset(CustomIcons.FORWARD_ARROW),
-            isIconLeading: false,
-            borderRadius: 0,
-            height: 32.h,
-          ),
+          // CustomIconButton(
+          //   onTap: () {},
+          //   // => GoRouter.of(context).goNamed(
+          //   //     AppRoutes.QUESTION_ROUTE_NAME,
+          //   //     queryParameters: {'questionNumber': '1'}),
+          //   label: 'Get University Admits in 14 Days',
+          //   color: Theme.of(context).primaryColor,
+          //   labelColor: Theme.of(context).cardColor,
+          //   icon: SvgPicture.asset(CustomIcons.FORWARD_ARROW),
+          //   isIconLeading: false,
+          //   borderRadius: 0,
+          //   height: 32.h,
+          // ),
           Container(
             color: Theme.of(context).bottomAppBarColor,
             child: Column(
@@ -72,7 +77,7 @@ class HomeScreen extends StatelessWidget {
                   padding: const EdgeInsets.only(
                       left: MAIN_PADDING,
                       right: MAIN_PADDING,
-                      top: MAIN_PADDING),
+                      top: SMALL_PADDING),
                   child: Column(
                     children: [
                       const JourneyProgressWidget(),
@@ -87,8 +92,8 @@ class HomeScreen extends StatelessWidget {
                   height: 20.h,
                 ),
                 GestureDetector(
-                  onTap: () =>
-                      GoRouter.of(context).go(AppRoutes.VIDEOS_ROUTE_PATH),
+                  onTap: () => Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => VideosScreen())),
                   child: Image.asset(
                     Images.GLOBEDOCK_IMAGE,
                     width: double.infinity,
@@ -105,7 +110,7 @@ class HomeScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Text(
-                          'Destination',
+                          'Destinations',
                           style: Theme.of(context).textTheme.headlineMedium,
                         )
                       ]),
@@ -115,7 +120,7 @@ class HomeScreen extends StatelessWidget {
                       left: MAIN_PADDING,
                       right: MAIN_PADDING,
                       top: MAIN_PADDING,
-                      bottom: MAIN_PADDING * 2),
+                      bottom: MAIN_PADDING),
                   child: SizedBox(
                     height: 170.h,
                     child: ListView.builder(
@@ -126,8 +131,11 @@ class HomeScreen extends StatelessWidget {
                           return Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: GestureDetector(
-                                onTap: () => GoRouter.of(context)
-                                    .go(AppRoutes.DESTINATION_ROUTE_PATH),
+                                onTap: () => Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            DestinationScreen())),
                                 child:
                                     HomeCountryTile(country: countries[index])),
                           );
@@ -147,8 +155,11 @@ class HomeScreen extends StatelessWidget {
                           style: Theme.of(context).textTheme.headlineMedium,
                         ),
                         GestureDetector(
-                          onTap: () => GoRouter.of(context)
-                              .go(AppRoutes.UNIVERSITIES_ROUTE_PATH),
+                          onTap: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      UniversitiesViewAllScreen())),
                           child: Text(
                             'View all',
                             style: TextStyle(
@@ -173,8 +184,11 @@ class HomeScreen extends StatelessWidget {
                           return Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: GestureDetector(
-                                onTap: () => GoRouter.of(context).go(
-                                    AppRoutes.UNIVERSITIES_DETAIL_ROUTE_PATH),
+                                onTap: () => Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            UniversitiesDetailScreen())),
                                 child: HomeCountryTile(
                                     isUniversity: true,
                                     country: universities[index])),

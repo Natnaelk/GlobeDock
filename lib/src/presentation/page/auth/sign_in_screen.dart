@@ -23,16 +23,19 @@ class SignInScreen extends StatefulWidget {
 class _SignInScreenState extends State<SignInScreen>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
+  late PageController _pageController;
 
   @override
   void initState() {
     _tabController = TabController(length: 2, vsync: this);
+    _pageController = PageController();
     super.initState();
   }
 
   @override
   void dispose() {
     _tabController.dispose();
+    _pageController.dispose();
     super.dispose();
   }
 
@@ -53,79 +56,85 @@ class _SignInScreenState extends State<SignInScreen>
         backgroundColor: Theme.of(context).bottomAppBarColor,
         appBar: CustomAppBar(
           backgroundColor: Theme.of(context).bottomAppBarColor,
-          isBackButtonExist: true,
+          isBackButtonExist: false,
           onBackButtonPressed: () =>
               GoRouter.of(context).go(AppRoutes.ONBOARDING_ROUTE_PATH),
         ),
         body: Stack(
           children: [
             Padding(
-              padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 75.h),
-              child: Column(
-                // mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text(
-                        LOGIN_TO_CONTINUE,
-                        style: Theme.of(context).textTheme.headlineLarge,
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 23.h,
-                  ),
-                  Container(
-                    padding: EdgeInsets.all(3.h),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(RADIUS),
-                      border: Border.all(color: Theme.of(context).canvasColor),
-                    ),
-                    child: TabBar(
-                      controller: _tabController,
-                      labelPadding: EdgeInsets.symmetric(horizontal: 2.w),
-                      indicator: const BoxDecoration(),
-                      dividerColor: Theme.of(context).bottomAppBarColor,
-                      tabs: [
-                        CustomTab(
-                          text: MOBILE,
-                          isSelected: _tabController.index == 0,
-                          haveBorderColor: false,
-                        ),
-                        CustomTab(
-                          text: EMAIL,
-                          isSelected: _tabController.index == 1,
-                          haveBorderColor: false,
+                padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 25.h),
+                child: Column(
+                  // mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          LOGIN_TO_CONTINUE,
+                          style: Theme.of(context).textTheme.headlineLarge,
                         ),
                       ],
-                      onTap: (index) {
-                        setState(() {
-                          _tabController.index = index;
-                        });
-                      },
                     ),
-                  ),
-                ],
-              ),
-            ),
-            Positioned.fill(
-              top: MediaQuery.of(context).size.height * 0.25,
-              child: Padding(
-                padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 10.h),
-                child: TabBarView(
-                  controller: _tabController,
-                  children: [
-                    MobileLoginTab(),
-                    emailLoginWidget(context),
+                    SizedBox(
+                      height: 23.h,
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(3.h),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(RADIUS),
+                        border:
+                            Border.all(color: Theme.of(context).canvasColor),
+                      ),
+                      child: TabBar(
+                        controller: _tabController,
+                        labelPadding: EdgeInsets.symmetric(horizontal: 2.w),
+                        indicator: const BoxDecoration(),
+                        dividerColor: Theme.of(context).bottomAppBarColor,
+                        tabs: [
+                          CustomTab(
+                            text: MOBILE,
+                            isSelected: _tabController.index == 0,
+                            haveBorderColor: false,
+                          ),
+                          CustomTab(
+                            text: EMAIL,
+                            isSelected: _tabController.index == 1,
+                            haveBorderColor: false,
+                          ),
+                        ],
+                        onTap: (index) {
+                          _pageController.animateToPage(
+                            index,
+                            duration: Duration(milliseconds: 300),
+                            curve: Curves.ease,
+                          );
+                        },
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20.h,
+                    ),
+                    Expanded(
+                      child: PageView(
+                        controller: _pageController,
+                        onPageChanged: (index) {
+                          setState(() {
+                            _tabController.index = index;
+                          });
+                        },
+                        children: [
+                          MobileLoginTab(),
+                          emailLoginWidget(context),
+                        ],
+                      ),
+                    ),
                   ],
-                ),
-              ),
-            ),
+                )),
             Positioned.fill(
               top: _tabController.index == 0
-                  ? MediaQuery.of(context).size.height * 0.45
-                  : MediaQuery.of(context).size.height * 0.57,
+                  ? MediaQuery.of(context).size.height * 0.39
+                  : MediaQuery.of(context).size.height * 0.51,
               child: Column(
                 children: [
                   Row(mainAxisAlignment: MainAxisAlignment.center, children: [
@@ -142,7 +151,7 @@ class _SignInScreenState extends State<SignInScreen>
                       onTap: () =>
                           GoRouter.of(context).go(AppRoutes.SIGNUP_ROUTE_PATH),
                       child: Text(
-                        SIGN_UP_FOR_FREE,
+                        ' $SIGN_UP_FOR_FREE',
                         style: TextStyle(
                             fontSize: CustomFontSize.s10,
                             fontWeight: FontWeight.bold,
@@ -151,7 +160,7 @@ class _SignInScreenState extends State<SignInScreen>
                     )
                   ]),
                   SizedBox(
-                    height: SPACE45.h,
+                    height: SPACE60.h,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,

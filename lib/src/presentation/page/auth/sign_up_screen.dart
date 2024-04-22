@@ -1,4 +1,3 @@
-import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,10 +7,9 @@ import 'package:globedock/src/common/custom_font_size.dart';
 import 'package:globedock/src/common/images.dart';
 import 'package:globedock/src/common/routes.dart';
 import 'package:globedock/src/presentation/bloc/authenticator_watcher/authenticator_watcher_bloc.dart';
-import 'package:globedock/src/presentation/widget/country_picker_widget.dart';
 import 'package:globedock/src/presentation/widget/custom_app_bar.dart';
-import 'package:globedock/src/presentation/widget/custom_elevated_button.dart';
 import 'package:globedock/src/presentation/widget/custom_textfield.dart';
+import 'package:globedock/src/presentation/widget/mobile_login_widget.dart';
 import 'package:globedock/src/presentation/widget/register_widget.dart';
 import 'package:go_router/go_router.dart';
 
@@ -50,16 +48,18 @@ class _SignUpScreenState extends State<SignUpScreen>
         );
       },
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         backgroundColor: Theme.of(context).bottomAppBarColor,
         appBar: CustomAppBar(
           isBackButtonExist: true,
           onBackButtonPressed: () =>
-              GoRouter.of(context).go(AppRoutes.ONBOARDING_ROUTE_PATH),
+              GoRouter.of(context).goNamed(AppRoutes.SIGNIN_ROUTE_NAME),
+          backgroundColor: Theme.of(context).bottomAppBarColor,
         ),
         body: Stack(
           children: [
             Padding(
-              padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 75.h),
+              padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 25.h),
               child: Column(
                 children: [
                   Row(
@@ -72,45 +72,9 @@ class _SignUpScreenState extends State<SignUpScreen>
                     ],
                   ),
                   SizedBox(
-                    height: 27.h,
+                    height: 17.h,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      CustomTextField(
-                        width: 95.w,
-                        height: 35.h,
-                        isWidget: true,
-                        childWidget: CodePickerWidget(
-                          alignLeft: true,
-                          onChanged: (CountryCode countryCode) {
-                            setState(() {
-                              _countryDialCode = countryCode.dialCode;
-                            });
-                          },
-                          initialSelection: 'ET',
-                          favorite: [_countryDialCode!],
-                          flagDecoration: BoxDecoration(
-                              shape: BoxShape.rectangle,
-                              borderRadius: BorderRadius.circular(5)),
-                          showCountryOnly: true,
-                          showDropDownButton: true,
-                          backgroundColor: Theme.of(context).cardColor,
-                          flagWidth: 30,
-                          hideMainText: true,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 10.w,
-                      ),
-                      Expanded(
-                          child: CustomTextField(
-                        width: double.infinity,
-                        height: 35.h,
-                        labelText: 'Mobile number',
-                      )),
-                    ],
-                  ),
+                  MobileLoginTab(),
                   SizedBox(
                     height: 15.h,
                   ),
@@ -150,22 +114,22 @@ class _SignUpScreenState extends State<SignUpScreen>
                   SizedBox(
                     height: 10.h,
                   ),
-                  !_isPhoneVerified
-                      ? CustomElevatedButton(
-                          onTap: () {
-                            setState(() {
-                              if (_showOTPField == false) {
-                                _showOTPField = true;
-                              } else {
-                                _isPhoneVerified = true;
-                              }
-                            });
-                          },
-                          label: VERIFY,
-                        )
-                      : SizedBox(),
+                  // !_isPhoneVerified
+                  //     ? CustomElevatedButton(
+                  //         onTap: () {
+                  //           setState(() {
+                  //             if (_showOTPField == false) {
+                  //               _showOTPField = true;
+                  //             } else {
+                  //               _isPhoneVerified = true;
+                  //             }
+                  //           });
+                  //         },
+                  //         label: VERIFY,
+                  //       )
+                  //     : SizedBox(),
                   SizedBox(
-                    height: 15.h,
+                    height: 5.h,
                   ),
                   Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                     Text(

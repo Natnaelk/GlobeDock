@@ -57,7 +57,7 @@ ThemeData themeLight(BuildContext context) {
       headlineMedium: GoogleFonts.rubik(
         color: ColorLight.fontTitle,
         fontSize: CustomFontSize.s17,
-        fontWeight: FontWeight.w600,
+        fontWeight: FontWeight.w500,
       ),
       headlineLarge: GoogleFonts.rubik(
         color: ColorLight.fontTitle,
@@ -163,7 +163,7 @@ ThemeData themeDark(BuildContext context) {
       headlineMedium: GoogleFonts.rubik(
         color: ColorDark.fontTitle,
         fontSize: 14,
-        fontWeight: FontWeight.w500,
+        fontWeight: FontWeight.w100,
       ),
       headlineSmall: GoogleFonts.rubik(
         color: ColorDark.fontTitle,

@@ -52,7 +52,7 @@ class ProfileScreen extends StatelessWidget {
           padding: EdgeInsets.only(
             left: MAIN_PADDING,
             right: MAIN_PADDING,
-            top: MAIN_PADDING * 1.5,
+            top: MAIN_PADDING * 1.1,
           ),
           child: Column(children: [
             Container(
@@ -139,7 +139,7 @@ class ProfileScreen extends StatelessWidget {
                                   color: Theme.of(context).primaryColor,
                                   width: 1.5)),
                           child: Text(
-                            'Enrolled students',
+                            'Enrolled student',
                             style: TextStyle(
                                 color: Theme.of(context).primaryColor,
                                 fontSize: CustomFontSize.s10),
@@ -150,7 +150,7 @@ class ProfileScreen extends StatelessWidget {
                   ],
                 )),
             SizedBox(
-              height: 30.h,
+              height: 15.h,
             ),
             Container(
               decoration: BoxDecoration(
@@ -210,7 +210,7 @@ class ProfileScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 30.h,
+              height: 15.h,
             ),
             Container(
               decoration: BoxDecoration(
@@ -235,7 +235,7 @@ class ProfileScreen extends StatelessWidget {
                           children: [
                             Text(
                               'Account',
-                              style: TextStyle(fontSize: 15),
+                              style: TextStyle(fontSize: 18),
                             ),
                             GestureDetector(
                               onTap: () {
@@ -274,13 +274,16 @@ class ProfileScreen extends StatelessWidget {
                           height: SPACE40,
                         ),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             SvgPicture.asset(
                               Images.EMAIL_LOGIN,
                               width: 20,
                               height: 20,
                               color: Theme.of(context).dialogBackgroundColor,
+                            ),
+                            SizedBox(
+                              width: 25.w,
                             ),
                             Text('Abel@gmail.com',
                                 style: TextStyle(fontSize: 15))
@@ -290,13 +293,16 @@ class ProfileScreen extends StatelessWidget {
                           height: SPACE40,
                         ),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             SvgPicture.asset(
                               CustomIcons.CALL,
                               width: 20,
                               height: 20,
                               color: Theme.of(context).dialogBackgroundColor,
+                            ),
+                            SizedBox(
+                              width: 25.w,
                             ),
                             Text('0922378272', style: TextStyle(fontSize: 15))
                           ],
@@ -305,12 +311,15 @@ class ProfileScreen extends StatelessWidget {
                           height: SPACE40,
                         ),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             SvgPicture.asset(
                               CustomIcons.LOCATION,
                               width: 20,
                               height: 20,
+                            ),
+                            SizedBox(
+                              width: 25.w,
                             ),
                             Text('locaiton not added',
                                 style: TextStyle(
@@ -322,12 +331,15 @@ class ProfileScreen extends StatelessWidget {
                           height: SPACE40,
                         ),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             SvgPicture.asset(
                               CustomIcons.GENDER,
                               width: 20,
                               height: 20,
+                            ),
+                            SizedBox(
+                              width: 25.w,
                             ),
                             Text('Male', style: TextStyle(fontSize: 15))
                           ],
@@ -336,12 +348,15 @@ class ProfileScreen extends StatelessWidget {
                           height: SPACE40,
                         ),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             SvgPicture.asset(
                               CustomIcons.CAKE,
                               width: 20,
                               height: 20,
+                            ),
+                            SizedBox(
+                              width: 25.w,
                             ),
                             Text('00-00-2023', style: TextStyle(fontSize: 15))
                           ],

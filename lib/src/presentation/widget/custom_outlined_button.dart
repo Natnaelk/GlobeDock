@@ -22,7 +22,6 @@ class CustomOutlinedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     return SizedBox(
       width: width,
       height: height,
@@ -33,13 +32,13 @@ class CustomOutlinedButton extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(RADIUS),
             side: BorderSide(
-              color: theme.primaryColor,
+              color: labelColor,
             ),
           ),
         ),
         child: Text(
           label!,
-          style: theme.textTheme.bodyText1,
+          style: TextStyle(color: labelColor),
         ),
       ),
     );

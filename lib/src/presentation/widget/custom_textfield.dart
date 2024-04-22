@@ -67,11 +67,8 @@ class CustomTextField extends StatelessWidget {
                 : null),
         child: isWidget
             ? childWidget
-            : Padding(
-                padding: const EdgeInsets.only(top: 3),
-                child: CustomTextFormField(
-                  labelText: labelText,
-                ),
+            : CustomTextFormField(
+                labelText: labelText,
               ));
   }
 }
