@@ -305,9 +305,7 @@ class _ChatRoomScreenState extends State<ChatRoomScreen> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       GestureDetector(
-                          onTap: () {
-                            print('Hello camera');
-                          },
+                          onTap: () {},
                           child: SvgPicture.asset(
                             CustomIcons.GALLERY,
                             height: 16.h,
